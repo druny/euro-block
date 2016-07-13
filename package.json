@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/druny/euro-block.git"
   },
-  "author": "Andrey Danilenko",
+  "author": "Andrey Danilenko, Vladimir Kharaman",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/druny/euro-block/issues"
