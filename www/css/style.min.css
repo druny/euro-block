@@ -1323,7 +1323,7 @@ button.close{padding:0;cursor:pointer;background:0 0;border:0;-webkit-appearance
 .tooltip.bottom-left .tooltip-arrow{right:5px;margin-top:-5px}
 .tooltip.bottom-right .tooltip-arrow{left:5px;margin-top:-5px}
 .popover{position:absolute;top:0;left:0;z-index:1060;display:none;max-width:276px;padding:1px;text-align:left;text-align:start;font-size:14px;background-color:#fff;border:1px solid #ccc;border:1px solid rgba(0,0,0,.2);border-radius:6px;-webkit-box-shadow:0 5px 10px rgba(0,0,0,.2);box-shadow:0 5px 10px rgba(0,0,0,.2)}
-.carousel-caption,.carousel-control{color:#fff;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.6)}
+.carousel-caption,.carousel-control{color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.6);text-align:center}
 .popover.top{margin-top:-10px}
 .popover.right{margin-left:10px}
 .popover.bottom{margin-top:10px}
@@ -1362,7 +1362,7 @@ button.close{padding:0;cursor:pointer;background:0 0;border:0;-webkit-appearance
 .carousel-control{position:absolute;top:0;left:0;bottom:0;width:15%;opacity:.5;filter:alpha(opacity=50);font-size:20px;background-color:rgba(0,0,0,0)}
 .carousel-control.left{background-image:-webkit-linear-gradient(left,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);background-image:-o-linear-gradient(left,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);background-image:linear-gradient(to right,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1)}
 .carousel-control.right{left:auto;right:0;background-image:-webkit-linear-gradient(left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);background-image:-o-linear-gradient(left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);background-image:linear-gradient(to right,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1)}
-.header,.header-menu{background-repeat:no-repeat}
+.header,.header-menu{background-repeat:no-repeat;background-size:cover}
 .carousel-control:focus,.carousel-control:hover{outline:0;color:#fff;text-decoration:none;opacity:.9;filter:alpha(opacity=90)}
 .carousel-control .glyphicon-chevron-left,.carousel-control .glyphicon-chevron-right,.carousel-control .icon-next,.carousel-control .icon-prev{position:absolute;top:50%;margin-top:-10px;z-index:5;display:inline-block}
 .carousel-control .glyphicon-chevron-left,.carousel-control .icon-prev{left:50%;margin-left:-10px}
@@ -1391,7 +1391,7 @@ button.close{padding:0;cursor:pointer;background:0 0;border:0;-webkit-appearance
 .hidden,.visible-lg,.visible-lg-block,.visible-lg-inline,.visible-lg-inline-block,.visible-md,.visible-md-block,.visible-md-inline,.visible-md-inline-block,.visible-sm,.visible-sm-block,.visible-sm-inline,.visible-sm-inline-block,.visible-xs,.visible-xs-block,.visible-xs-inline,.visible-xs-inline-block{display:none!important}
 .invisible{visibility:hidden}
 .text-hide{font:0/0 a;color:transparent;background-color:transparent;border:0}
-.header-menu .header-list .basket,.header-menu .header-list .menu-item{text-transform:uppercase;font-family:OfficinaSansBold,sans-serif}
+.header-menu .header-list .basket,.header-menu .header-list .menu-item{font-family:OfficinaSansBold,sans-serif;text-transform:uppercase}
 .affix{position:fixed}
 @-ms-viewport{width:device-width}
 @media (max-width:767px){.visible-xs{display:block!important}
@@ -1454,8 +1454,7 @@ td.visible-print,th.visible-print{display:table-cell!important}
 @font-face{font-family:OfficinaSansBook;src:url('../fonts/ITC Officina Sans LT Book.ttf')}
 @font-face{font-family:OfficinaSansBookItalic;src:url('../fonts/ITC Officina Sans LT Book Italic.ttf')}
 .mobile-info{display:none}
-.header{background-image:url(../img/first-bg.png);background-size:100% 100%;background-position:center center;height:500px}
-.header-menu{background-color:#fff;opacity:.722;box-shadow:1px 1.73px 5px 0 #000;background-size:cover}
+.header-menu{background-color:#fff;opacity:.722;box-shadow:1px 1.73px 5px 0 #000}
 .header-menu .header-list{margin:10px 0;list-style-type:none;line-height:20px}
 .header-menu .header-list .logo{width:80px}
 .header-menu .header-list .trunk{position:relative;left:-10px;top:-10px;width:60px}
@@ -1467,6 +1466,16 @@ td.visible-print,th.visible-print{display:table-cell!important}
 .header-menu .header-list .request{margin-left:40px;position:relative;top:20px}
 .header-menu .header-list .request .phone{font-size:23px;line-height:0;color:#000;font-family:OfficinaSansBook,sans-serif;font-weight:700}
 .header-menu .header-list .request-call{font-style:13px;font-weight:700;font-family:OfficinaSansBook,sans-serif;text-decoration:underline}
+.header{background-image:url(../img/first-bg.png);background-position:center center}
+.header .title-block{margin-top:30px}
+.header .title-block-first{background:#006bd3}
+.header .title-block-first h1{padding:15px 0;color:#fff;text-transform:uppercase;font-family:OfficinaSansBold,sans-serif;text-align:center}
+.header .title-block-second{background:#fdca00;margin-top:-20px}
+.header .title-block-second p{line-height:25px;padding:10px 0 10px 20px;color:#000;text-transform:uppercase;font-family:OfficinaSansBook,sans-serif;font-weight:700;font-size:15px}
+.header .login{margin-top:50px;background:linear-gradient(45deg,#028bf8,#006bd3);border-radius:10px;padding:15px;border:3px solid #006bd3}
+.header .login-topic{margin-top:0;font-size:14px;text-transform:uppercase;color:#fff;font-family:OfficinaSansBold,sans-serif}
+.header .login .entrance input{height:25px;border:none;box-shadow:0 1px 10px 1px #0059ae;border-radius:5px;margin-bottom:10px;font-family:OfficinaSansBook,sans-serif;font-weight:700;text-transform:uppercase;color:#000}
+.header .login .entrance input .login-btn{color:red}
 @media (max-width:1200px){.header-menu .header-list{margin:5px 0}
 .header-menu .header-list .menu{margin:0}
 .header-menu .header-list .menu-item{font-size:16px}

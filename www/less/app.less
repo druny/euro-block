@@ -18,14 +18,7 @@
 .mobile-info {
 	display: none;
 }
-.header {
-	background-image: url(../img/first-bg.png);
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-	background-position: center center;
-	height: 500px;
 
-}
 .header-menu { 
   	background-color: rgb( 255, 255, 255 );
  	opacity: 0.722;
@@ -95,4 +88,68 @@
 
 	}
 	
+}
+.header {
+	background-image: url(../img/first-bg.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	//height: 500px;
+	.title-block {
+		margin-top: 30px;
+		&-first {
+			background: #006bd3;
+			h1 {
+				padding: 15px 0;
+				color: #fff;
+				text-transform: uppercase;
+				font-family: @main-font-bold;
+				text-align: center;
+			}
+			
+		}
+		&-second {
+			background: #fdca00;
+			margin-top: -20px;
+			p {
+				line-height: 25px;
+				padding: 10px 0 10px 20px;
+				color: #000;
+				text-transform: uppercase;
+				font-family: @main-font-book;
+				font-weight: bold;
+				font-size: 15px;
+			}
+		}
+	}
+	.login {
+		margin-top: 50px;
+		background: linear-gradient(45deg, #028bf8, #006bd3);
+		border-radius: 10px;
+		padding: 15px;
+		border: 3px solid #006bd3;
+		&-topic {
+			margin-top: 0;
+			font-size: 14px;
+			text-transform: uppercase;
+			color: #fff;
+			font-family: @main-font-bold;
+		}
+		.entrance {
+			input {
+				height: 25px;
+				border: none;
+				box-shadow: 0 1px 10px 1px #0059ae;
+				border-radius: 5px;
+				margin-bottom: 10px;
+				font-family: @main-font-book;
+				font-weight: bold;
+				text-transform: uppercase;
+				color: #000;
+				.login-btn {
+					color: red;
+				}
+			}
+		}	
+	}
 }
