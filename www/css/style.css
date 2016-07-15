@@ -6812,6 +6812,8 @@ button.close {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+  padding-bottom: 70px;
+  margin-bottom: -15px;
 }
 .header .title-block {
   margin: 30px 0 15px;
@@ -6958,6 +6960,46 @@ button.close {
   text-transform: uppercase;
   display: inline-block;
 }
+.info {
+  background: url(../img/t_1.png) no-repeat center bottom, #fff url(../img/info-bg.png) no-repeat;
+  background-size: contain, cover;
+  height: 100%;
+  padding-bottom: 100px;
+}
+.info-header {
+  background-color: #006bd3;
+  opacity: 0.859;
+  height: 80px;
+}
+.info-header .info-title {
+  margin-top: 20px;
+  float: left;
+  color: #fff;
+  font-family: "OfficinaSansBold", sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.info-description {
+  background: #fff;
+  height: 820px;
+  padding: 25px 50px;
+  margin-bottom: 15px;
+}
+.info-description img {
+  width: 100%;
+  height: 250px;
+  border-radius: 10px;
+  border: 8px solid #ffffff;
+  box-shadow: 3px 3px 10px 1px #060606;
+  margin: 10px 0;
+}
+.info-description .main-descr {
+  color: #006bd3;
+  font-size: 12px;
+  font-family: "OfficinaSansBold", sans-serif;
+  text-transform: uppercase;
+}
 @media (max-width: 1199px) {
   .header-menu .header-list {
     margin: 5px 0;
@@ -6981,6 +7023,9 @@ button.close {
   }
   .header .login .entrance input {
     width: 45%;
+  }
+  .info-header .info-title {
+    margin-top: 12px;
   }
 }
 @media (max-width: 991px) {
@@ -7014,6 +7059,15 @@ button.close {
   .header .login .entrance .login-btn {
     width: 30%;
   }
+  .header .feedback .my-icon > i {
+    border-left: 362px solid transparent;
+    border-right: 362px solid transparent;
+    left: -20px;
+    top: 14px;
+  }
+  .info-header {
+    height: 110px;
+  }
 }
 @media (max-width: 767px) {
   .mobile-info {
@@ -7039,6 +7093,14 @@ button.close {
   .header-video iframe {
     height: 300px;
   }
+  .header .feedback .my-icon > i {
+    display: none;
+  }
+}
+@media (max-width: 520px) {
+  .info-header {
+    height: 150px;
+  }
 }
 @media (max-width: 450px) {
   .header-menu .header-list .menu {
@@ -7046,5 +7108,10 @@ button.close {
   }
   .header-video iframe {
     height: 200px;
+  }
+}
+@media (max-width: 375px) {
+  .info-header {
+    height: 190px;
   }
 }

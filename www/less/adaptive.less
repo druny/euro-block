@@ -33,6 +33,13 @@
 			}
 		}
 	}
+	.info {
+		&-header {
+			.info-title {
+				margin-top: 12px;
+			}
+		}
+	}
 	
 }
 
@@ -75,6 +82,20 @@
 				}
 			}
 		}
+		.feedback {
+			.my-icon > i {
+			   	border-left: 362px solid transparent; 
+			   	border-right: 362px solid transparent; 
+			    left: -20px;
+			    top: 14px;
+			}
+		}
+	}
+
+	.info {
+		&-header {
+			height: 110px;
+		}
 	}
 
 }
@@ -110,8 +131,24 @@
 			height: 300px;
 		}
 	}
+	.header {
+		.feedback {
+			.my-icon > i {
+			   display: none;
+			}
+		}
+	}
 
 }
+@media(max-width: 520px) {
+.info {
+		&-header {
+			height: 150px;
+		}
+	}
+	
+}
+
 @media(max-width: 450px) {
 	.header-menu {
 		.header-list {
@@ -127,4 +164,12 @@
 		}
 	}
 	
+}
+
+@media(max-width: 375px) {
+	.info {
+		&-header {
+			height: 190px;
+		}
+	}
 }

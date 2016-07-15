@@ -94,6 +94,8 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
+	padding-bottom: 70px;
+	margin-bottom: -15px;
 	//height: 500px;
 	.title-block {
 		margin: 30px 0 15px;
@@ -242,6 +244,50 @@
 				text-transform: uppercase;
 				display: inline-block;
 			}
+		}
+
+	}
+}
+
+
+.info {
+	background: url(../img/t_1.png)   no-repeat center bottom,
+				#fff url(../img/info-bg.png) no-repeat;
+	background-size: contain, cover;
+	height: 100%;
+	padding-bottom: 100px;
+	&-header {
+		background-color: rgb( 0, 107, 211 );
+		opacity: 0.859;
+		height: 80px;
+		.info-title {
+			margin-top: 20px;
+			float: left;
+			color: #fff;
+			font-family: @main-font-bold;
+			font-size: 15px;
+			text-transform: uppercase;
+			text-align: center;
+		}
+	}
+	&-description {
+		background: #fff;
+		height: 820px;
+		padding: 25px 50px;
+		margin-bottom: 15px;
+		img {
+			width: 100%;
+			height: 250px;
+			border-radius: 10px;
+		  	border: 8px solid rgb( 255, 255, 255 );
+		  	box-shadow: 3px 3px 10px 1px rgb( 6, 6, 6 );
+ 			margin: 10px 0;
+		}
+		.main-descr {
+			color: #006bd3;
+			font-size: 12px;
+			font-family: @main-font-bold;
+			text-transform: uppercase;
 		}
 
 	}
