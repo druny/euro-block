@@ -1,4 +1,4 @@
-@media(max-width: 1200px) {
+@media(max-width: 1199px) {
 	.header-menu {
 		.header-list {
 			margin: 5px 0;
@@ -14,9 +14,30 @@
 			
 		}
 	}
+	.header {
+		.feedback {
+			.my-icon > i {
+			   	border-top: 50px solid #006cd3;
+			   	border-left: 115px solid transparent; 
+			   	border-right: 120px solid transparent; 
+			   	border-radius: 5px;
+			    left: -18px;
+			    top: 14px;
+			}
+		}
+		.login {
+			.entrance {
+				input {
+					width: 45%;
+				}
+			}
+		}
+	}
+	
 }
 
-@media(max-width: 990px) {
+@media(max-width: 991px) {
+
 	.header-menu {
 		.header-list {
 			.logo {
@@ -38,6 +59,20 @@
 			}
 			.request {
 				margin-left: 0px;
+			}
+		}
+	}
+	.header {
+		.login {
+			margin-top: 5px;
+			.entrance {
+				input {
+					width: 60%;
+					margin-right: 20px;
+				}
+				.login-btn {
+					width: 30%;
+				}
 			}
 		}
 	}
@@ -70,6 +105,11 @@
 			}
 		}
 	}
+	.header-video {
+		iframe {
+			height: 300px;
+		}
+	}
 
 }
 @media(max-width: 450px) {
@@ -80,6 +120,11 @@
 			}
 		}
 
+	}
+	.header-video {
+		iframe {
+			height: 200px;
+		}
 	}
 	
 }

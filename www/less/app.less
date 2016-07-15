@@ -124,7 +124,7 @@
 	}
 	.login {
 		margin-top: 50px;
-		background: linear-gradient(90deg, #028bf8, #006bd3);
+		background: linear-gradient(180deg, #028bf8, #006bd3);
 		border-radius: 10px;
 		padding: 15px;
 		border: 3px solid #006bd3;
@@ -136,6 +136,8 @@
 			font-family: @main-font-bold;
 		}
 		.entrance {
+			font-family: @main-font-book;
+			text-transform: uppercase;
 			input {
 				height: 25px;
 				border: none;
@@ -144,8 +146,25 @@
 				margin-bottom: 10px;
 				font-family: @main-font-book;
 				font-weight: bold;
-				text-transform: uppercase;
 				color: #000;
+				padding-left: 10px;
+				width: 55%;
+			}
+			.registration {
+				color: #fff;
+				text-decoration: underline;
+				font-size: 14px;
+				font-weight: bold;
+			}
+			.login-btn {
+				text-transform: uppercase;
+				font-weight: bold;
+				font-size: 14px;
+				border: none;
+				border-radius: 5px;
+				background-color: #fdca00;
+				width: 40%;
+				height: 25px;
 			}
 		}	
 	}
@@ -157,12 +176,73 @@
 			width: 100%;
 		}
 	}
+
+
 	.feedback {
-		margin-top: 50px;
-		background: linear-gradient(90deg, #028bf8, #006bd3);
+		margin-top: 30px;
+		background: linear-gradient(180deg, #028bf8, #006bd3);
 		border-radius: 10px;
 		padding: 15px;
 		border: 3px solid #006bd3;
-	
+		.my-icon {
+   		 	position: relative;
+		}
+		.my-icon > i {
+		    position: absolute;
+		    display: inline-block;
+		   	width: 0; 
+		  	height: 0;
+		   	border-top: 50px solid #006cd3;
+		   	border-left: 138px solid transparent; 
+		   	border-right: 141px solid transparent; 
+		   	border-radius: 5px;
+		    left: -15px;
+		    top: 16px;
+		}
+		&-topic {
+			font-family: @main-font-bold;
+			font-size: 22px;
+			text-transform: uppercase;
+			color: #fff;
+			text-align: center;
+			margin-top: 0px;
+		}
+		input {
+				height: 30px;
+				width: 100%;
+				border: none;
+				box-shadow: 0 1px 10px 1px #0059ae;
+				border-radius: 5px;
+				margin: 10px 0;
+				font-family: @main-font-book;
+				font-weight: bold;
+				text-transform: uppercase;
+				color: #000;
+				padding-left: 10px;
+			}
+		.get {
+			width: 100%;
+			margin-top: 20px;
+			border: none;
+			border-radius: 5px;
+			height: 40px;
+			background-color: #fdca00;
+			&-img {
+				margin-top: -5px;
+				margin-right: 10px;
+				width: 30px;
+				
+			}
+			&-text {
+				margin-top: 5px;
+				margin-left: 10px;
+				font-size: 20px;
+				font-family: @main-font-book;
+				color: #000;
+				text-transform: uppercase;
+				display: inline-block;
+			}
+		}
+
 	}
 }
