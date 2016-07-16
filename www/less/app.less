@@ -249,11 +249,16 @@
 	}
 }
 
+.divide {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+}
 
 .info {
-	background: url(../img/t_1.png)   no-repeat center bottom,
-				#fff url(../img/info-bg.png) no-repeat;
-	background-size: contain, cover;
+	position: relative;
+	background: #fff url(../img/info-bg.png) no-repeat;
+	background-size: cover;
 	height: 100%;
 	padding-bottom: 100px;
 	&-header {
@@ -272,7 +277,7 @@
 	}
 	&-description {
 		background: #fff;
-		height: 820px;
+		height: 1000px;
 		padding: 25px 50px;
 		margin-bottom: 15px;
 		img {
@@ -285,9 +290,20 @@
 		}
 		.main-descr {
 			color: #006bd3;
-			font-size: 12px;
+			font-size: 16px;
 			font-family: @main-font-bold;
 			text-transform: uppercase;
+			margin: 10px 10px;
+		}
+		.descr {
+			font-family: @main-font-bold;
+			font-size: 17px;
+			color: #000;
+			margin: 10px 10px;
+		}
+		.descr-second {
+			width: 450px;
+			margin: 23px 20px;
 		}
 
 	}
