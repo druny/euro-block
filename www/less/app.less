@@ -331,7 +331,6 @@
 		}
 	}
 	.advantages-info {
-		overflow: hidden;
 		position: relative;
 		margin-bottom: 100px;
 
@@ -343,10 +342,12 @@
 			margin-bottom: 10%;
 		}
 		.descr {
+			display: inline-block;
+			width: 200px;
 			position: relative;
 			text-transform: uppercase;
 			&-title {
-				font-size: 14px;
+				font-size: 15px;
 				font-family: @main-font-bold;
 			}
 			&-text {
@@ -356,29 +357,77 @@
 				font-family: @main-font-book;
 			}
 			&:nth-child(1){
-				top: 0;
+				top: -10px;
 				left: 430px;
 				& .descr-title {
 					margin-left: 90px;
+					width: 150px;
+				}
+				& .descr-text {
+					width: 280px;
 				}
 			}
 			&:nth-child(2) {
-				top: 50px;
-				left: 780px;
+				top: 120px;
+				left: 570px;
+				& .descr-title {
+					width: 200px;
+				}
 				& .descr-text {
 					text-align: left;
-					width: 220px;
+					width: 250px;
 				}
 			}
 			&:nth-child(3) {
-				top: 170px;
-				left: 850px;
+				top: 310px;
+				left: 450px;
+				 .descr-title {
+					width: 150px;
+				}
 				& .descr-text {
 					width: 50px;
 				}
 			}
 			&:nth-child(4) {
-				top: 300px;
+				top: 470px;
+				left: 150px;
+				& .descr-text {
+					width: 150px;
+				}
+			}
+			&:nth-child(5) {
+				top: 660px;
+				right: 350px;
+				& .descr-title {
+					margin-left: 50px;
+				}
+			}
+			&:nth-child(6) {
+				top: 380px;
+				left: 200px;
+				& .descr-text {
+					width: 90px;
+				}
+			}
+			&:nth-child(7) {
+				top: 220px;
+				left: -30px;
+				 .descr-title {
+					width: 50px;
+				}
+				& .descr-text {
+					width: 50px;
+				}
+			}
+			&:nth-child(8)  {
+				top: 20px;
+				left: -170px;
+				.descr-title {
+					width: 50px;
+				}
+				& .descr-text {
+					width: 85px;
+				}
 			}
 		}
 	}
