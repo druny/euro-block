@@ -7018,6 +7018,7 @@ button.close {
   position: relative;
   background: #fff url(../img/advanture-bg.png) no-repeat;
   background-size: cover;
+  height: 1000px;
 }
 .advantages-title {
   background: linear-gradient(180deg, #2681cb, #038bf8);
@@ -7036,6 +7037,57 @@ button.close {
   text-align: center;
   margin: 0px auto;
   transform: skew(30deg);
+}
+.advantages .advantages-info {
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 100px;
+}
+.advantages .advantages-info .descr-img {
+  width: 550px;
+  position: absolute;
+  top: 100px;
+  left: 25%;
+  margin-bottom: 10%;
+}
+.advantages .advantages-info .descr {
+  position: relative;
+  text-transform: uppercase;
+}
+.advantages .advantages-info .descr-title {
+  font-size: 14px;
+  font-family: "OfficinaSansBold", sans-serif;
+}
+.advantages .advantages-info .descr-text {
+  text-align: center;
+  max-width: 280px;
+  font-size: 11px;
+  font-family: "OfficinaSansBook", sans-serif;
+}
+.advantages .advantages-info .descr:nth-child(1) {
+  top: 0;
+  left: 430px;
+}
+.advantages .advantages-info .descr:nth-child(1) .descr-title {
+  margin-left: 90px;
+}
+.advantages .advantages-info .descr:nth-child(2) {
+  top: 50px;
+  left: 780px;
+}
+.advantages .advantages-info .descr:nth-child(2) .descr-text {
+  text-align: left;
+  width: 220px;
+}
+.advantages .advantages-info .descr:nth-child(3) {
+  top: 170px;
+  left: 850px;
+}
+.advantages .advantages-info .descr:nth-child(3) .descr-text {
+  width: 50px;
+}
+.advantages .advantages-info .descr:nth-child(4) {
+  top: 300px;
 }
 @media (max-width: 1440px) {
   .divide {
@@ -7089,6 +7141,9 @@ button.close {
   }
 }
 @media (max-width: 991px) {
+  .advantages {
+    display: none;
+  }
   .divide {
     top: -50px;
   }
