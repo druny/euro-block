@@ -429,6 +429,14 @@
 	}
 }
 }
+
+@media(max-width: 529px) {
+	
+	.title-width {
+		width: 80%;
+	}
+}
+
 @media(max-width: 524px) {
 .info {
 		&-header {
@@ -442,8 +450,28 @@
 		}
 	}
 .calc {
-	display: none;
+	&_i_fields_i_lbl {
+		display: inline-block;
+		max-width: 100%;
+	}
+	&_i_fields_i_val {
+		width: 100%;
+	}
+	.calc_i_cols_fields-left-c  {
+		width: 100%;
+		margin: 0;
+		float: none;
+	}
+	.calc_i_cols_fields-right-c {
+		width: 100%;
+		float: left;
+		margin-left: 0%;
+	}
+	.calc-brick {
+		width: 100%;
+	}
 }
+
 	
 }
 

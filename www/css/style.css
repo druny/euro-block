@@ -7252,7 +7252,8 @@ button.close {
   font-size: 22px;
   text-transform: uppercase;
   width: 100%;
-  height: 55px;
+  height: 65px;
+  display: block;
 }
 .products .items .item-description {
   font-family: 'AGLettericaCondensed', sans-serif;
@@ -7610,6 +7611,11 @@ button.close {
     max-width: 100%;
   }
 }
+@media (max-width: 529px) {
+  .title-width {
+    width: 80%;
+  }
+}
 @media (max-width: 524px) {
   .info-header {
     height: 150px;
@@ -7620,8 +7626,25 @@ button.close {
   .info .divide {
     bottom: 80px;
   }
-  .calc {
-    display: none;
+  .calc_i_fields_i_lbl {
+    display: inline-block;
+    max-width: 100%;
+  }
+  .calc_i_fields_i_val {
+    width: 100%;
+  }
+  .calc .calc_i_cols_fields-left-c {
+    width: 100%;
+    margin: 0;
+    float: none;
+  }
+  .calc .calc_i_cols_fields-right-c {
+    width: 100%;
+    float: left;
+    margin-left: 0%;
+  }
+  .calc .calc-brick {
+    width: 100%;
   }
 }
 @media (max-width: 450px) {
@@ -7744,4 +7767,21 @@ button.close {
 }
 .calc_i_fields_i_val {
   float: left;
+}
+.calc_i_sb {
+  background: linear-gradient(#f9d316, #f69e16);
+  width: 250px;
+  border: none;
+}
+.calc_i_sb h3 {
+  display: inline-block;
+  font-family: "OfficinaSansBold", sans-serif;
+  font-size: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-left: 20px;
+}
+.calc_i_sb img {
+  width: 20px;
+  margin-top: -15px;
 }

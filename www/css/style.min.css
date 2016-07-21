@@ -1552,7 +1552,7 @@ td.visible-print,th.visible-print{display:table-cell!important}
 .products .items{margin:50px auto}
 .products .items .item{height:300px;margin-bottom:150px}
 .products .items .item-img{padding-left:20px;height:200px;margin-bottom:10px}
-.products .items .item-title{font-family:OfficinaSansBold,sans-serif;font-size:22px;text-transform:uppercase;width:100%;height:55px}
+.products .items .item-title{font-family:OfficinaSansBold,sans-serif;font-size:22px;text-transform:uppercase;width:100%;height:65px;display:block}
 .products .items .item-description{font-family:AGLettericaCondensed,sans-serif;text-transform:uppercase;color:#44627e;height:50px}
 .calculator-title,.products .items .item-button h3{font-family:OfficinaSansBold,sans-serif;text-transform:uppercase}
 .products .items .item-button{background:linear-gradient(#f9d316,#f69e16);width:80%;border:none}
@@ -1642,16 +1642,22 @@ td.visible-print,th.visible-print{display:table-cell!important}
 .products .items .item-title{font-size:25px;text-align:center}
 .products .items .item-description{font-size:20px}
 }
+.calc,.calc_i_h,.calc_i_sb h3{display:inline-block}
 @media (max-width:650px){.divide{top:-30px}
 .info-description{height:1850px}
 .products .items .item-img{margin:0;max-width:100%}
 }
+@media (max-width:529px){.title-width{width:80%}
+}
 @media (max-width:524px){.info-header{height:150px}
 .info-description{height:1920px}
 .info .divide{bottom:80px}
-.calc{display:none}
+.calc_i_fields_i_lbl{display:inline-block;max-width:100%}
+.calc_i_fields_i_val{width:100%}
+.calc .calc_i_cols_fields-left-c{width:100%;margin:0;float:none}
+.calc .calc_i_cols_fields-right-c{width:100%;float:left;margin-left:0}
+.calc .calc-brick{width:100%}
 }
-.calc,.calc_i_h{display:inline-block}
 @media (max-width:450px){.header-menu .header-list .menu{width:100%}
 .header-video iframe{height:200px}
 .info-description{height:2200px}
@@ -1681,3 +1687,6 @@ td.visible-print,th.visible-print{display:table-cell!important}
 .calc_i_fields_i{margin-bottom:10px}
 .calc_i_fields_i_lbl{line-height:25px;float:left;width:300px;margin-right:20px}
 .calc_i_fields_i_val{float:left}
+.calc_i_sb{background:linear-gradient(#f9d316,#f69e16);width:250px;border:none}
+.calc_i_sb h3{font-family:OfficinaSansBold,sans-serif;font-size:30px;text-align:center;text-transform:uppercase;margin-left:20px}
+.calc_i_sb img{width:20px;margin-top:-15px}
