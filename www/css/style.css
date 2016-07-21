@@ -7167,7 +7167,7 @@ button.close {
   background: linear-gradient(180deg, #2681cb, #038bf8);
   margin: 0px auto;
   margin-bottom: 20px;
-  width: 280px;
+  width: 300px;
   transform: skew(-15deg);
   padding: 20px 0;
   box-shadow: 2px 2px 10px 0 #666;
@@ -7182,20 +7182,68 @@ button.close {
   margin: 0;
 }
 .title-descr {
-  width: 465px;
+  width: 495px;
   margin: 20px auto;
 }
 .title-descr p {
   text-align: center;
   font-family: "OfficinaSansBold", sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   text-transform: uppercase;
 }
 .objects {
+  padding-bottom: 200px;
   position: relative;
   background: #fff url(../img/objects-bg.png) no-repeat bottom center;
   background-size: 100%;
-  height: 1000px;
+}
+.objects p {
+  font-size: 12px;
+  font-family: "OfficinaSansBook", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.objects-items-first img {
+  width: 350px;
+  height: 300px;
+}
+.objects-items-first p {
+  padding: 10px 0;
+  font-size: 16px;
+  font-family: "OfficinaSansBook", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.objects-items-second img {
+  width: 250px;
+}
+.objects-items-second p {
+  padding-top: 10px;
+  font-size: 13px;
+  font-family: "OfficinaSansBook", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.products {
+  position: relative;
+  background: #fff;
+}
+.products .items {
+  margin: 50px auto;
+}
+.products .items .item {
+  height: 300px;
+  margin-bottom: 100px;
+}
+.products .items .item-img {
+  padding-left: 20px;
+  height: 200px;
+}
+.products .items .item-title {
+  font-family: "OfficinaSansBold", sans-serif;
+  font-size: 24px;
+  text-transform: uppercase;
+  width: 100%;
 }
 @media (max-width: 1440px) {
   .divide {
@@ -7332,6 +7380,22 @@ button.close {
   .advantages .eko {
     left: 0px;
   }
+  .objects {
+    padding-bottom: 100px;
+  }
+  .objects-items-first img {
+    width: 300px;
+    height: 230px;
+  }
+  .objects-items-first p {
+    font-size: 14px;
+  }
+  .objects-items-second img {
+    width: 200px;
+  }
+  .objects-items-second p {
+    font-size: 11px;
+  }
 }
 @media (max-width: 991px) {
   .advantages {
@@ -7393,6 +7457,30 @@ button.close {
   .info-description img {
     margin-bottom: 20px;
   }
+  .objects {
+    padding-bottom: 50px;
+  }
+  .objects p {
+    font-size: 16px;
+  }
+  .objects-items-first img {
+    width: 340px;
+    height: 250px;
+  }
+  .objects-items-first p {
+    font-size: 15px;
+    width: 90%;
+  }
+  .objects-items-second img {
+    width: 100%;
+    height: 450px;
+  }
+  .objects-items-second p {
+    width: 100%;
+    padding-top: 10px;
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
 }
 @media (max-width: 767px) {
   .divide {
@@ -7429,6 +7517,25 @@ button.close {
   }
   .divide {
     bottom: 70px;
+  }
+  .objects .title-descr {
+    display: inline-block;
+    font-size: 18px;
+    max-width: 100%;
+  }
+  .objects-items-first img {
+    width: 100%;
+    height: 100%;
+  }
+  .objects-items-first p {
+    font-size: 18px;
+  }
+  .objects-items-second img {
+    width: 100%;
+    height: 100%;
+  }
+  .objects-items-second p {
+    font-size: 20px;
   }
 }
 @media (max-width: 650px) {

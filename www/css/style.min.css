@@ -1516,7 +1516,7 @@ td.visible-print,th.visible-print{display:table-cell!important}
 .advantages .advantages-info .descr:nth-child(2){top:120px;left:570px}
 .advantages .advantages-info .descr:nth-child(2) .descr-title{width:200px}
 .advantages .advantages-info .descr:nth-child(2) .descr-text{text-align:left;width:250px}
-.title-descr p,.title-topic .title{text-align:center;font-family:OfficinaSansBold,sans-serif;text-transform:uppercase}
+.title-descr p,.title-topic .title{text-align:center;font-family:OfficinaSansBold,sans-serif}
 .advantages .advantages-info .descr:nth-child(3){top:310px;left:450px}
 .advantages .advantages-info .descr:nth-child(3) .descr-title{width:150px}
 .advantages .advantages-info .descr:nth-child(3) .descr-text{width:50px}
@@ -1535,11 +1535,22 @@ td.visible-print,th.visible-print{display:table-cell!important}
 .advantages .distinction img{width:80px}
 .advantages .eko{display:inline-block;position:relative;top:450px;left:80px}
 .advantages .eko img{width:60px}
-.title-topic{margin:0 auto 20px;width:280px;transform:skew(-15deg)}
-.title-topic .title{transform:skew(15deg);font-size:29px;color:#fff;margin:0}
-.title-descr{width:465px;margin:20px auto}
-.title-descr p{font-size:14px}
-.objects{position:relative;background:url(../img/objects-bg.png) bottom center no-repeat #fff;background-size:100%;height:1000px}
+.title-topic{margin:0 auto 20px;width:300px;transform:skew(-15deg)}
+.title-topic .title{transform:skew(15deg);font-size:29px;text-transform:uppercase;color:#fff;margin:0}
+.title-descr{width:495px;margin:20px auto}
+.title-descr p{font-size:15px;text-transform:uppercase}
+.objects p,.objects-items-first p,.objects-items-second p{font-family:OfficinaSansBook,sans-serif;font-weight:700;text-transform:uppercase}
+.objects{padding-bottom:200px;position:relative;background:url(../img/objects-bg.png) bottom center no-repeat #fff;background-size:100%}
+.objects p{font-size:12px}
+.objects-items-first img{width:350px;height:300px}
+.objects-items-first p{padding:10px 0;font-size:16px}
+.objects-items-second img{width:250px}
+.objects-items-second p{padding-top:10px;font-size:13px}
+.products{position:relative;background:#fff}
+.products .items{margin:50px auto}
+.products .items .item{height:300px;margin-bottom:100px}
+.products .items .item-img{padding-left:20px;height:200px}
+.products .items .item-title{font-family:OfficinaSansBold,sans-serif;font-size:24px;text-transform:uppercase;width:100%}
 @media (max-width:1440px){.divide{top:-80px}
 }
 @media (max-width:1199px){.divide{top:-60px;bottom:60px}
@@ -1577,6 +1588,11 @@ td.visible-print,th.visible-print{display:table-cell!important}
 .advantages .advantages-info .descr:nth-child(8) .descr-text{width:85px}
 .advantages .distinction{left:130px}
 .advantages .eko{left:0}
+.objects{padding-bottom:100px}
+.objects-items-first img{width:300px;height:230px}
+.objects-items-first p{font-size:14px}
+.objects-items-second img{width:200px}
+.objects-items-second p{font-size:11px}
 }
 @media (max-width:991px){.header-menu .header-list .basket,.header-menu .header-list .menu-item{font-size:14px}
 .advantages{display:none}
@@ -1593,6 +1609,12 @@ td.visible-print,th.visible-print{display:table-cell!important}
 .info-description{height:1680px}
 .info-description .descr,.info-description .main-descr{width:100%;text-align:center}
 .info-description img{margin-bottom:20px}
+.objects{padding-bottom:50px}
+.objects p{font-size:16px}
+.objects-items-first img{width:340px;height:250px}
+.objects-items-first p{font-size:15px;width:90%}
+.objects-items-second img{width:100%;height:450px}
+.objects-items-second p{width:100%;padding-top:10px;font-size:15px;margin-bottom:20px}
 }
 @media (max-width:767px){.mobile-info,.mobile-info .request-call{display:inline-block}
 .divide{top:-40px;bottom:70px}
@@ -1602,6 +1624,10 @@ td.visible-print,th.visible-print{display:table-cell!important}
 .header-menu .header-list .logo{margin-right:10px}
 .header-video iframe{height:300px}
 .info-description{height:1715px}
+.objects-items-first img,.objects-items-second img{width:100%;height:100%}
+.objects .title-descr{display:inline-block;font-size:18px;max-width:100%}
+.objects-items-first p{font-size:18px}
+.objects-items-second p{font-size:20px}
 }
 @media (max-width:650px){.divide{top:-30px}
 .info-description{height:1850px}
