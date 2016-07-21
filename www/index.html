@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
 	<link rel="stylesheet" href="css/style.min.css">
 	<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+	<script src="js/calc/init.js"></script>
 </head>
 <body>
 	<div class="header">
@@ -192,7 +193,7 @@
 				<h2 class="descr-title">Идеальная геометрия</h2>
 				<p class="descr-text">390×190×188 мм</p>
 			</span>
-				<img class="descr-img" src="img/block01 (1).png" alt="">
+				<img class="descr-img" src="img/block01.png" alt="">
 
 			</div>
 			<img class="advantages-img" src="img/vodopogloshenie.png" alt="">
@@ -276,7 +277,7 @@
 			</div>
 		<div class="items clearfix">
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
-				<img class="item-img" src="img/products/block01 (1).png" alt="">
+				<img class="item-img" src="img/products/block01.png" alt="">
 				<p class="item-title">Блок стеновой m50/ М75/ m100</p>
 				<p class="item-description">Мркировка: КСР-ПР-ПС-39-50-F50-1450; ГОСТ 6133–99</p>
 				<button type="submit" class="item-button">
@@ -323,7 +324,7 @@
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
 				<img class="item-img" src="img/products/Euroblock6.png" alt="">
 				<p class="item-title">Евроблок стеновой</p>
-
+				<p class="item-description"></p>
 				<button type="submit" class="item-button">
 					<img src="img/black-bus.png" alt="">
 					<h3>В корзину</h3>
@@ -332,7 +333,7 @@
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
 				<img class="item-img" src="img/products/Ventblock7.png" alt="">
 				<p class="item-title">Блоки вентиляционные</p>
-
+			
 				<button type="submit" class="item-button">
 					<img src="img/black-bus.png" alt="">
 					<h3>В корзину</h3>
@@ -341,7 +342,7 @@
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
 				<img class="item-img" src="img/products/plitka01_red8.png" alt="">
 				<p class="item-title">Брусчатка фигурная "Волна"</p>
-
+				
 				<button type="submit" class="item-button">
 					<img src="img/black-bus.png" alt="">
 					<h3>В корзину</h3>
@@ -350,7 +351,7 @@
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
 				<img class="item-img" src="img/products/plitka02 9.png" alt="">
 				<p class="item-title">Брусчатка прямоугольная</p>
-
+				
 				<button type="submit" class="item-button">
 					<img src="img/black-bus.png" alt="">
 					<h3>В корзину</h3>
@@ -359,7 +360,7 @@
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
 				<img class="item-img" src="img/products/plitka_new2 (1)10.png" alt="">
 				<p class="item-title">Брусчатка  «Старый город»</p>
-
+				
 				<button type="submit" class="item-button">
 					<img src="img/black-bus.png" alt="">
 					<h3>В корзину</h3>
@@ -368,7 +369,7 @@
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
 				<img class="item-img" src="img/products/bordur3 11.png" alt="">
 				<p class="item-title">Бордюр тротуарный</p>
-
+				
 				<button type="submit" class="item-button">
 					<img src="img/black-bus.png" alt="">
 					<h3>В корзину</h3>
@@ -377,7 +378,7 @@
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
 				<img class="item-img" src="img/products/bordur12.png" alt="">
 				<p class="item-title">Бордюр дорожный</p>
-
+				
 				<button type="submit" class="item-button">
 					<img src="img/black-bus.png" alt="">
 					<h3>В корзину</h3>
@@ -386,7 +387,7 @@
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
 				<img class="item-img" src="img/products/plitka_120_120 13.png" alt="">
 				<p class="item-title">Брусчатка "Квадрат"</p>
-
+				
 				<button type="submit" class="item-button">
 					<img src="img/black-bus.png" alt="">
 					<h3>В корзину</h3>
@@ -395,7 +396,7 @@
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
 				<img class="item-img" src="img/products/scheb_gr_4(14).png" alt="">
 				<p class="item-title">Щебень</p>
-
+				
 				<button type="submit" class="item-button">
 					<img src="img/black-bus.png" alt="">
 					<h3>В корзину</h3>
@@ -403,6 +404,147 @@
 			</div>
 		</div>
 	</div>
+	</div>
+
+	<div class="calculator">
+	<img class="divide" src="img/line.png" alt="">
+		<div class="container">
+			<div class="title-topic title-width">
+				<h1 class="title">Рассчитать стоимость</h1>
+			</div>
+			<h2 class="calculator-title">Калькулятор расчета количества блоков</h2>
+
+
+			<!-- Start calculator -->
+			<div id="calc" class="calc">
+				<div class="calc_i">
+					<div class="calc_i_h">1. Размеры жилого дома</div>
+					<div class="calc_i_fields">
+						<div class="calc_i_fields_i">
+							<div class="calc_i_fields_i_lbl">Периметр (м)</div>
+							<input id="calc-perimeter" class="calc_i_fields_i_val" name="perimeter" value="20">
+						</div>
+						<div class="calc_i_fields_i">
+							<div class="calc_i_fields_i_lbl">Высота (м)</div>
+							<input id="calc-height" class="calc_i_fields_i_val" name="height" value="5">
+						</div>
+					</div>
+				</div>
+				<div class="calc_i">
+					<div class="calc_i_h">2. Архитектурные особенности</div>
+					<div class="calc_i_cols">
+						<div class="calc_i_cols_fields-left-c">
+							<div class="calc_i_description">
+								Если размеры дверей разные, то в поле <b>"Количество внешних дверей (шт)"</b> введите <b>"1"</b>, в поле <b>"Ширина одной двери (м)"</b> - сумму длин всех дверей, в поле <b>"Высота одной двери (м)"</b> - сумму высот всех дверей
+							</div>
+							<div class="calc_i_fields">
+								<div class="calc_i_fields_i">
+									<div class="calc_i_fields_i_lbl">
+										Количество внешних дверей (шт)
+									</div>
+									<input id="calc-doorsQuantity" class="calc_i_fields_i_val" name="doorsQuantity" value="1">
+								</div>
+								<div class="calc_i_fields_i">
+									<div class="calc_i_fields_i_lbl">
+										Ширина одной двери (м)
+									</div>
+									<input id="calc-doorWidth" class="calc_i_fields_i_val" name="doorWidth" value="1">
+								</div>
+								<div class="calc_i_fields_i">
+									<div class="calc_i_fields_i_lbl">
+										Высота одной двери (м)
+									</div>
+									<input id="calc-doorHeight" class="calc_i_fields_i_val" name="doorHeight" value="2">
+								</div>
+							</div>
+						</div>
+						<div class="calc_i_cols_fields-right-c">
+							<div class="calc_i_description">
+								Если размеры окон разные, то в поле <b>"Количество окон (шт)"</b> введите <b>"1"</b>, в поле <b>"Ширина одного окна (м)"</b> - сумму длин всех окон, в поле <b>"Высота одного окна (м)"</b> - сумму высот всех окон
+							</div>
+							<div class="calc_i_fields">
+								<div class="calc_i_fields_i">
+									<div class="calc_i_fields_i_lbl">Количество окон (шт)</div>
+									<input id="calc-windowsQuantity" class="calc_i_fields_i_val" name="windowsQuantity" value="1">
+								</div>
+								<div class="calc_i_fields_i">
+									<div class="calc_i_fields_i_lbl">Ширина одного окна (м)</div>
+									<input id="calc-windowWidth" class="calc_i_fields_i_val" name="windowWidth" value="1">
+								</div>
+								<div class="calc_i_fields_i">
+									<div class="calc_i_fields_i_lbl">Высота одно окна (м)</div>
+									<input id="calc-windowHeight" class="calc_i_fields_i_val" name="windowHeight" value="1">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="calc_i">
+					<div class="calc_i_h">3. Кладка</div>
+					<div class="calc_i_cols">
+						<div id="calc_brick-photo" class="calc_i_cols_photo-c calc_brick-photo">
+						</div>
+						<div class="calc_i_cols_info-c">
+							<div class="calc_i_fields">
+								<div class="calc_i_fields_i">
+									<div class="calc_i_fields_i_lbl">Вид кладки</div>
+								<select id="calc-brick">
+								    <option data-photo="img/products/block01.png" value="390/190/188">
+								   	 Блок стеновой андезитобазальтовый М50
+								    </option>
+								    <option data-photo="img/products/block01.png" value="390/190/188">
+								    	Блок стеновой андезитобазальтовый М75
+								    </option>
+								    <option data-photo="img/products/block01.png" value="390/190/188">	
+								    	Блок стеновой андезитобазальтовый М100
+								    </option>
+								    <option data-photo="img/products/block02.png" value="390/90/188">
+								    	Блок перегородочный андезитобазальтовый
+								    </option>
+								    <option data-photo="img/products/block03.png" value="390/288/188">Блок рядовой с пенополистирольным вкладышем
+								    </option>
+								    <option data-photo="img/products/block04.png" value="495/288/188">Блок угловой с пенополистирольным вкладышем 
+								    </option>
+								    <option data-photo="img/products/block05.png" value="190/288/188">Блок половинчатый с пенополистирольным вкладышем
+								    </option>
+								    <option data-photo="img/products/Euroblock6.png" value="390/190/188">Евроблок стеновой андезитобазальтовый
+								    </option>
+								</select>
+								</div>
+								<div class="calc_i_fields_i">
+									<div class="calc_i_fields_i_lbl">Толщина кладки (м)</div>
+									<select id="calc-brickworkWidth" class="calc_i_fields_i_val" name="brickworkWidth">
+										<option value="0.24">0.24</option>
+										<option value="0.4">0.4</option>
+										<option value="0.6">0.6</option>
+									</select>
+								</div>
+								<div class="calc_i_fields_i">
+									<div class="calc_i_fields_i_lbl">Толщина шва (раствора) (м)</div>
+									<input id="calc-seamWidth" class="calc_i_fields_i_val" name="seamWidth" value="0.01">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="calc_i">
+					<button id="calc_i_sb" class="calc_i_sb">Рассчитать</button>
+				</div>
+				<div class="calc_i calc_i__no-border">
+					<div class="calc_i_fields">
+						<div class="calc_i_fields_i">
+							<div class="calc_i_fields_i_lbl">Количество материала</div>
+							<div id="calc_i_output" class="calc_i_output calc_i_fields_i_val">
+								<b>Для расчета, заполните поля.</b>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End calculator -->
+
+
+		</div>
 	</div>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script type="text/javascript" src="dist/js/bootstrap.min.js"></script>
