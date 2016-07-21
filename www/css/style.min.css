@@ -1501,8 +1501,9 @@ td.visible-print,th.visible-print{display:table-cell!important}
 .info-description .descr{font-size:17px;color:#000}
 .info-description .descr-second{width:450px;margin:23px 20px}
 .divide{position:absolute;top:-140px;width:100%}
-.advantages{position:relative;background:url(../img/advanture-bg.png) no-repeat #fff;background-size:cover;height:1000px}
-.advantages-title{background:linear-gradient(180deg,#2681cb,#038bf8);margin:60px auto;width:100%;transform:skew(-30deg);padding:20px 0;box-shadow:2px 2px 10px 0 #666}
+.advantages{position:relative;background:url(../img/advanture-bg.png) no-repeat #fff;background-size:cover;height:1100px}
+.advantages-title,.title-topic{background:linear-gradient(180deg,#2681cb,#038bf8);padding:20px 0;box-shadow:2px 2px 10px 0 #666}
+.advantages-title{margin:0 auto 50px;width:100%;transform:skew(-30deg)}
 .advantages-title .title{font-family:OfficinaSansBold,sans-serif;font-size:29px;text-transform:uppercase;color:#fff;width:40%;text-align:center;margin:0 auto;transform:skew(30deg)}
 .advantages .advantages-info{position:relative;margin-bottom:100px}
 .advantages .advantages-info .descr-img{width:550px;position:absolute;top:100px;left:25%;margin-bottom:10%}
@@ -1515,6 +1516,7 @@ td.visible-print,th.visible-print{display:table-cell!important}
 .advantages .advantages-info .descr:nth-child(2){top:120px;left:570px}
 .advantages .advantages-info .descr:nth-child(2) .descr-title{width:200px}
 .advantages .advantages-info .descr:nth-child(2) .descr-text{text-align:left;width:250px}
+.title-descr p,.title-topic .title{text-align:center;font-family:OfficinaSansBold,sans-serif;text-transform:uppercase}
 .advantages .advantages-info .descr:nth-child(3){top:310px;left:450px}
 .advantages .advantages-info .descr:nth-child(3) .descr-title{width:150px}
 .advantages .advantages-info .descr:nth-child(3) .descr-text{width:50px}
@@ -1528,6 +1530,16 @@ td.visible-print,th.visible-print{display:table-cell!important}
 .advantages .advantages-info .descr:nth-child(7){top:220px;left:-30px}
 .advantages .advantages-info .descr:nth-child(8){top:20px;left:-170px}
 .advantages .advantages-info .descr:nth-child(8) .descr-text{width:85px}
+.advantages-img{position:relative;top:300px;left:720px;width:250px}
+.advantages .distinction{position:relative;top:100px;left:220px;display:inline-block}
+.advantages .distinction img{width:80px}
+.advantages .eko{display:inline-block;position:relative;top:450px;left:80px}
+.advantages .eko img{width:60px}
+.title-topic{margin:0 auto 20px;width:280px;transform:skew(-15deg)}
+.title-topic .title{transform:skew(15deg);font-size:29px;color:#fff;margin:0}
+.title-descr{width:465px;margin:20px auto}
+.title-descr p{font-size:14px}
+.objects{position:relative;background:url(../img/objects-bg.png) bottom center no-repeat #fff;background-size:100%;height:1000px}
 @media (max-width:1440px){.divide{top:-80px}
 }
 @media (max-width:1199px){.divide{top:-60px;bottom:60px}
@@ -1563,6 +1575,8 @@ td.visible-print,th.visible-print{display:table-cell!important}
 .advantages .advantages-info .descr:nth-child(7){top:220px;left:-320px}
 .advantages .advantages-info .descr:nth-child(8){top:20px;left:-450px}
 .advantages .advantages-info .descr:nth-child(8) .descr-text{width:85px}
+.advantages .distinction{left:130px}
+.advantages .eko{left:0}
 }
 @media (max-width:991px){.header-menu .header-list .basket,.header-menu .header-list .menu-item{font-size:14px}
 .advantages{display:none}
