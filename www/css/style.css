@@ -7280,6 +7280,7 @@ button.close {
 }
 .calculator {
   position: relative;
+  margin-bottom: 50px;
 }
 .calculator-title {
   font-family: "OfficinaSansBold", sans-serif;
@@ -7287,6 +7288,24 @@ button.close {
   text-transform: uppercase;
   color: #2382ce;
   margin: 50px 0;
+}
+.mass-media {
+  position: relative;
+  background: #fff url(../img/mass-media-bg.png) no-repeat;
+  background-size: contain;
+  margin-bottom: 50px;
+}
+.mass-media .newspaper {
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  margin: 20px auto;
+}
+.mass-media .newspaper-item {
+  background-color: #fff;
+  height: 650px;
+  padding: 10px;
+  margin-bottom: 50px;
 }
 @media (max-width: 1440px) {
   .divide {
@@ -7527,6 +7546,15 @@ button.close {
     font-size: 15px;
     margin-bottom: 20px;
   }
+  .mass-media {
+    background-size: cover;
+  }
+  .mass-media .newspaper {
+    width: 80%;
+  }
+  .mass-media .newspaper-item {
+    height: 100%;
+  }
 }
 @media (max-width: 767px) {
   .divide {
@@ -7598,6 +7626,16 @@ button.close {
   .products .items .item-description {
     font-size: 20px;
   }
+  .mass-media {
+    background-size: cover;
+  }
+  .mass-media .newspaper {
+    width: 50%;
+    margin: 0 auto;
+  }
+  .mass-media .newspaper-item {
+    height: 100%;
+  }
 }
 @media (max-width: 650px) {
   .divide {
@@ -7656,6 +7694,16 @@ button.close {
   }
   .info-description {
     height: 2200px;
+  }
+  .mass-media {
+    background-size: cover;
+  }
+  .mass-media .newspaper {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .mass-media .newspaper-item {
+    height: 100%;
   }
 }
 @media (max-width: 375px) {
