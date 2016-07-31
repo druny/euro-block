@@ -9,7 +9,8 @@ class Cabinet extends CI_Controller
     {
         if ( ! empty($this->session->products)) 
         {
-            
+            $data = $this->session->products;
+            $this->load->view('cart/test', )
         }
     }
 }
