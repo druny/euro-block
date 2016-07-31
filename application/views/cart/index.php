@@ -8,126 +8,22 @@
 				<button class="exit col-lg-3 col-md-3 col-sm-12 col-xs-12" href="#!" type="submit"><a class="exit-text" >Выход</a></button>
 				<p class="name col-lg-9 col-md-9 col-sm-12 col-xs-12">Имя пользователя</p>
 			</div>
-
-			<div class="order-info col-lg-4 col-md-4 col-sm-4 col-xs-12">
-				<h4>Оплата</h4>
-				<table class="table-order">
-					<tr>
-						<td>
-							<p>Заказ №11102</p>
-						</td>
-						<td><p>28.05.2016</p></td>
-					</tr>
-					<tr>
-						<td>
-							<p>Блок м75</p>
-						</td>
-						<td>
-							<p>кол-во:</p>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<p>Стоимость:</p>
-						</td>
-						<td><p>100,000 р</p></td>
-					</tr>
-					<tr>
-						<td>
-							<p>оплаченно:</p>
-						</td>
-						<td></td>
-					</tr>
-				</table>
-			</div>
-			<div class="order-info col-lg-4 col-md-4 col-sm-4 col-xs-12">
-				<h4>Отгрузка</h4>
-				<table class="table-order">
-					<tr>
-						<td>
-							<p>Заказ №11102</p>
-						</td>
-						<td><p>28.05.2016</p></td>
-					</tr>
-					<tr>
-						<td>
-							<p>Блок м75</p>
-						</td>
-						<td>
-							<p>кол-во:</p>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<p>Стоимость:</p>
-						</td>
-						<td><p>100,000р</p></td>
-					</tr>
-					<tr>
-						<td>
-							<p>отгруженно:</p>
-						</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>
-							<p>Осталось:</p>
-						</td>
-						<td></td>
-					</tr>
-				</table>
-			</div>
-			<div class="order-info col-lg-4 col-md-4 col-sm-4 col-xs-12">
-				<h4>Отгрузка поддонов</h4>
-				<table class="table-order">
-					<tr>
-						<td>
-							<p>Заказ №11102</p>
-						</td>
-						<td><p>28.05.2016</p></td>
-					</tr>
-					<tr>
-						<td>
-							<p>Блок м75</p>
-						</td>
-						<td>
-							<p>кол-во:</p>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<p>Стоимость:</p>
-						</td>
-						<td><p>100,000 р</p></td>
-					</tr>
-					<tr>
-						<td>
-							<p>отгруженно:</p>
-						</td>
-						<td></td>
-					</tr>
-					<tr>
-					<td>
-						<p>Осталось:</p>
-					</td>
-					<td></td>
-				</table>
-			</div>
-
 			<div class="order-info flow col-lg-10 col-md-9 col-sm-8 col-xs-12">
 				<h4>Текущий заказ</h4>
 				<table class="table-order">
-					<tr>
-						<td>
-							<p>Блок м75</p>
-						</td>
-						<td>
-							<p>кол-во: </p>
-						</td>
-						<td>
-							<p>Стоимость: 100,000 р</p>
-						</td>
-					</tr>
+					<?php foreach ($products as $product): ?>
+						<tr>
+							<td>
+								<p><?= $product['name']; ?></p>
+							</td>
+							<td>
+								<p>Кол-во: <?= $product['amount']; ?></p>
+							</td>
+							<td>
+								<p>Стоимость: <?= $product['total_price']; ?> р</p>
+							</td>
+						</tr>
+					<?php endforeach; ?>
 				</table>
 			</div>
 			<div class="order-info col-lg-2 col-md-3 col-sm-4 col-xs-12">
@@ -135,7 +31,7 @@
 				<table class="table-order">
 					<tr>
 						<td>
-							<p>100,000 Р</p>
+							<p><?= $sum; ?> Р</p>
 						</td>
 					</tr>
 				</table>

@@ -7,13 +7,6 @@ class Cabinet extends CI_Controller
 {
     public function index()
     {
-        if ( ! empty($this->session->products)) 
-        {
-            $data = $this->session->products;
-            
-        }
-        $this->load->view('header');
-	    $this->load->view('cart/index');
-	    $this->load->view('footer');
+        
     }
 }

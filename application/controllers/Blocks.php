@@ -25,15 +25,43 @@ class Blocks extends CI_Controller
     {
         $amount = $this->blocks->prepare_data($this->input->post());
         $data = $this->blocks->get_products_by_id($this->blocks->products_id);
+        $sum = 0;
+
         foreach ($data as &$value) {
             $value['amount'] = $amount[$value['id']];
             $value['total_price'] = $value['amount'] * $value['price'];
+            $sum += $value['total_price'];
+
+            // Deleting price column
+            unset($value['price']);
         }
-        $this->session->products = $data;
-        echo "<pre>";
-        var_dump($this->session->products);
+
+        if ( ! isset($this->session->products) )
+        {
+            $this->session->products = $data;
+            $this->session->sum = $sum;
+        }
+        else
+        {
+            foreach ($this->session->products as &$product) {
+                if ($product['name'] === $data[0]['name'])
+                {
+                    # code...
+                }
+            }
+            die;
+
+            $this->session->products = array_merge($this->session->products, $data);
+            $this->session->sum += $sum;
+        }
+
+        redirect('/cart');
         die;
-        $this->load->view('cart/index');
+    }
+
+    public function a()
+    {
+        
     }
 
 
