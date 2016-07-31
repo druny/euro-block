@@ -23,9 +23,18 @@ class Blocks extends CI_Controller
 
     public function cart_add()
     {
+        $amount = $this->blocks->prepare_data($this->input->post());
+        $data = $this->blocks->get_products_by_id($this->blocks->products_id);
+        foreach ($data as &$value) {
+            $value['amount'] = $amount[$value['id']];
+            $value['total_price'] = $value['amount'] * $value['price'];
+        }
+        $this->session->products = $data;
         echo "<pre>";
-        var_dump($this->input->post());
-        //$this->session->block = 
+        var_dump($this->session->products);
+        die;
+        $this->load->view('cart/index');
     }
+
 
 }

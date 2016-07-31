@@ -5,10 +5,7 @@
 */
 class Blocks_model extends CI_Model
 {
-    public function cart_add()
-    {
-        
-    }
+    public $products_id = [];
 
     public function get_one($id)
     {
@@ -22,21 +19,24 @@ class Blocks_model extends CI_Model
         return $this->db->get_where('blocks', ['id' => $id])->row();
     }
 
-    /*public function prepare_data($post)
+    public function prepare_data($post)
     {
+        //$block_id = $post['block_id'];
         foreach ($post as $k => $v) {
             if (strpos($k, 'product_') === 0)
             {
-                $product_id = str_replace('sound_', '', $k);
-                $products[] = [
-                    'sound_id' => $sound_id,
-                    'progress_mark_id' => $v
-                ];
+                $substring = str_replace('product_', '', $k);
+                $this->products_id[] = $substring;
+                $data[$substring] = $v;
             }
-            else if (strpos($k, 'block_id') === 0)
-            {
+        }
+        return $data;
+    }
 
-            }
-    }*/
+    public function get_products_by_id($products_id)
+    {
+        $this->db->where_in('id', $products_id);
+        return $this->db->get('products')->result_array();
+    }
     
 }
