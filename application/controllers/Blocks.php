@@ -31,9 +31,6 @@ class Blocks extends CI_Controller
             $value['amount'] = $amount[$value['id']];
             $value['total_price'] = $value['amount'] * $value['price'];
             $sum += $value['total_price'];
-
-            // Deleting price column
-            unset($value['price']);
         }
 
         if ( ! isset($this->session->products) )
@@ -43,14 +40,23 @@ class Blocks extends CI_Controller
         }
         else
         {
-            foreach ($this->session->products as &$product) {
-                if ($product['name'] === $data[0]['name'])
-                {
-                    # code...
-                }
-            }
-            die;
+            $i = 0;
+            $current_sum = 0;
 
+            foreach ($_SESSION['products'] as &$product) {
+
+                if ($product['name'] === $data[$i]['name'])
+                {
+                    $product['amount'] += $data[$i]['amount'];
+                    $sum = $product['total_price'];
+                    $product['total_price'] += ($data[$i]['amount'] * $product['price']);
+                    $i++;
+                }
+
+                $current_sum += $product['total_price']; 
+            }
+
+            $sum = $current_sum - $this->session->sum;
             $this->session->products = array_merge($this->session->products, $data);
             $this->session->sum += $sum;
         }
