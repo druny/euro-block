@@ -20,7 +20,6 @@ class Blocks extends CI_Controller
     }
 
 
-
     public function cart_add()
     {
         $amount = $this->blocks->prepare_data($this->input->post());
@@ -42,32 +41,35 @@ class Blocks extends CI_Controller
         {
             $i = 0;
             $current_sum = 0;
+            $products = $this->session->products;
 
-            foreach ($_SESSION['products'] as &$product) {
-
-                if ($product['name'] === $data[$i]['name'])
+            foreach ($products as &$product) {
+                //if ($product['name'] === $data[$i]['name'])
+                if (isset($data[$i]) && $product['name'] === $data[$i]['name'])
                 {
                     $product['amount'] += $data[$i]['amount'];
-                    $sum = $product['total_price'];
                     $product['total_price'] += ($data[$i]['amount'] * $product['price']);
                     $i++;
                 }
-
-                $current_sum += $product['total_price']; 
+            
+                $current_sum += $product['total_price'];
             }
 
-            $sum = $current_sum - $this->session->sum;
-            $this->session->products = array_merge($this->session->products, $data);
-            $this->session->sum += $sum;
+            if ($i === 0)
+            {
+                // TODO: Расчитать сумму для элементов которых еще нет в сессии
+                $this->session->products = array_merge($products, $data);
+                $this->session->sum += $sum;
+            }
+            else
+            {
+                $this->session->products = $products;
+                $this->session->sum = $current_sum;
+            }
         }
 
         redirect('/cart');
         die;
-    }
-
-    public function a()
-    {
-        
     }
 
 
