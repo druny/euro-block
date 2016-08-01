@@ -39,6 +39,6 @@
 	</footer>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
-<script type="text/javascript" src="dist/js/bootstrap.min.js"></script>
+<script src="/js/script.js"></script>
 </body>
 </html>

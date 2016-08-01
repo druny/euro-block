@@ -26,3 +26,14 @@
 <?php echo form_close();?>
 
 <p><a href="forgot_password"><?php echo lang('login_forgot_password');?></a></p>
+
+
+
+
+
+
+
+
+
+
+
