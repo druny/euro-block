@@ -41,7 +41,7 @@
 		.trunk {
 			position: relative;
 			left: -10px;
-			top: -10px;
+			top: -8px;
 			width: 60px;
 		}
 		li {
@@ -60,7 +60,7 @@
 			list-style-type: none;
 			width: 450px;
 			position: relative;
-			top: 5px;
+			top: 7px;
 			margin: 0 25px;
 			&-item {
 				text-transform: uppercase;
@@ -124,11 +124,11 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
-	padding-bottom: 70px;
+	padding-bottom: 20px;
 	margin-bottom: -15px;
 	//height: 500px;
 	.title-block {
-		margin: 30px 0 15px;
+		margin: 5px 0 15px;
 		&-first {
 			background: #006bd3;
 			h1 {
@@ -155,7 +155,7 @@
 		}
 	}
 	.login {
-		margin-top: 50px;
+		margin-top: 30px;
 		background: linear-gradient(180deg, #028bf8, #006bd3);
 		border-radius: 10px;
 		padding: 15px;
@@ -206,6 +206,7 @@
 			border: 5px solid #006dd5;
 			border-radius: 5px;
 			width: 100%;
+			height: 380px;
 		}
 	}
 
@@ -224,27 +225,28 @@
 		    display: inline-block;
 		   	width: 0; 
 		  	height: 0;
-		   	border-top: 50px solid #006cd3;
+		   	border-top: 40px solid #006cd3;
 		   	border-left: 138px solid transparent; 
 		   	border-right: 141px solid transparent; 
-		   	border-radius: 5px;
+		   	border-radius: 50px;
 		    left: -15px;
-		    top: 16px;
+		    top: 15px;
+		    margin-bottom: 15px;
 		}
 		&-topic {
 			font-family: @main-font-bold;
-			font-size: 22px;
+			font-size: 23px;
 			text-transform: uppercase;
 			color: #fff;
 			text-align: center;
-			margin-top: 0px;
+			margin-top: 5px;
 		}
 		input {
-				height: 30px;
+				height: 40px;
 				width: 100%;
 				border: none;
 				box-shadow: 0 1px 10px 1px #0059ae;
-				border-radius: 5px;
+				border-radius: 8px;
 				margin: 10px 0;
 				font-family: @main-font-book;
 				font-weight: bold;
@@ -315,13 +317,13 @@
 			font-size: 16px;
 			font-family: @main-font-bold;
 			text-transform: uppercase;
-			margin: 10px 10px;
+			margin: 14px 10px;
 		}
 		.descr {
 			font-family: @main-font-bold;
 			font-size: 17px;
 			color: #000;
-			margin: 10px 10px;
+			margin: 5px 10px;
 		}
 		.descr-second {
 			width: 450px;
@@ -516,7 +518,7 @@
 	p {
 		text-align: center;
 		font-family: @main-font-bold;
-		font-size: 15px;
+		font-size: 20px;
 		text-transform: uppercase;
 	}
 }
@@ -705,10 +707,9 @@
 }
 
 .certificates {
-	display: none;
 	position: relative;
 	background: #fff url(../img/certificates-bg.png) no-repeat;
-	background-size:  100%;
+	background-size:  cover;
 	background-position: 100% 100%;
 	height: 550px;
 	.bush {
