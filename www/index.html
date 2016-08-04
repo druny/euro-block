@@ -10,6 +10,7 @@
 	<script src="js/calc/init.js"></script>
 </head>
 <body>
+
 	<div class="header">
 		<div class="header-menu">
 			<div class="container">
@@ -68,7 +69,11 @@
 					   </li>
 					   <li class="request nav navbar-nav navbar-right">
 							<p class="phone">+7 (423) 230-12-18</p>
-							<a class="request-call" href="#!">заказать обратный звонок</a>
+							
+							<a class="request-call" type="button" data-toggle="modal" data-target="#myModal" href="#!">
+								Заказать обратный звонок
+							</a>
+							
 						</li>
 				    </div>
 				</nav>
@@ -690,10 +695,42 @@
 				</p>
 			</div>
 		</div>
-		
 	</footer>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
+	<!-- modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">Отправить</h4>
+	      </div>
+	      <div class="modal-body">
+	      <form>
+			  <div class="form-group">
+			    <label for="exampleInputEmail1">Email address</label>
+			    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+			  </div>
+			  <div class="form-group">
+			    <label for="exampleInputPassword1">Name</label>
+			    <input type="text" class="form-control" id="" placeholder="Name">
+			  </div>
+				<div class="form-group">
+			    <label for="exampleInputPassword1">Phone</label>
+			    <input type="text" class="form-control" id="" placeholder="Phone">
+			  </div>
+			  <button type="submit" class="btn btn-default">Submit</button>
+			</form>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<!-- !modal -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script type="text/javascript" src="dist/js/bootstrap.min.js"></script>
 </body>
 </html>
