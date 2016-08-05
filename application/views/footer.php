@@ -37,6 +37,38 @@
 		</div>
 		
 	</footer>
+	<!-- modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">Отправить</h4>
+	      </div>
+	      <div class="modal-body">
+	      <form method="post" action="/sending">
+			  <div class="form-group">
+			    <label for="exampleInputEmail1">Email address</label>
+			    <input type="email" class="form-control" name="email" id="exampleInputEmail1" placeholder="Email">
+			  </div>
+			  <div class="form-group">
+			    <label for="exampleInputPassword1">Name</label>
+			    <input type="text" class="form-control" name="name" id="" placeholder="Name">
+			  </div>
+				<div class="form-group">
+			    <label for="exampleInputPassword1">Phone</label>
+			    <input type="text" class="form-control"  name="password" id="" placeholder="Phone">
+			  </div>
+			  <button type="submit" class="btn btn-default">Submit</button>
+			</form>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<!-- !modal -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
 <script src="/js/script.js"></script>

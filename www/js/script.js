@@ -898,8 +898,6 @@ $(function() {
 		e.preventDefault();
 		$('#calc').dialog('open');
 	});
-});
+
 $('#login-btn').click(function(e) {
     e.preventDefault();
-    
-});

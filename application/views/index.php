@@ -10,6 +10,7 @@
 	<script src="js/calc/init.js"></script>
 </head>
 <body>
+
 	<div class="header">
 		<div class="header-menu">
 			<div class="container">
@@ -23,7 +24,9 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-							<img class="logo" src="img/logo.png" alt="logo">
+							<a href="#!">
+								<img class="logo" src="img/logo.png" alt="logo">
+							</a>
 							<div class="mobile-info">
 				
 					       		<a class="basket" href="#!">корзина 0</a>
@@ -66,13 +69,17 @@
 					   </li>
 					   <li class="request nav navbar-nav navbar-right">
 							<p class="phone">+7 (423) 230-12-18</p>
-							<a class="request-call" href="#!">заказать обратный звонок</a>
+							
+							<a class="request-call" type="button" data-toggle="modal" data-target="#myModal" href="#!">
+								Заказать обратный звонок
+							</a>
+							
 						</li>
 				    </div>
 				</nav>
 			</div>
 		</div>
-		<div class="container">
+	<div class="container">
 			<div class="title-block col-lg-9 col-md-9 col-sm-12 col-xs-12">
 				<div class="title-block-first">
 					<h1>Тереховский завод бетонных изделий</h1>
@@ -282,7 +289,7 @@
 				<p class="item-description">Мркировка: КСР-ПР-ПС-39-50-F50-1450; ГОСТ 6133–99</p>
 				<button type="submit" class="item-button">
 					<img src="img/black-bus.png" alt="">
-					<h3>В корзину</h3>
+					<h3>Перейти</h3>
 				</button>
 			</div>
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
@@ -291,7 +298,7 @@
 				<p class="item-description">Мркировка: КПР-ПР-ПС-39-35-F50-1390</p>
 				<button type="submit" class="item-button">
 					<img src="img/black-bus.png" alt="">
-					<h3>В корзину</h3>
+					<h3>Перейти</h3>
 				</button>
 			</div>
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
@@ -300,7 +307,7 @@
 				<p class="item-description">Мркировка: КСР-ПР ПС-ПСБ-39-35-F25-1000</p>
 				<button type="submit" class="item-button">
 					<img src="img/black-bus.png" alt="">
-					<h3>В корзину</h3>
+					<h3>Перейти</h3>
 				</button>
 			</div>
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
@@ -309,7 +316,7 @@
 				<p class="item-description">Мркировка: КСР-УГ ПС-ПСБ-49,5-35-F25-1000</p>
 				<button type="submit" class="item-button">
 					<img src="img/black-bus.png" alt="">
-					<h3>В корзину</h3>
+					<h3>Перейти</h3>
 				</button>
 			</div>
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
@@ -318,7 +325,7 @@
 				<p class="item-description">Мркировка: КСР-ПЗ ПС-ПСБ-19-35-F25-1000</p>
 				<button type="submit" class="item-button">
 					<img src="img/black-bus.png" alt="">
-					<h3>В корзину</h3>
+					<h3>Перейти</h3>
 				</button>
 			</div>
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
@@ -327,7 +334,7 @@
 				<p class="item-description"></p>
 				<button type="submit" class="item-button">
 					<img src="img/black-bus.png" alt="">
-					<h3>В корзину</h3>
+					<h3>Перейти</h3>
 				</button>
 			</div>
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
@@ -336,7 +343,7 @@
 			
 				<button type="submit" class="item-button">
 					<img src="img/black-bus.png" alt="">
-					<h3>В корзину</h3>
+					<h3>Перейти</h3>
 				</button>
 			</div>
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
@@ -345,7 +352,7 @@
 				
 				<button type="submit" class="item-button">
 					<img src="img/black-bus.png" alt="">
-					<h3>В корзину</h3>
+					<h3>Перейти</h3>
 				</button>
 			</div>
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
@@ -354,7 +361,7 @@
 				
 				<button type="submit" class="item-button">
 					<img src="img/black-bus.png" alt="">
-					<h3>В корзину</h3>
+					<h3>Перейти</h3>
 				</button>
 			</div>
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
@@ -363,7 +370,7 @@
 				
 				<button type="submit" class="item-button">
 					<img src="img/black-bus.png" alt="">
-					<h3>В корзину</h3>
+					<h3>Перейти</h3>
 				</button>
 			</div>
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
@@ -372,7 +379,7 @@
 				
 				<button type="submit" class="item-button">
 					<img src="img/black-bus.png" alt="">
-					<h3>В корзину</h3>
+					<h3>Перейти</h3>
 				</button>
 			</div>
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
@@ -381,7 +388,7 @@
 				
 				<button type="submit" class="item-button">
 					<img src="img/black-bus.png" alt="">
-					<h3>В корзину</h3>
+					<h3>Перейти</h3>
 				</button>
 			</div>
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
@@ -390,7 +397,7 @@
 				
 				<button type="submit" class="item-button">
 					<img src="img/black-bus.png" alt="">
-					<h3>В корзину</h3>
+					<h3>Перейти</h3>
 				</button>
 			</div>
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
@@ -399,7 +406,7 @@
 				
 				<button type="submit" class="item-button">
 					<img src="img/black-bus.png" alt="">
-					<h3>В корзину</h3>
+					<h3>Перейти</h3>
 				</button>
 			</div>
 		</div>
@@ -649,3 +656,24 @@
 			<img src="img/certificates/100_luhsih_tovarov_m50_m75.jpg" alt="" class="certificates-confirm-item">
 		</div>
 	</div>
+<<<<<<< HEAD
+=======
+	<div class="contacts">
+		<div class="container">
+			<div class="contacts-title">
+				<h2>Контакты:</h2>
+			</div>
+			<div class="contacts-description">
+				<p>Для того, чтобы обезопасить своих клиентов от покупки поддельных некачественных стройматериалов, Тереховский завод дает возможность приобрести свою продукцию любому клиенту напрямую, непосредственно у производителя.</p>
+			</div>
+		</div>
+	</div>
+	<div class="map">
+		<div class="logo-bottom">
+			<a href="#!">
+				<img class="logo" src="img/logo.png" alt="logo">
+			</a>
+		</div>
+	</div>
+	
+>>>>>>> master
