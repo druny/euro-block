@@ -73,6 +73,7 @@
 		.header-list {
 			margin: 5px 0;
 			.menu {
+				top: 4px;
 				margin: 0;
 				&-item {
 					font-size: 16px;
@@ -327,6 +328,7 @@
 				font-size: 14px;
 			}
 			.menu {
+				top: 5px;
 				width: 400px;
 				margin-right: -25px;
 				&-item {
@@ -352,6 +354,7 @@
 			}
 		}
 		.feedback {
+			margin-bottom: 56px;
 			.my-icon > i {
 			   	border-left: 362px solid transparent; 
 			   	border-right: 362px solid transparent; 
@@ -445,6 +448,7 @@
 }
 
 @media(max-width: 885px) {
+
 	.reviews {
 		
 		.app-item {
@@ -503,6 +507,7 @@
 	}
 	.header {
 		.feedback {
+
 			.my-icon > i {
 			   display: none;
 			}
@@ -613,8 +618,31 @@
 }
 
 }
-@media(max-width: 650px) {
+@media(max-width: 686px) {
+	.certificates {
+		height: 800px;
+	}
+	.bush {
+		display: none;
+	}
+	.certificates {
+		height: 100%;
+		&-title {
+			width: 100%;
+		}
+		&-confirm {
+			margin-left: 0;
+			margin: 10px;
+			&-item {
+				width: 49%;
+				margin-right: 0;
+			}
+		}
+	}
+}
 
+@media(max-width: 650px) {
+	
 	.divide {
 		top: -30px;
 	}
@@ -745,7 +773,22 @@
 	
 }
 
-
+@media(max-width: 458px) {
+	.certificates {
+		height: 100%;
+		&-title {
+			width: 100%;
+		}
+		&-confirm {
+			margin-left: 0;
+			margin: 10px;
+			&-item {
+				width: 100%;
+				margin-right: 0;
+			}
+		}
+	}
+}
 
 
 
