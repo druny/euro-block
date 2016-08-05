@@ -89,7 +89,7 @@
 					Напрямую с завода с доставкой на Ваш объект за 1 день</p>
 				</div>
 			</div>
-			<?php if ($this->ion_auth->logged_in()): ?>
+			<?php if ( ! $this->ion_auth->logged_in() || ! $this->ion_auth->is_admin()): ?>
 				<div class="login col-lg-3 col-md-3 col-sm-12 col-xs-12">
 					<h2 class="login-topic">Войти в личный кабинет</h2>
 					<div class="login-errors"><?= $this->session->flashdata('login_errors'); ?></div>
@@ -103,8 +103,8 @@
 			<?php else: ?>
 				<div class="personal-info current-order-bg col-lg-3 col-md-3 col-sm-12 col-xs-12">
 					<h4>Личный кабинет пользователя:</h4> 
-					<button class="exit col-lg-3 col-md-3 col-sm-12 col-xs-12" href="#!" type="submit"><a class="exit-text" >Выход</a></button> 
-					<p class="name col-lg-9 col-md-9 col-sm-12 col-xs-12">Имя пользователя</p> 
+					<button class="exit col-lg-3 col-md-3 col-sm-12 col-xs-12" type="submit"><a href="/auth/logout" class="exit-text" >Выход</a></button> 
+					<p class="name col-lg-9 col-md-9 col-sm-12 col-xs-12"><?= $this->ion_auth->user()->row()->username; ?></p> 
 				</div>
 			<?php endif; ?>
 			<div class="header-video col-lg-9 col-md-9 col-sm-12 col-xs-12">
@@ -663,22 +663,5 @@
 			<img src="img/certificates/hab.jpg" alt="" class="certificates-confirm-item">
 			<img src="img/certificates/Ekolog.jpg" alt="" class="certificates-confirm-item">
 			<img src="img/certificates/100_luhsih_tovarov_m50_m75.jpg" alt="" class="certificates-confirm-item">
-		</div>
-	</div>
-	<div class="contacts">
-		<div class="container">
-			<div class="contacts-title">
-				<h2>Контакты:</h2>
-			</div>
-			<div class="contacts-description">
-				<p>Для того, чтобы обезопасить своих клиентов от покупки поддельных некачественных стройматериалов, Тереховский завод дает возможность приобрести свою продукцию любому клиенту напрямую, непосредственно у производителя.</p>
-			</div>
-		</div>
-	</div>
-	<div class="map">
-		<div class="logo-bottom">
-			<a href="#!">
-				<img class="logo" src="img/logo.png" alt="logo">
-			</a>
 		</div>
 	</div>
