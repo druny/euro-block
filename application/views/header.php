@@ -66,7 +66,7 @@
 					   </li>
 					   <li class="request nav navbar-nav navbar-right">
 							<p class="phone">+7 (423) 230-12-18</p>
-							<a class="request-call" href="#!">заказать обратный звонок</a>
+							<a class="request-call" data-toggle="modal" data-target="#myModal" href="#!">заказать обратный звонок</a>
 						</li>
 				    </div>
 				</nav>
