@@ -90,7 +90,8 @@ class Auth extends CI_Controller {
 				'type' => 'password',
 			);
 
-			$this->_render_page('auth/login', $this->data);
+			$this->session->set_flashdata('login_errors', $this->data['message']);
+			redirect('/', 'refresh');
 		}
 	}
 

@@ -89,15 +89,24 @@
 					Напрямую с завода с доставкой на Ваш объект за 1 день</p>
 				</div>
 			</div>
-			<div class="login col-lg-3 col-md-3 col-sm-12 col-xs-12">
-				<h2 class="login-topic">Войти в личный кабинет</h2>
-				<form class="entrance" action="/auth/login" method="post">
-					<input type="text" name="identity" placeholder="Логин:">
-					<a class="registration" href="#!">Регистрация</a> 
-					<input type="password" name="password" placeholder="Пароль:">
-					<button type="submit" id="login-btn" class="login-btn">Войти</button> 
-				</form>
-			</div>
+			<?php if ($this->ion_auth->logged_in()): ?>
+				<div class="login col-lg-3 col-md-3 col-sm-12 col-xs-12">
+					<h2 class="login-topic">Войти в личный кабинет</h2>
+					<div class="login-errors"><?= $this->session->flashdata('login_errors'); ?></div>
+					<form class="entrance" action="/auth/login" method="post">
+						<input type="text" name="identity" placeholder="Логин:">
+						<a class="registration" href="#!">Регистрация</a> 
+						<input type="password" name="password" placeholder="Пароль:">
+						<button type="submit" id="login-btn" class="login-btn">Войти</button> 
+					</form>
+				</div>
+			<?php else: ?>
+				<div class="personal-info current-order-bg col-lg-3 col-md-3 col-sm-12 col-xs-12">
+					<h4>Личный кабинет пользователя:</h4> 
+					<button class="exit col-lg-3 col-md-3 col-sm-12 col-xs-12" href="#!" type="submit"><a class="exit-text" >Выход</a></button> 
+					<p class="name col-lg-9 col-md-9 col-sm-12 col-xs-12">Имя пользователя</p> 
+				</div>
+			<?php endif; ?>
 			<div class="header-video col-lg-9 col-md-9 col-sm-12 col-xs-12">
 				<iframe width="700" height="420" src="https://www.youtube.com/embed/2xhnCsNFrbI?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 			</div>
@@ -656,8 +665,6 @@
 			<img src="img/certificates/100_luhsih_tovarov_m50_m75.jpg" alt="" class="certificates-confirm-item">
 		</div>
 	</div>
-<<<<<<< HEAD
-=======
 	<div class="contacts">
 		<div class="container">
 			<div class="contacts-title">
@@ -675,5 +682,3 @@
 			</a>
 		</div>
 	</div>
-	
->>>>>>> master

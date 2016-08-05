@@ -69,8 +69,19 @@
 	  </div>
 	</div>
 	<!-- !modal -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	
+<!-- 	Login status Modal
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      pew-pew
+    </div>
+  </div>
+</div> -->
 
-<script src="/js/script.js"></script>
+
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src="/js/script.js"></script>
 </body>
 </html>
