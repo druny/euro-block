@@ -1596,16 +1596,16 @@ td.visible-print,th.visible-print{display:table-cell!important}
 .location-content{margin:20px 0;color:#fff;font-size:15px}
 .location-content h4{font-family:OfficinaSansBold,sans-serif}
 .location-content p{font-size:14px;font-family:OfficinaSansBook,sans-serif}
-.current-order .personal-info,.current-order-title h1{color:#fff;font-family:OfficinaSansBold,sans-serif;text-transform:uppercase}
+.current-order-title h1,.personal-info{font-family:OfficinaSansBold,sans-serif}
+.personal-info{margin-bottom:55px;color:#fff;text-transform:uppercase;height:100px}
+.personal-info h4{font-size:16px;margin-bottom:10px}
+.personal-info .name{font-size:16px;text-decoration:underline}
+.personal-info .exit{float:right;background:#fdca00;border:none;border-radius:5px;padding-left:10px}
+.personal-info .exit-text{font-size:15px;text-transform:uppercase;color:#000}
 .current-order{background:url(../img/snow_texture.png) no-repeat #666;background-size:cover;padding-top:25px;padding-bottom:90px}
 .current-order-bg{background:linear-gradient(180deg,#028af7,#006bd3);border:3px solid #006bd3;border-radius:10px}
 .current-order-title{margin-bottom:25px;margin-right:20px}
-.current-order-title h1{font-size:30px}
-.current-order .personal-info{margin-bottom:55px;height:100px}
-.current-order .personal-info h4{font-size:16px;margin-bottom:10px}
-.current-order .personal-info .name{font-size:16px;text-decoration:underline}
-.current-order .personal-info .exit{float:right;background:#fdca00;border:none;border-radius:5px;padding-left:10px}
-.current-order .personal-info .exit-text{font-size:15px;text-transform:uppercase;color:#000}
+.current-order-title h1{color:#fff;font-size:30px;text-transform:uppercase}
 .current-order .order-info h4,.current-order .type-payment table p{font-size:20px;font-family:OfficinaSansBold,sans-serif;text-transform:uppercase}
 .current-order .order-info .table-order{width:100%;border:1px solid #000}
 .current-order .order-info .table-order tr{background-color:#f8f7fd;width:200px;border-collapse:collapse;border:1px solid #000}

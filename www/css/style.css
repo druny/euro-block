@@ -7473,6 +7473,33 @@ button.close {
   font-family: "OfficinaSansBook", sans-serif;
 }
 /* Admin  styles */
+.personal-info {
+  margin-bottom: 55px;
+  color: #fff;
+  font-family: "OfficinaSansBold", sans-serif;
+  text-transform: uppercase;
+  height: 100px;
+}
+.personal-info h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.personal-info .name {
+  font-size: 16px;
+  text-decoration: underline;
+}
+.personal-info .exit {
+  float: right;
+  background: #fdca00;
+  border: none;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+.personal-info .exit-text {
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #000;
+}
 .current-order {
   background: #666 url(../img/snow_texture.png) no-repeat;
   background-size: cover;
@@ -7493,33 +7520,6 @@ button.close {
   font-family: "OfficinaSansBold", sans-serif;
   font-size: 30px;
   text-transform: uppercase;
-}
-.current-order .personal-info {
-  margin-bottom: 55px;
-  color: #fff;
-  font-family: "OfficinaSansBold", sans-serif;
-  text-transform: uppercase;
-  height: 100px;
-}
-.current-order .personal-info h4 {
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-.current-order .personal-info .name {
-  font-size: 16px;
-  text-decoration: underline;
-}
-.current-order .personal-info .exit {
-  float: right;
-  background: #fdca00;
-  border: none;
-  border-radius: 5px;
-  padding-left: 10px;
-}
-.current-order .personal-info .exit-text {
-  font-size: 15px;
-  text-transform: uppercase;
-  color: #000;
 }
 .current-order .order-info h4 {
   text-transform: uppercase;

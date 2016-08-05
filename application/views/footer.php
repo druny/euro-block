@@ -49,15 +49,15 @@
 	      <form method="post" action="/sending">
 			  <div class="form-group">
 			    <label for="exampleInputEmail1">Email address</label>
-			    <input type="email" class="form-control" name="email" id="exampleInputEmail1" placeholder="Email">
+			    <input type="email" class="form-control" name="email" id="exampleInputEmail1" placeholder="Email" required>
 			  </div>
 			  <div class="form-group">
 			    <label for="exampleInputPassword1">Name</label>
-			    <input type="text" class="form-control" name="name" id="" placeholder="Name">
+			    <input type="text" class="form-control" name="name" id="" placeholder="Name" required>
 			  </div>
 				<div class="form-group">
 			    <label for="exampleInputPassword1">Phone</label>
-			    <input type="text" class="form-control"  name="password" id="" placeholder="Phone">
+			    <input type="text" class="form-control"  name="phone" id="" placeholder="Phone" required>
 			  </div>
 			  <button type="submit" class="btn btn-default">Submit</button>
 			</form>
