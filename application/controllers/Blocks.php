@@ -20,7 +20,6 @@ class Blocks extends CI_Controller
     }
 
 
-
     public function cart_add()
     {
         $amount = $this->blocks->prepare_data($this->input->post());
@@ -31,9 +30,6 @@ class Blocks extends CI_Controller
             $value['amount'] = $amount[$value['id']];
             $value['total_price'] = $value['amount'] * $value['price'];
             $sum += $value['total_price'];
-
-            // Deleting price column
-            unset($value['price']);
         }
 
         if ( ! isset($this->session->products) )
@@ -43,25 +39,37 @@ class Blocks extends CI_Controller
         }
         else
         {
-            foreach ($this->session->products as &$product) {
-                if ($product['name'] === $data[0]['name'])
-                {
-                    # code...
-                }
-            }
-            die;
+            $i = 0;
+            $current_sum = 0;
+            $products = $this->session->products;
 
-            $this->session->products = array_merge($this->session->products, $data);
-            $this->session->sum += $sum;
+            foreach ($products as &$product) {
+                //if ($product['name'] === $data[$i]['name'])
+                if (isset($data[$i]) && $product['name'] === $data[$i]['name'])
+                {
+                    $product['amount'] += $data[$i]['amount'];
+                    $product['total_price'] += ($data[$i]['amount'] * $product['price']);
+                    $i++;
+                }
+            
+                $current_sum += $product['total_price'];
+            }
+
+            if ($i === 0)
+            {
+                // TODO: Расчитать сумму для элементов которых еще нет в сессии
+                $this->session->products = array_merge($products, $data);
+                $this->session->sum += $sum;
+            }
+            else
+            {
+                $this->session->products = $products;
+                $this->session->sum = $current_sum;
+            }
         }
 
         redirect('/cart');
         die;
-    }
-
-    public function a()
-    {
-        
     }
 
 

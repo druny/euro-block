@@ -91,11 +91,11 @@
 			</div>
 			<div class="login col-lg-3 col-md-3 col-sm-12 col-xs-12">
 				<h2 class="login-topic">Войти в личный кабинет</h2>
-				<form class="entrance" action="#!" method="post">
-					<input type="text" name="login" placeholder="Логин:">
+				<form class="entrance" action="/auth/login" method="post">
+					<input type="text" name="identity" placeholder="Логин:">
 					<a class="registration" href="#!">Регистрация</a> 
 					<input type="password" name="password" placeholder="Пароль:">
-					<button type="submit" class="login-btn">Войти</button> 
+					<button type="submit" id="login-btn" class="login-btn">Войти</button> 
 				</form>
 			</div>
 			<div class="header-video col-lg-9 col-md-9 col-sm-12 col-xs-12">
@@ -656,6 +656,8 @@
 			<img src="img/certificates/100_luhsih_tovarov_m50_m75.jpg" alt="" class="certificates-confirm-item">
 		</div>
 	</div>
+<<<<<<< HEAD
+=======
 	<div class="contacts">
 		<div class="container">
 			<div class="contacts-title">
@@ -674,3 +676,4 @@
 		</div>
 	</div>
 	
+>>>>>>> master
