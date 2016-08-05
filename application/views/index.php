@@ -88,7 +88,7 @@
 					<input type="text" name="identity" placeholder="Логин:">
 					<a class="registration" href="#!">Регистрация</a> 
 					<input type="password" name="password" placeholder="Пароль:">
-					<button type="submit" class="login-btn">Войти</button> 
+					<button type="submit" id="login-btn" class="login-btn">Войти</button> 
 				</form>
 			</div>
 			<div class="header-video col-lg-9 col-md-9 col-sm-12 col-xs-12">
@@ -649,23 +649,3 @@
 			<img src="img/certificates/100_luhsih_tovarov_m50_m75.jpg" alt="" class="certificates-confirm-item">
 		</div>
 	</div>
-
-
-<!-- Modal for showing login status -->
-<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
