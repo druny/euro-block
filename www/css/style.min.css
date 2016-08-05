@@ -789,12 +789,12 @@ a.btn.disabled,fieldset[disabled] a.btn{pointer-events:none}
 .btn-info.active.focus,.btn-info.active:focus,.btn-info.active:hover,.btn-info:active.focus,.btn-info:active:focus,.btn-info:active:hover,.open>.dropdown-toggle.btn-info.focus,.open>.dropdown-toggle.btn-info:focus,.open>.dropdown-toggle.btn-info:hover{color:#fff;background-color:#269abc;border-color:#1b6d85}
 .btn-info.disabled.focus,.btn-info.disabled:focus,.btn-info.disabled:hover,.btn-info[disabled].focus,.btn-info[disabled]:focus,.btn-info[disabled]:hover,fieldset[disabled] .btn-info.focus,fieldset[disabled] .btn-info:focus,fieldset[disabled] .btn-info:hover{background-color:#5bc0de;border-color:#46b8da}
 .btn-info .badge{color:#5bc0de;background-color:#fff}
-.btn-warning{color:#fff;background-color:#f0ad4e;border-color:#eea236}
-.btn-warning.focus,.btn-warning:focus{color:#fff;background-color:#ec971f;border-color:#985f0d}
-.btn-warning.active,.btn-warning:active,.btn-warning:hover,.open>.dropdown-toggle.btn-warning{color:#fff;background-color:#ec971f;border-color:#d58512}
-.btn-warning.active.focus,.btn-warning.active:focus,.btn-warning.active:hover,.btn-warning:active.focus,.btn-warning:active:focus,.btn-warning:active:hover,.open>.dropdown-toggle.btn-warning.focus,.open>.dropdown-toggle.btn-warning:focus,.open>.dropdown-toggle.btn-warning:hover{color:#fff;background-color:#d58512;border-color:#985f0d}
-.btn-warning.disabled.focus,.btn-warning.disabled:focus,.btn-warning.disabled:hover,.btn-warning[disabled].focus,.btn-warning[disabled]:focus,.btn-warning[disabled]:hover,fieldset[disabled] .btn-warning.focus,fieldset[disabled] .btn-warning:focus,fieldset[disabled] .btn-warning:hover{background-color:#f0ad4e;border-color:#eea236}
-.btn-warning .badge{color:#f0ad4e;background-color:#fff}
+.btn-warning{color:#fff;background-color:#fdca00;border-color:#e4b600}
+.btn-warning.focus,.btn-warning:focus{color:#fff;background-color:#caa100;border-color:#645000}
+.btn-warning.active,.btn-warning:active,.btn-warning:hover,.open>.dropdown-toggle.btn-warning{color:#fff;background-color:#caa100;border-color:#a68500}
+.btn-warning.active.focus,.btn-warning.active:focus,.btn-warning.active:hover,.btn-warning:active.focus,.btn-warning:active:focus,.btn-warning:active:hover,.open>.dropdown-toggle.btn-warning.focus,.open>.dropdown-toggle.btn-warning:focus,.open>.dropdown-toggle.btn-warning:hover{color:#fff;background-color:#a68500;border-color:#645000}
+.btn-warning.disabled.focus,.btn-warning.disabled:focus,.btn-warning.disabled:hover,.btn-warning[disabled].focus,.btn-warning[disabled]:focus,.btn-warning[disabled]:hover,fieldset[disabled] .btn-warning.focus,fieldset[disabled] .btn-warning:focus,fieldset[disabled] .btn-warning:hover{background-color:#fdca00;border-color:#e4b600}
+.btn-warning .badge{color:#fdca00;background-color:#fff}
 .btn-danger{color:#fff;background-color:#d9534f;border-color:#d43f3a}
 .btn-danger.focus,.btn-danger:focus{color:#fff;background-color:#c9302c;border-color:#761c19}
 .btn-danger.active,.btn-danger:active,.btn-danger:hover,.open>.dropdown-toggle.btn-danger{color:#fff;background-color:#c9302c;border-color:#ac2925}
@@ -1092,8 +1092,8 @@ a.badge:focus,a.badge:hover,a.label:focus,a.label:hover{color:#fff;cursor:pointe
 .label-success[href]:focus,.label-success[href]:hover{background-color:#449d44}
 .label-info{background-color:#5bc0de}
 .label-info[href]:focus,.label-info[href]:hover{background-color:#31b0d5}
-.label-warning{background-color:#f0ad4e}
-.label-warning[href]:focus,.label-warning[href]:hover{background-color:#ec971f}
+.label-warning{background-color:#fdca00}
+.label-warning[href]:focus,.label-warning[href]:hover{background-color:#caa100}
 .label-danger{background-color:#d9534f}
 .label-danger[href]:focus,.label-danger[href]:hover{background-color:#c9302c}
 .badge{display:inline-block;min-width:10px;padding:3px 7px;font-size:12px;color:#fff;vertical-align:middle;background-color:#777;border-radius:10px}
@@ -1154,7 +1154,7 @@ to{background-position:0 0}
 .progress-striped .progress-bar-info,.progress-striped .progress-bar-warning{background-image:-webkit-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);background-image:-o-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent)}
 .progress-bar-info{background-color:#5bc0de}
 .progress-striped .progress-bar-info{background-image:linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent)}
-.progress-bar-warning{background-color:#f0ad4e}
+.progress-bar-warning{background-color:#fdca00}
 .progress-striped .progress-bar-warning{background-image:linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent)}
 .progress-bar-danger{background-color:#d9534f}
 .progress-striped .progress-bar-danger{background-image:-webkit-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);background-image:-o-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);background-image:linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent)}
@@ -1620,6 +1620,7 @@ td.visible-print,th.visible-print{display:table-cell!important}
 .product-info:nth-of-type(1),.product-info:nth-of-type(2){text-align:left}
 .product-info-description{color:#44627e;text-transform:uppercase;font-family:Roman}
 .product-info tr:last-of-type,.product-info tr:nth-of-type(1),.product-info tr:nth-of-type(10){color:#44627e;font-weight:700;font-size:25px;text-transform:uppercase}
+.login-errors{color:#fdca00;font-weight:700}
 @media (min-width:1441px){.reviews .app-item img{width:180px}
 .reviews .app-item .carousel-caption{margin-left:50px;width:70%}
 .reviews .app-item .carousel-caption .carousel-title{font-size:16px;text-transform:uppercase;font-weight:700}

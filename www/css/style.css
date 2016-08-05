@@ -3275,26 +3275,26 @@ fieldset[disabled] .btn-info.focus {
 }
 .btn-warning {
   color: #fff;
-  background-color: #f0ad4e;
-  border-color: #eea236;
+  background-color: #fdca00;
+  border-color: #e4b600;
 }
 .btn-warning:focus,
 .btn-warning.focus {
   color: #fff;
-  background-color: #ec971f;
-  border-color: #985f0d;
+  background-color: #caa100;
+  border-color: #645000;
 }
 .btn-warning:hover {
   color: #fff;
-  background-color: #ec971f;
-  border-color: #d58512;
+  background-color: #caa100;
+  border-color: #a68500;
 }
 .btn-warning:active,
 .btn-warning.active,
 .open > .dropdown-toggle.btn-warning {
   color: #fff;
-  background-color: #ec971f;
-  border-color: #d58512;
+  background-color: #caa100;
+  border-color: #a68500;
 }
 .btn-warning:active:hover,
 .btn-warning.active:hover,
@@ -3306,8 +3306,8 @@ fieldset[disabled] .btn-info.focus {
 .btn-warning.active.focus,
 .open > .dropdown-toggle.btn-warning.focus {
   color: #fff;
-  background-color: #d58512;
-  border-color: #985f0d;
+  background-color: #a68500;
+  border-color: #645000;
 }
 .btn-warning:active,
 .btn-warning.active,
@@ -3323,11 +3323,11 @@ fieldset[disabled] .btn-warning:focus,
 .btn-warning.disabled.focus,
 .btn-warning[disabled].focus,
 fieldset[disabled] .btn-warning.focus {
-  background-color: #f0ad4e;
-  border-color: #eea236;
+  background-color: #fdca00;
+  border-color: #e4b600;
 }
 .btn-warning .badge {
-  color: #f0ad4e;
+  color: #fdca00;
   background-color: #fff;
 }
 .btn-danger {
@@ -4874,11 +4874,11 @@ a.label:focus {
   background-color: #31b0d5;
 }
 .label-warning {
-  background-color: #f0ad4e;
+  background-color: #fdca00;
 }
 .label-warning[href]:hover,
 .label-warning[href]:focus {
-  background-color: #ec971f;
+  background-color: #caa100;
 }
 .label-danger {
   background-color: #d9534f;
@@ -5147,7 +5147,7 @@ a.thumbnail.active {
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 .progress-bar-warning {
-  background-color: #f0ad4e;
+  background-color: #fdca00;
 }
 .progress-striped .progress-bar-warning {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
@@ -7591,6 +7591,11 @@ button.close {
   font-weight: bold;
   font-size: 25px;
   text-transform: uppercase;
+}
+/* Login errors styles */
+.login-errors {
+  color: #fdca00;
+  font-weight: 700;
 }
 @media (min-width: 1441px) {
   .reviews .app-item img {
