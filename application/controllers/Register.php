@@ -9,7 +9,9 @@ class Register extends CI_Controller
     {
         if ($this->form_validation->run('register') == FALSE)
         {
-            $this->load->view('register/index');
+            $this->load->view('header');
+            $this->load->view('register/index');   
+            $this->load->view('footer');        
         }
         else
         {
