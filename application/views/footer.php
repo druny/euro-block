@@ -10,7 +10,7 @@
 	</div>
 	<div class="map">
 		<div class="logo-bottom">
-			<img src="img/logo.png" alt="">
+			<img src="/img/logo.png" alt="">
 		</div>
 	</div>
 	<footer class="location">
