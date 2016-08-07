@@ -79,9 +79,9 @@
 						</tr>
 					</table>
 				</div>
+				<form action="/blocks/cart_add" method="post" class="product-item">
 				<?php foreach ($products as $product): ?>
 				<div class="product-info col-lg-3 col-md-6 col-sm-6 col-xs-6 clearfix-right">
-				<form action="/blocks/cart_add" method="post">
 				<input type="hidden" name="block_id" value="<?= $block->id; ?>">
 				
 					<table>
@@ -143,10 +143,11 @@
 							</td>
 						</tr>
 					</table>
-				<input type="submit" value="В корзину">
-				</form>
-				</div>
+					</div>
 				<?php endforeach; ?>
+				<div class="clearfix"></div>
+				<input type="submit" class="to-cart btn btn-warning" value="В корзину">
+				</form>
 				
 			</div>
 		</div>
