@@ -91,6 +91,7 @@ class Auth extends CI_Controller {
 			);
 
 			$this->session->set_flashdata('login_errors', $this->data['message']);
+			$this->session->set_flashdata('login', $this->input->post('identity'));
 			redirect('/', 'refresh');
 		}
 	}
