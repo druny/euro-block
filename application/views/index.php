@@ -95,7 +95,7 @@
 					<div class="login-errors"><?= $this->session->flashdata('login_errors'); ?></div>
 					<form class="entrance" action="/auth/login" method="post">
 						<input type="text" name="identity" placeholder="Логин:" value="<?php if ( ! empty($this->session->flashdata('login'))) echo $this->session->flashdata('login'); ?>">
-						<a class="registration" href="#!">Регистрация</a> 
+						<a class="registration" href="/register">Регистрация</a> 
 						<input type="password" name="password" placeholder="Пароль:">
 						<button type="submit" id="login-btn" class="login-btn">Войти</button> 
 					</form>
@@ -104,7 +104,7 @@
 				<div class="personal-info current-order-bg col-lg-3 col-md-3 col-sm-12 col-xs-12">
 					<h4>Личный кабинет пользователя:</h4> 
 					<button class="exit col-lg-3 col-md-3 col-sm-12 col-xs-12" type="submit"><a href="/auth/logout" class="exit-text" >Выход</a></button> 
-					<p class="name col-lg-9 col-md-9 col-sm-12 col-xs-12"><?= $this->ion_auth->user()->row()->username; ?></p> 
+					<p class="name col-lg-9 col-md-9 col-sm-12 col-xs-12"><a href="/cabinet"><?= $this->ion_auth->user()->row()->username; ?></a></p> 
 				</div>
 			<?php endif; ?>
 			<div class="header-video col-lg-9 col-md-9 col-sm-12 col-xs-12">

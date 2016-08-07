@@ -14,5 +14,9 @@ class Cart extends CI_Controller {
             $this->load->view('cart/index', $data);
             $this->load->view('footer');
         }
+        else
+        {
+            echo "Корзина пуста";
+        }
     }
 }
