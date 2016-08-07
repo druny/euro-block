@@ -94,7 +94,7 @@
 					<h2 class="login-topic">Войти в личный кабинет</h2>
 					<div class="login-errors"><?= $this->session->flashdata('login_errors'); ?></div>
 					<form class="entrance" action="/auth/login" method="post">
-						<input type="text" name="identity" placeholder="Логин:" value="<?= set_value('identity'); ?>">
+						<input type="text" name="identity" placeholder="Логин:" value="<?php if ( ! empty($this->session->flashdata('login'))) echo $this->session->flashdata('login'); ?>">
 						<a class="registration" href="#!">Регистрация</a> 
 						<input type="password" name="password" placeholder="Пароль:">
 						<button type="submit" id="login-btn" class="login-btn">Войти</button> 
