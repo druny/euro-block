@@ -7,10 +7,11 @@ class Cart extends CI_Controller {
     {
         if ( ! empty($this->session->products)) 
         {
+            $count['cart_count'] = ( ! empty($this->session->products)) ? count($this->session->products) : 0;
             $data['products'] = $this->session->products;
             $data['sum'] = (isset($this->session->sum)) ? $this->session->sum : 0;
 
-            $this->load->view('header');
+            $this->load->view('header', $count);
             $this->load->view('cart/index', $data);
             $this->load->view('footer');
         }
@@ -18,6 +19,13 @@ class Cart extends CI_Controller {
         {
             echo "Корзина пуста";
         }
+    }
+
+    public function clear_data()
+    {
+        $session_items = ['products', 'sum'];
+        $this->session->unset_userdata($session_items);
+        redirect('/');
     }
     
 }
