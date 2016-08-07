@@ -10,13 +10,15 @@ class Blocks extends CI_Controller
     {
         parent::__construct();
         $this->load->model('blocks_model', 'blocks');
+
     }
 
     public function product($id)
     {
+        $count['cart_count'] = ( ! empty($this->session->products)) ? count($this->session->products) : 0;
         $data['products'] = $this->blocks->get_one($id);
         $data['block'] = $this->blocks->get_block_info($id);
-        $this->load->view('header');
+        $this->load->view('header', $count);
         $this->load->view('blocks/index', $data);
         $this->load->view('footer');
     }
