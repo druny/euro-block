@@ -36,7 +36,7 @@
 					</tr>
 				</table>
 			</div>
-			
+			<div class="clearfix"></div>
 			<form action="" method="post" class="cart-form">
 				<div class="order-info delivery col-lg-4 col-md-4 col-sm-4 col-xs-12">
 					<h4>Заказать доставку:</h4>
