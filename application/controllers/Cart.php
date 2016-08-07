@@ -27,5 +27,37 @@ class Cart extends CI_Controller {
         $this->session->unset_userdata($session_items);
         redirect('/');
     }
+
+    public function order()
+    {
+        $this->load->model('cart_model', 'cart');
+
+        if ( ! empty($this->session->products) && !empty($this->input->post()) && isset($this->session->sum))
+        {
+            $order_data = $this->generic->get_post('city, street, locality, crane, delivery_date, payment_type');
+            $order_data['sum'] = $this->session->sum;
+            $order_id = $this->cart->order_data($order_data);
+
+            $products = $this->session->products;
+
+            foreach ($products as $key => &$value) {
+                $value['product_id'] = $value['id'];
+                $value['order_id'] = $order_id;
+                unset($value['id']);
+            }
+
+            if ($this->cart->order_products($products))
+            {
+                $this->clear_data();
+            }
+            else
+            {
+                echo "exception";
+            }
+        }
+        else { 
+            echo "exception";
+        }
+    }
     
 }

@@ -37,7 +37,7 @@
 				</table>
 			</div>
 			<div class="clearfix"></div>
-			<form action="" method="post" class="cart-form">
+			<form action="/cart/order" method="post" class="cart-form">
 				<div class="order-info delivery col-lg-4 col-md-4 col-sm-4 col-xs-12">
 					<h4>Заказать доставку:</h4>
 					<table class="table-order">
@@ -46,7 +46,7 @@
 								<p>Город:</p>
 							</td>
 							<td>
-								<p></p>
+								<input type="text" name="city">
 							</td>
 						</tr>
 					</table>
@@ -56,7 +56,7 @@
 								<p>Улица:</p>
 							</td>
 							<td>
-								<p></p>
+								<input type="text" name="street">
 							</td>
 						</tr>
 					</table>
@@ -66,14 +66,14 @@
 								<p>Населенный пункт</p>
 							</td>
 							<td>
-								<p></p>
+								<input type="text" name="locality">
 							</td>
 						</tr>
 					</table>
 					<table class="table-order">
 						<tr>
 							<td>
-								<input type="radio" name="crane" id="with" value="with">
+								<input type="radio" name="crane" id="with" value="1">
 							</td>
 							<td>
 								<label for="with" class="label-radio">
@@ -81,7 +81,7 @@
 								</label>
 							</td>
 							<td>
-								<input type="radio" name="crane" id="without" value="without">
+								<input type="radio" name="crane" id="without" value="0">
 							</td>
 							<td>
 								<label for="without" class="label-radio">
@@ -93,14 +93,14 @@
 				</div>
 				<div class="order-info col-lg-4 col-md-4 col-sm-4 col-xs-4">
 					<h4>На какое число</h4>
-					<input type="date" name="calendar" >
+					<input type="date" name="delivery_date" >
 				</div>
 				<div class="type-payment order-info col-lg-4 col-md-4 col-sm-4 col-xs-8">
 					<h4>Выбрать тип оплаты</h4>
 					<table>
 						<tr>
 							<td>
-								<input class="payment" type="radio" name="payment" id="without" value="score">
+								<input class="payment" type="radio" name="payment_type" id="without" value="score">
 							</td>
 							<td>
 								<a href="#!">
@@ -115,7 +115,7 @@
 					<table>	
 						<tr>
 							<td>
-								<input class="payment" type="radio" name="payment" id="without" value="requisites">
+								<input class="payment" type="radio" name="payment_type" id="without" value="requisites">
 							</td>
 							<td>
 								<a href="#!">
@@ -130,7 +130,7 @@
 					<table>	
 						<tr>
 							<td>
-								<input class="payment" type="radio" name="payment" id="without" value="cash">
+								<input class="payment" type="radio" name="payment_type" id="without" value="cash">
 							</td>
 							<td>
 								<a href="#!">
