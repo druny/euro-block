@@ -29,7 +29,7 @@
 							</a>
 							<div class="mobile-info">
 				
-					       		<a class="basket" href="#!">корзина 0</a>
+					       		<a class="basket" href="#!">корзина <?= $cart_count; ?></a>
 					       		<p class="phone">+7 (423) 230-12-18</p>
 							
 							</div>
@@ -65,7 +65,7 @@
 					        </ul>
 					   <li class="request nav navbar-nav ">
 					   		<img  class="trunk" src="img/trunk.png" alt="">
-					        <a class="basket" href="#!">корзина 0</a>
+					        <a class="basket" href="#!">корзина <?= $cart_count; ?></a>
 					   </li>
 					   <li class="request nav navbar-nav navbar-right">
 							<p class="phone">+7 (423) 230-12-18</p>
