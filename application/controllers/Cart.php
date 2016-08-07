@@ -19,4 +19,5 @@ class Cart extends CI_Controller {
             echo "Корзина пуста";
         }
     }
+    
 }

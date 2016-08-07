@@ -5,9 +5,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Блок стеновой андезитобазальтовый m50/ М75/ m100</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
-	<link rel="stylesheet" href="css/style.min.css">
-	<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
-	<script src="js/calc/init.js"></script>
+	<link rel="stylesheet" href="/css/style.min.css">
+	<script type="text/javascript" src="/js/jquery-3.0.0.min.js"></script>
+	<script src="/js/calc/init.js"></script>
 </head>
 <body>
 	<div class="header-menu">
@@ -22,7 +22,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-							<img class="logo" src="img/logo.png" alt="logo">
+							<img class="logo" src="/img/logo.png" alt="logo">
 							<div class="mobile-info">
 				
 					       		<a class="basket" href="#!">корзина 0</a>
@@ -60,7 +60,7 @@
 							</li>
 					        </ul>
 					   <li class="request nav navbar-nav ">
-					   		<img  class="trunk" src="img/trunk.png" alt="">
+					   		<img  class="trunk" src="/img/trunk.png" alt="">
 					        <a class="basket" href="#!">корзина 0</a>
 					   </li>
 					   <li class="request nav navbar-nav navbar-right">
@@ -77,7 +77,7 @@
 			<div class="container">
 				<h1 class="product-title">Блок стеновой андезитобазальтовый m50/ М75/ m100</h1>
 				<div class="product-info col-lg-3 col-md-3 col-sm-6 col-xs-12">
-					<img src="img/products/block01.png" alt="">
+					<img src="/img/products/block01.png" alt="">
 					<p class="product-info-description">Маркировка: КСР-ПР-ПС-39-50-F50-1450; ГОСТ 6133–99</p>
 				</div>
 				<div class="product-info col-lg-3 col-md-3 col-sm-6 col-xs-12">

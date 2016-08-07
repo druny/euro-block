@@ -5,9 +5,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Manager</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
-	<link rel="stylesheet" href="css/style.min.css">
-	<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
-	<script src="js/calc/init.js"></script>
+	<link rel="stylesheet" href="/css/style.min.css">
+	<script type="text/javascript" src="/js/jquery-3.0.0.min.js"></script>
+	<script src="/js/calc/init.js"></script>
 </head>
 <body>
 	<header class="header-admin">
@@ -23,7 +23,10 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-							<img class="logo" src="img/logo-bg.png" alt="logo">
+							<a href="#!">
+								<img class="logo" src="/img/logo-bg.png" alt="logo">
+							</a>
+							
 							<div class="mobile-info">
 				
 					       		<a class="basket" href="#!">корзина 0</a>
@@ -61,7 +64,7 @@
 							</li>
 					        </ul>
 					   <li class="request nav navbar-nav ">
-					   		<img  class="trunk" src="img/white-trunk.png" alt="">
+					   		<img  class="trunk" src="/img/white-trunk.png" alt="">
 					        <a class="basket" href="#!">корзина 0</a>
 					   </li>
 					   <li class="request nav navbar-nav navbar-right">
