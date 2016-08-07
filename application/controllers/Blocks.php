@@ -16,7 +16,9 @@ class Blocks extends CI_Controller
     {
         $data['products'] = $this->blocks->get_one($id);
         $data['block'] = $this->blocks->get_block_info($id);
+        $this->load->view('header');
         $this->load->view('blocks/index', $data);
+        $this->load->view('footer');
     }
 
 

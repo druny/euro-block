@@ -905,7 +905,16 @@
 
 
 /* items */
-
+.clearfix-right {
+	&:before,
+  &:after {
+    content: " ";
+    display: block;
+  }
+  &:after {
+    clear: right;
+  }
+}
 .product {
 	&-title {
 		margin: 45px 0;
@@ -919,6 +928,9 @@
 		text-align: center;
 		font-size: 18px;
 		margin-bottom: 35px;
+		clear: right;
+		display: table;
+		content: '';
 		&:nth-of-type(1), &:nth-of-type(2) {
 			text-align: left;
 		}
@@ -949,4 +961,21 @@
 		font-size: 20px;
 	}
 
+}
+
+.cart-form {
+	label {
+
+	  cursor: pointer;
+	  position: relative;
+	  padding-top: 12px;
+	  font-size: 13px;
+	}
+	.payment {
+		margin-right: 20px;	
+	}
+
+}
+.order-btn {
+	
 }

@@ -36,100 +36,117 @@
 					</tr>
 				</table>
 			</div>
-
-			<div class="order-info delivery col-lg-4 col-md-4 col-sm-4 col-xs-12">
-				<h4>Заказать доставку:</h4>
-				<table class="table-order">
-					<tr>
-						<td>
-							<p>Город:</p>
-						</td>
-						<td>
-							<p></p>
-						</td>
-					</tr>
-				</table>
-				<table class="table-order">
-					<tr>
-						<td>
-							<p>Улица:</p>
-						</td>
-						<td>
-							<p></p>
-						</td>
-					</tr>
-				</table>
-				<table class="table-order">
-					<tr>
-						<td>
-							<p>Населенный пункт</p>
-						</td>
-						<td>
-							<p></p>
-						</td>
-					</tr>
-				</table>
-				<table class="table-order">
-					<tr>
-						<td>
-							<input type="radio">
-						</td>
-						<td>
-							<p>С краном</p>
-						</td>
-						<td>
-							<input type="radio">
-						</td>
-						<td>
-							<p>Без крана</p>
-						</td>
-					</tr>
-				</table>
-			</div>
-			<div class="order-info col-lg-4 col-md-4 col-sm-4 col-xs-4">
-				<h4>На какое число</h4>
-				<input type="date" name="calendar" >
-			</div>
-			<div class="type-payment order-info col-lg-4 col-md-4 col-sm-4 col-xs-8">
-				<h4>Выбрать тип оплаты</h4>
-				<table>
-					<tr>
-						<td>
-							<a href="#!">
-								<img src="img/Векторный смарт-объект2.png" alt="">
-							</a>
-						</td>
-						<td>
-							<p>Получить счетна оплату</p>
-						</td>
-					</tr>
-				</table>
-				<table>	
-					<tr>
-						<td>
-							<a href="#!">
-								<img src="img/Векторный смарт-объект3.png" alt="">
-							</a>
-						</td>
-						<td>
-							<p>Реквизиты</p>
-						</td>
-					</tr>
-				</table>
-				<table>	
-					<tr>
-						<td>
-							<a href="#!">
-								<img src="img/Векторный смарт-объект4.png" alt="">
-							</a>
-						</td>
-						<td>
-							<p>Оплатить наличными</p>
-						</td>
-					</tr>
-				</table>
-			</div>
-
+			
+			<form action="" method="post" class="cart-form">
+				<div class="order-info delivery col-lg-4 col-md-4 col-sm-4 col-xs-12">
+					<h4>Заказать доставку:</h4>
+					<table class="table-order">
+						<tr>
+							<td>
+								<p>Город:</p>
+							</td>
+							<td>
+								<p></p>
+							</td>
+						</tr>
+					</table>
+					<table class="table-order">
+						<tr>
+							<td>
+								<p>Улица:</p>
+							</td>
+							<td>
+								<p></p>
+							</td>
+						</tr>
+					</table>
+					<table class="table-order">
+						<tr>
+							<td>
+								<p>Населенный пункт</p>
+							</td>
+							<td>
+								<p></p>
+							</td>
+						</tr>
+					</table>
+					<table class="table-order">
+						<tr>
+							<td>
+								<input type="radio" name="crane" id="with" value="with">
+							</td>
+							<td>
+								<label for="with" class="label-radio">
+									<p>С краном</p>
+								</label>
+							</td>
+							<td>
+								<input type="radio" name="crane" id="without" value="without">
+							</td>
+							<td>
+								<label for="without" class="label-radio">
+									<p>Без крана</p>
+								</label>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="order-info col-lg-4 col-md-4 col-sm-4 col-xs-4">
+					<h4>На какое число</h4>
+					<input type="date" name="calendar" >
+				</div>
+				<div class="type-payment order-info col-lg-4 col-md-4 col-sm-4 col-xs-8">
+					<h4>Выбрать тип оплаты</h4>
+					<table>
+						<tr>
+							<td>
+								<input class="payment" type="radio" name="payment" id="without" value="score">
+							</td>
+							<td>
+								<a href="#!">
+									<img src="img/Векторный смарт-объект2.png" alt="">
+								</a>
+							</td>
+							<td>
+								<p>Получить счет на оплату</p>
+							</td>
+						</tr>
+					</table>
+					<table>	
+						<tr>
+							<td>
+								<input class="payment" type="radio" name="payment" id="without" value="requisites">
+							</td>
+							<td>
+								<a href="#!">
+									<img src="img/Векторный смарт-объект3.png" alt="">
+								</a>
+							</td>
+							<td>
+								<p>Реквизиты</p>
+							</td>
+						</tr>
+					</table>
+					<table>	
+						<tr>
+							<td>
+								<input class="payment" type="radio" name="payment" id="without" value="cash">
+							</td>
+							<td>
+								<a href="#!">
+									<img src="img/Векторный смарт-объект4.png" alt="">
+								</a>
+							</td>
+							<td>
+								<p>Оплатить наличными</p>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="col-sm-offset-8">
+					<button class="btn btn-warning">Заказать</button>
+				</div>
+			</form>
 		</div>
 	</div>
 	<div class="calculator">
