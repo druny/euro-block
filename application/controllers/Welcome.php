@@ -5,7 +5,8 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('index');
+        $data['cart_count'] = ( ! empty($this->session->products)) ? count($this->session->products) : 0;
+		$this->load->view('index', $data);
 		$this->load->view('footer');
 	}
 }

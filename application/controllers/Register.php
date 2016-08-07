@@ -9,8 +9,9 @@ class Register extends CI_Controller
     {
         if ($this->form_validation->run('register') == FALSE)
         {
+            $data['cart_count'] = ( ! empty($this->session->products)) ? count($this->session->products) : 0;
             $this->load->view('header');
-            $this->load->view('register/index');   
+            $this->load->view('register/index', $data);   
             $this->load->view('footer');        
         }
         else

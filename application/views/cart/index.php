@@ -14,7 +14,7 @@
 					<?php foreach ($products as $product): ?>
 						<tr>
 							<td>
-								<p><?= $product['name']; ?></p>
+								<p><?= $product['block_name'] . ': ' . $product['name']; ?></p>
 							</td>
 							<td>
 								<p>Кол-во: <?= $product['amount']; ?></p>
