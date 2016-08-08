@@ -1,6 +1,6 @@
 -- --------------------------------------------------------
 -- Хост:                         127.0.0.1
--- Версия сервера:               5.6.31 - MySQL Community Server (GPL)
+-- Версия сервера:               5.5.48 - MySQL Community Server (GPL)
 -- ОС Сервера:                   Win32
 -- HeidiSQL Версия:              9.3.0.4984
 -- --------------------------------------------------------
@@ -29,16 +29,16 @@ CREATE TABLE IF NOT EXISTS `blocks` (
 DELETE FROM `blocks`;
 /*!40000 ALTER TABLE `blocks` DISABLE KEYS */;
 INSERT INTO `blocks` (`id`, `name`, `img`) VALUES
-(1, 'Блок стеновой', '/img/products/block01.png'),
-(2, 'Блок перегородочный ', '/img/products/block02.png'),
-(3, 'Блок рядовой', '/img/products/block03.png'),
-(4, 'Блок угловой', '/img/products/block04.png'),
-(5, 'Блок половинчатый', '/img/products/block05.png'),
-(6, 'Блоки вентиляционные', '/img/products/Ventblock7.png'),
-(7, 'Евроблок', '/img/products/Euroblock6.png'),
-(8, 'Плитка бетонная', '/img/products/plitka01_red8.png'),
-(9, 'Бордюр', '/img/products/bordur3 11.png'),
-(10, 'Щебень', '/img/products/scheb_gr_4(14).png');
+	(1, 'Блок стеновой', '/img/products/block01.png'),
+	(2, 'Блок перегородочный ', '/img/products/block02.png'),
+	(3, 'Блок рядовой', '/img/products/block03.png'),
+	(4, 'Блок угловой', '/img/products/block04.png'),
+	(5, 'Блок половинчатый', '/img/products/block05.png'),
+	(6, 'Блоки вентиляционные', '/img/products/Ventblock7.png'),
+	(7, 'Евроблок', '/img/products/Euroblock6.png'),
+	(8, 'Плитка бетонная', '/img/products/plitka01_red8.png'),
+	(9, 'Бордюр', '/img/products/bordur3 11.png'),
+	(10, 'Щебень', '/img/products/scheb_gr_4(14).png');
 /*!40000 ALTER TABLE `blocks` ENABLE KEYS */;
 
 
@@ -74,7 +74,7 @@ CREATE TABLE IF NOT EXISTS `ordered_products` (
   PRIMARY KEY (`id`),
   KEY `FK_ordered_products_orders` (`order_id`),
   CONSTRAINT `FK_ordered_products_orders` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы euro-block.ordered_products: ~0 rows (приблизительно)
 DELETE FROM `ordered_products`;
@@ -88,13 +88,21 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `delivery_date` date DEFAULT NULL,
   `city` varchar(30) DEFAULT NULL,
+  `user_id` int(10) unsigned NOT NULL,
   `street` varchar(30) DEFAULT NULL,
+  `paid` float unsigned NOT NULL DEFAULT '0',
+  `blocks_shipped` int(10) unsigned DEFAULT NULL,
+  `blocks_left` int(10) unsigned DEFAULT NULL,
+  `pallets_shipped` int(10) unsigned DEFAULT NULL,
+  `pallets_left` int(10) unsigned DEFAULT NULL,
   `locality` varchar(30) DEFAULT NULL,
   `crane` tinyint(3) unsigned DEFAULT NULL,
   `payment_type` varchar(20) NOT NULL,
   `sum` float NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `FK_orders_users` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы euro-block.orders: ~0 rows (приблизительно)
 DELETE FROM `orders`;
@@ -173,7 +181,7 @@ DELETE FROM `users`;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`) VALUES
 	(1, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1470668698, 1, 'Admin', 'istrator', 'ADMIN', '0'),
-	(3, '127.0.0.1', 'geralt777', '$2y$08$CgJoPNEvk8EJLHT5EW.89OdGarn6zM8rUtLOBfjMT1ioiCnI0g.XG', NULL, 'geralt@from.rivia', NULL, NULL, NULL, NULL, 1470668133, 1470668686, 1, 'Geralt', 'Rivia', 'Kaer Morhen', '0988123123');
+	(3, '127.0.0.1', 'geralt777', '$2y$08$CgJoPNEvk8EJLHT5EW.89OdGarn6zM8rUtLOBfjMT1ioiCnI0g.XG', NULL, 'geralt@from.rivia', NULL, NULL, NULL, NULL, 1470668133, 1470677159, 1, 'Geralt', 'Rivia', 'Kaer Morhen', '0988123123');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 

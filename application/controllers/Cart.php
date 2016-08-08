@@ -39,6 +39,7 @@ class Cart extends CI_Controller {
         {
             $order_data = $this->generic->get_post('city, street, locality, crane, delivery_date, payment_type');
             $order_data['sum'] = $this->session->sum;
+            $order_data['user_id'] = $this->ion_auth->user()->row()->id;
             $order_id = $this->cart->order_data($order_data);
 
             $products = $this->session->products;
