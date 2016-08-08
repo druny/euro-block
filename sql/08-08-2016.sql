@@ -21,23 +21,24 @@ DROP TABLE IF EXISTS `blocks`;
 CREATE TABLE IF NOT EXISTS `blocks` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
+  `img` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы euro-block.blocks: ~10 rows (приблизительно)
 DELETE FROM `blocks`;
 /*!40000 ALTER TABLE `blocks` DISABLE KEYS */;
-INSERT INTO `blocks` (`id`, `name`) VALUES
-	(1, 'Блок стеновой'),
-	(2, 'Блок перегородочный '),
-	(3, 'Блок рядовой'),
-	(4, 'Блок угловой'),
-	(5, 'Блок половинчатый'),
-	(6, 'Блоки вентиляционные'),
-	(7, 'Евроблок'),
-	(8, 'Плитка бетонная'),
-	(9, 'Бордюр'),
-	(10, 'Щебень');
+INSERT INTO `blocks` (`id`, `name`, `img`) VALUES
+(1, 'Блок стеновой', '/img/products/block01.png'),
+(2, 'Блок перегородочный ', '/img/products/block02.png'),
+(3, 'Блок рядовой', '/img/products/block03.png'),
+(4, 'Блок угловой', '/img/products/block04.png'),
+(5, 'Блок половинчатый', '/img/products/block05.png'),
+(6, 'Блоки вентиляционные', '/img/products/Ventblock7.png'),
+(7, 'Евроблок', '/img/products/Euroblock6.png'),
+(8, 'Плитка бетонная', '/img/products/plitka01_red8.png'),
+(9, 'Бордюр', '/img/products/bordur3 11.png'),
+(10, 'Щебень', '/img/products/scheb_gr_4(14).png');
 /*!40000 ALTER TABLE `blocks` ENABLE KEYS */;
 
 
