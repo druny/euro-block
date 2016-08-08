@@ -5,7 +5,7 @@ $config = [
         [
             'field' => 'identity',
             'label' => 'Логин',
-            'rules' => 'required|is_unique[users.username]|min_length[6]|max_length[16]|alpha'
+            'rules' => 'required|is_unique[users.username]|regex_match[/^[a-z0-9]{6,16}$/]'
         ],
         [
             'field' => 'email',
@@ -21,6 +21,21 @@ $config = [
             'field' => 'password_confirm',
             'label' => 'Второе поле Пароль',
             'rules' => 'required|matches[password]'
+        ],
+        [
+            'field' => 'first_name',
+            'label' => 'Имя',
+            'rules' => 'required|alpha'
+        ],
+        [
+            'field' => 'last_name',
+            'label' => 'Фамилия',
+            'rules' => 'required|alpha'
+        ],
+        [
+            'field' => 'phone',
+            'label' => 'Телефон',
+            'rules' => 'required'
         ],
     ]
 ];

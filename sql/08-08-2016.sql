@@ -1,6 +1,6 @@
 -- --------------------------------------------------------
 -- Хост:                         127.0.0.1
--- Версия сервера:               5.5.48 - MySQL Community Server (GPL)
+-- Версия сервера:               5.6.31 - MySQL Community Server (GPL)
 -- ОС Сервера:                   Win32
 -- HeidiSQL Версия:              9.3.0.4984
 -- --------------------------------------------------------
@@ -75,13 +75,9 @@ CREATE TABLE IF NOT EXISTS `ordered_products` (
   CONSTRAINT `FK_ordered_products_orders` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы euro-block.ordered_products: ~3 rows (приблизительно)
+-- Дамп данных таблицы euro-block.ordered_products: ~0 rows (приблизительно)
 DELETE FROM `ordered_products`;
 /*!40000 ALTER TABLE `ordered_products` DISABLE KEYS */;
-INSERT INTO `ordered_products` (`id`, `order_id`, `product_id`, `name`, `price`, `block_name`, `amount`, `total_price`) VALUES
-	(4, 5, 1, 'андезитобазальтовый М50', 59, 'Блок стеновой', 123, 7257),
-	(5, 5, 2, 'андезитобазальтовый М75', 62, 'Блок стеновой', 123, 7626),
-	(6, 5, 3, 'андезитобазальтовый М100', 68, 'Блок стеновой', 123, 8364);
 /*!40000 ALTER TABLE `ordered_products` ENABLE KEYS */;
 
 
@@ -99,11 +95,9 @@ CREATE TABLE IF NOT EXISTS `orders` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы euro-block.orders: ~1 rows (приблизительно)
+-- Дамп данных таблицы euro-block.orders: ~0 rows (приблизительно)
 DELETE FROM `orders`;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` (`id`, `delivery_date`, `city`, `street`, `locality`, `crane`, `payment_type`, `sum`) VALUES
-	(5, '2016-08-03', 'awdawd', 'awd', 'awd', 0, 'requisites', 23247);
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 
 
@@ -171,14 +165,14 @@ CREATE TABLE IF NOT EXISTS `users` (
   `company` varchar(100) DEFAULT NULL,
   `phone` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы euro-block.users: ~2 rows (приблизительно)
 DELETE FROM `users`;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`) VALUES
-	(1, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1469276742, 1, 'Admin', 'istrator', 'ADMIN', '0'),
-	(2, '127.0.0.1', 'awdawdawd', '$2y$08$tl7gXte2VnDBcnMlVazJAed0aBlo/bAHh9ngpBvY3ctypQfQb6BIS', NULL, 'awdawd@awd.awd', NULL, NULL, NULL, NULL, 1469367237, 1469367457, 1, NULL, NULL, NULL, NULL);
+	(1, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1470668698, 1, 'Admin', 'istrator', 'ADMIN', '0'),
+	(3, '127.0.0.1', 'geralt777', '$2y$08$CgJoPNEvk8EJLHT5EW.89OdGarn6zM8rUtLOBfjMT1ioiCnI0g.XG', NULL, 'geralt@from.rivia', NULL, NULL, NULL, NULL, 1470668133, 1470668686, 1, 'Geralt', 'Rivia', 'Kaer Morhen', '0988123123');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 
@@ -194,7 +188,7 @@ CREATE TABLE IF NOT EXISTS `users_groups` (
   KEY `fk_users_groups_groups1_idx` (`group_id`),
   CONSTRAINT `fk_users_groups_groups1` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
   CONSTRAINT `fk_users_groups_users1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы euro-block.users_groups: ~3 rows (приблизительно)
 DELETE FROM `users_groups`;
@@ -202,7 +196,7 @@ DELETE FROM `users_groups`;
 INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
 	(1, 1, 1),
 	(2, 1, 2),
-	(3, 2, 2);
+	(4, 3, 2);
 /*!40000 ALTER TABLE `users_groups` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;

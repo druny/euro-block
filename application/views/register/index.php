@@ -13,6 +13,34 @@
             <input type="email" class="form-control" name="email" value="<?= set_value('email'); ?>" id="email">
         </div>
     </div>
+
+    <div class="form-group">
+        <label for="first_name"  class="col-sm-3 control-label registration-descr">Имя:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="first_name" value="<?= set_value('first_name'); ?>" id="first_name">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="last_name"  class="col-sm-3 control-label registration-descr">Фамилия:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="last_name" value="<?= set_value('last_name'); ?>" id="last_name">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="company"  class="col-sm-3 control-label registration-descr">Компания:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="company" value="<?= set_value('company'); ?>" id="company">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="phone"  class="col-sm-3 control-label registration-descr">Телефон:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="phone" value="<?= set_value('phone'); ?>" id="phone">
+        </div>
+    </div>
     
     <div class="form-group">
         <label for="password"  class="col-sm-3 control-label registration-descr">Пароль:</label>
