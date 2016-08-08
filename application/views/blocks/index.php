@@ -5,8 +5,7 @@
 			<div class="container">
 				<h1 class="product-title"><?= $block->name; ?></h1>
 				<div class="product-info col-lg-3 col-md-3 col-sm-6 col-xs-12">
-					<img src="/img/products/Ventblock7.png" alt="">
-					
+					<img src="<?= $block->img; ?>" alt="<?= $block->name; ?>">
 				</div>
 				<div class="product-info col-lg-3 col-md-3 col-sm-6 col-xs-6">
 					<table>
@@ -24,6 +23,7 @@
 							<td>
 								<p>средняя плотность:</p>
 							</td>
+
 						</tr>
 						<tr>
 							<td>

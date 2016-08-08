@@ -23,7 +23,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-							<a href="#!">
+							<a href="/">
 								<img class="logo" src="/img/logo-bg.png" alt="logo">
 							</a>
 							
@@ -64,8 +64,10 @@
 							</li>
 					        </ul>
 					   <li class="request nav navbar-nav ">
-					   		<img  class="trunk" src="/img/white-trunk.png" alt="">
-					        <a class="basket" href="#!">корзина <?= $cart_count; ?></a>
+					   		<a class="basket" href="/cart">
+					   			<img  class="trunk" src="/img/white-trunk.png" alt="">
+					   			корзина <?= $cart_count; ?>
+					   		</a>
 					   </li>
 					   <li class="request nav navbar-nav navbar-right">
 							<p class="phone">+7 (423) 230-12-18</p>

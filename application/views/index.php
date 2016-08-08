@@ -64,8 +64,10 @@
 							</li>
 					        </ul>
 					   <li class="request nav navbar-nav ">
-					   		<img  class="trunk" src="img/trunk.png" alt="">
-					        <a class="basket" href="/cart">корзина <?= $cart_count; ?></a>
+					   		<a class="basket" href="/cart">
+					   			<img  class="trunk" src="img/trunk.png" alt="">
+					        	корзина <?= $cart_count; ?>
+					        </a>
 					   </li>
 					   <li class="request nav navbar-nav navbar-right">
 							<p class="phone">+7 (423) 230-12-18</p>
@@ -294,129 +296,150 @@
 		<div class="items clearfix">
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
 				<img class="item-img" src="/img/products/block01.png" alt="">
-				<a href="#!" class="item-title">Блок стеновой m50/ М75/ m100</a>
+				<a href="/blocks/product/1" class="item-title">Блок стеновой m50/ М75/ m100</a>
 				<p class="item-description">Мркировка: КСР-ПР-ПС-39-50-F50-1450; ГОСТ 6133–99</p>
-				<button type="submit" class="item-button">
-					<img src="/img/black-bus.png" alt="">
-					<h3>Перейти</h3>
-				</button>
+				<a href="/blocks/product/1">
+					<button type="submit" class="item-button">
+						<img src="/img/black-bus.png" alt="">
+						<h3>Перейти</h3>
+					</button>
+				</a>
+				
 			</div>
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
 				<img class="item-img" src="/img/products/block02.png" alt="">
-				<a href="#!" class="item-title">Блок перегородочный</a>
+				<a href="/blocks/product/2" class="item-title">Блок перегородочный</a>
 				<p class="item-description">Мркировка: КПР-ПР-ПС-39-35-F50-1390</p>
-				<button type="submit" class="item-button">
-					<img src="/img/black-bus.png" alt="">
-					<h3>Перейти</h3>
-				</button>
+				<a href="/blocks/product/2">
+					<button type="submit" class="item-button">
+						<img src="/img/black-bus.png" alt="">
+						<h3>Перейти</h3>
+					</button>
+				</a>
 			</div>
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
 				<img class="item-img" src="/img/products/block03.png" alt="">
-				<a href="#!" class="item-title">Блок стеновой рядовой</a>
+				<a href="/blocks/product/3" class="item-title">Блок стеновой рядовой</a>
 				<p class="item-description">Мркировка: КСР-ПР ПС-ПСБ-39-35-F25-1000</p>
-				<button type="submit" class="item-button">
-					<img src="/img/black-bus.png" alt="">
-					<h3>Перейти</h3>
-				</button>
+				<a href="/blocks/product/3">
+					<button type="submit" class="item-button">
+						<img src="/img/black-bus.png" alt="">
+						<h3>Перейти</h3>
+					</button>
+				</a>
 			</div>
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
 				<img class="item-img" src="/img/products/block04.png" alt="">
-				<a href="#!" class="item-title">Блок стеновой угловой</a>
+				<a href="/blocks/product/4" class="item-title">Блок стеновой угловой</a>
 				<p class="item-description">Мркировка: КСР-УГ ПС-ПСБ-49,5-35-F25-1000</p>
-				<button type="submit" class="item-button">
-					<img src="/img/black-bus.png" alt="">
-					<h3>Перейти</h3>
-				</button>
+				<a href="/blocks/product/4">
+					<button type="submit" class="item-button">
+						<img src="/img/black-bus.png" alt="">
+						<h3>Перейти</h3>
+					</button>
+				</a>
 			</div>
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
 				<img class="item-img" src="/img/products/block05.png" alt="">
-				<a href="#!" class="item-title">Блок половинчатый перевязочный </a>
+				<a href="/blocks/product/5" class="item-title">Блок половинчатый перевязочный </a>
 				<p class="item-description">Мркировка: КСР-ПЗ ПС-ПСБ-19-35-F25-1000</p>
-				<button type="submit" class="item-button">
-					<img src="/img/black-bus.png" alt="">
-					<h3>Перейти</h3>
-				</button>
+				<a href="/blocks/product/5">
+					<button type="submit" class="item-button">
+						<img src="/img/black-bus.png" alt="">
+						<h3>Перейти</h3>
+					</button>
+				</a>
 			</div>
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
 				<img class="item-img" src="/img/products/Euroblock6.png" alt="">
-				<a href="#!" class="item-title">Евроблок стеновой</a>
+				<a href="/blocks/product/7" class="item-title">Евроблок стеновой</a>
 				<p class="item-description"></p>
-				<button type="submit" class="item-button">
-					<img src="/img/black-bus.png" alt="">
-					<h3>Перейти</h3>
-				</button>
+				<a href="/blocks/product/7">
+					<button type="submit" class="item-button">
+						<img src="/img/black-bus.png" alt="">
+						<h3>Перейти</h3>
+					</button>	
+				</a>
 			</div>
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
 				<img class="item-img" src="/img/products/Ventblock7.png" alt="">
-				<a href="#!" class="item-title">Блоки вентиляционные</a>
-			
-				<button type="submit" class="item-button">
-					<img src="/img/black-bus.png" alt="">
-					<h3>Перейти</h3>
-				</button>
+				<a href="/blocks/product/6" class="item-title">Блоки вентиляционные</a>
+				<a href="/blocks/product/6">
+					<button type="submit" class="item-button">
+						<img src="/img/black-bus.png" alt="">
+						<h3>Перейти</h3>
+					</button>
+				</a>
 			</div>
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
 				<img class="item-img" src="/img/products/plitka01_red8.png" alt="">
-				<a href="#!" class="item-title">Брусчатка фигурная "Волна"</a>
-				
-				<button type="submit" class="item-button">
-					<img src="/img/black-bus.png" alt="">
-					<h3>Перейти</h3>
-				</button>
+				<a href="/blocks/product/8" class="item-title">Брусчатка фигурная "Волна"</a>
+				<a href="/blocks/product/8">
+					<button type="submit" class="item-button">
+						<img src="/img/black-bus.png" alt="">
+						<h3>Перейти</h3>
+					</button>
+				</a>
 			</div>
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
 				<img class="item-img" src="/img/products/plitka02 9.png" alt="">
-				<a href="#!" class="item-title">Брусчатка прямоугольная</a>
-				
-				<button type="submit" class="item-button">
-					<img src="/img/black-bus.png" alt="">
-					<h3>Перейти</h3>
-				</button>
+				<a href="/blocks/product/8" class="item-title">Брусчатка прямоугольная</a>
+				<a href="/blocks/product/8">
+					<button type="submit" class="item-button">
+						<img src="/img/black-bus.png" alt="">
+						<h3>Перейти</h3>
+					</button>
+				</a>
 			</div>
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
 				<img class="item-img" src="/img/products/plitka_new2 (1)10.png" alt="">
-				<a href="#!" class="item-title">Брусчатка  «Старый город»</a>
-				
-				<button type="submit" class="item-button">
-					<img src="/img/black-bus.png" alt="">
-					<h3>Перейти</h3>
-				</button>
+				<a href="/blocks/product/8" class="item-title">Брусчатка  «Старый город»</a>
+				<a href="/blocks/product/8">
+					<button type="submit" class="item-button">
+						<img src="/img/black-bus.png" alt="">
+						<h3>Перейти</h3>
+					</button>
+				</a>
 			</div>
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
 				<img class="item-img" src="/img/products/bordur3 11.png" alt="">
-				<a href="#!" class="item-title">Бордюр тротуарный</a>
-				
-				<button type="submit" class="item-button">
-					<img src="/img/black-bus.png" alt="">
-					<h3>Перейти</h3>
-				</button>
+				<a href="/blocks/product/9" class="item-title">Бордюр тротуарный</a>
+				<a href="/blocks/product/9">
+					<button type="submit" class="item-button">
+						<img src="/img/black-bus.png" alt="">
+						<h3>Перейти</h3>
+					</button>
+				</a>
 			</div>
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
 				<img class="item-img" src="/img/products/bordur12.png" alt="">
-				<a href="#!" class="item-title">Бордюр дорожный</a>
-				
-				<button type="submit" class="item-button">
-					<img src="/img/black-bus.png" alt="">
-					<h3>Перейти</h3>
-				</button>
+				<a href="/blocks/product/9" class="item-title">Бордюр дорожный</a>
+				<a href="/blocks/product/9">
+					<button type="submit" class="item-button">
+						<img src="/img/black-bus.png" alt="">
+						<h3>Перейти</h3>
+					</button>
+				</a>
 			</div>
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
 				<img class="item-img" src="/img/products/plitka_120_120 13.png" alt="">
-				<a href="#!" class="item-title">Брусчатка "Квадрат"</a>
-				
-				<button type="submit" class="item-button">
-					<img src="/img/black-bus.png" alt="">
-					<h3>Перейти</h3>
-				</button>
+				<a href="/blocks/product/8" class="item-title">Брусчатка "Квадрат"</a>
+				<a href="/blocks/product/8">
+					<button type="submit" class="item-button">
+						<img src="/img/black-bus.png" alt="">
+						<h3>Перейти</h3>
+					</button>
+				</a>
 			</div>
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
 				<img class="item-img" src="/img/products/scheb_gr_4(14).png" alt="">
-				<a href="#!" class="item-title">Щебень</a>
-				
-				<button type="submit" class="item-button">
-					<img src="/img/black-bus.png" alt="">
-					<h3>Перейти</h3>
-				</button>
+				<a href="/blocks/product/10" class="item-title">Щебень</a>
+				<a href="/blocks/product/10">
+					<button type="submit" class="item-button">
+						<img src="/img/black-bus.png" alt="">
+						<h3>Перейти</h3>
+					</button>
+				</a>
 			</div>
 		</div>
 	</div>

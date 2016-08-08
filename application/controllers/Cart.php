@@ -5,9 +5,9 @@ class Cart extends CI_Controller {
 
     public function index()
     {
+         $count['cart_count'] = ( ! empty($this->session->products)) ? count($this->session->products) : 0;
         if ( ! empty($this->session->products)) 
         {
-            $count['cart_count'] = ( ! empty($this->session->products)) ? count($this->session->products) : 0;
             $data['products'] = $this->session->products;
             $data['sum'] = (isset($this->session->sum)) ? $this->session->sum : 0;
 
@@ -17,7 +17,10 @@ class Cart extends CI_Controller {
         }
         else
         {
-            echo "Корзина пуста";
+            $this->load->view('header', $count);
+            $this->load->view('cart/empty_basket');
+            $this->load->view('footer');
+
         }
     }
 
