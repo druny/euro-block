@@ -9,7 +9,7 @@ class Blocks_model extends CI_Model
 
     public function get_one($id)
     {
-        $this->db->select('products.id, products.name, products.price');
+        $this->db->select('products.*');
         $this->db->join('blocks', 'blocks.id = products.block_id', 'left');
         return $this->db->get_where('products', ['products.block_id' => $id])->result();
     }

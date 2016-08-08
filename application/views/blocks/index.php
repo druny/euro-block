@@ -1,16 +1,4 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
-<!-- <h1><?= $block->name; ?></h1>
-<form action="/blocks/cart_add" method="post">
-    TODO: Add other information about each block
-    <input type="hidden" name="block_id" value="<?= $block->id; ?>">
-    <?php foreach ($products as $product): ?>
-        <div class="form-group">
-            <label for="product_<?= $product->id; ?>"> <?= $product->name; ?></label>
-            <input type="number" min="0" name="product_<?= $product->id; ?>" id="product_<?= $product->id; ?>">
-        </div>
-    <?php endforeach; ?>
-    <input type="submit" value="В корзину">
-</form> -->
 
 
 <div class="product">
@@ -92,42 +80,42 @@
 						</tr>
 						<tr>
 							<td>
-								<p>~21 кг.</p>
+								<p><?= $product->weight; ?> мм.</p>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<p>1000 кг/м³</p>
+								<p><?= $product->average_density; ?> кг/м³</p>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<p>190×288×188 мм.</p>
+								<p><?= $product->size; ?> мм.</p>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<p>0,085 Вт/м0С</p>
+								<p><?= $product->transcalency; ?> Вт/м0С</p>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<p>8.79%</p>
+								<p><?= $product->water_absorption; ?>%</p>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<p>72</p>
+								<p><?= $product->pallets; ?></p>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<p>F35</p>
+								<p><?= $product->frost_resistance; ?></p>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<p>-</p>
+								<p><?= $product->fire_resistance; ?></p>
 							</td>
 						</tr>
 						<tr>
