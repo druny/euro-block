@@ -91,7 +91,7 @@
 					Напрямую с завода с доставкой на Ваш объект за 1 день</p>
 				</div>
 			</div>
-			<?php if ( ! $this->ion_auth->logged_in() || ! $this->ion_auth->is_admin()): ?>
+			<?php if ( ! $this->ion_auth->logged_in()): ?>
 				<div class="login col-lg-3 col-md-3 col-sm-12 col-xs-12">
 					<h2 class="login-topic">Войти в личный кабинет</h2>
 					<div class="login-errors"><?= $this->session->flashdata('login_errors'); ?></div>
