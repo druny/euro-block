@@ -194,45 +194,7 @@
 				<h4>На какое число</h4>
 				<input type="date" name="calendar" >
 			</div>
-			<div class="type-payment order-info col-lg-4 col-md-4 col-sm-4 col-xs-8">
-				<h4>Выбрать тип оплаты</h4>
-				<table>
-					<tr>
-						<td>
-							<a href="#!">
-								<img src="img/Векторный смарт-объект2.png" alt="">
-							</a>
-						</td>
-						<td>
-							<p>Получить счетна оплату</p>
-						</td>
-					</tr>
-				</table>
-				<table>	
-					<tr>
-						<td>
-							<a href="#!">
-								<img src="img/Векторный смарт-объект3.png" alt="">
-							</a>
-						</td>
-						<td>
-							<p>Реквизиты</p>
-						</td>
-					</tr>
-				</table>
-				<table>	
-					<tr>
-						<td>
-							<a href="#!">
-								<img src="img/Векторный смарт-объект4.png" alt="">
-							</a>
-						</td>
-						<td>
-							<p>Оплатить наличными</p>
-						</td>
-					</tr>
-				</table>
-			</div>
+			
 
 		</div>
 	</div>

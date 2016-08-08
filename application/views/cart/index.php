@@ -103,13 +103,15 @@
 								<input class="payment" type="radio" name="payment_type" id="without" value="score">
 							</td>
 							<td>
-								<a href="#!">
-									<img src="img/Векторный смарт-объект2.png" alt="">
-								</a>
+								<button type="button" data-toggle="modal" data-target="#scoreModal">
+										<a href="#!">
+											<img src="img/Векторный смарт-объект2.png" alt="">
+										</a>
+								</button>
 							</td>
-							<td>
-								<p>Получить счет на оплату</p>
-							</td>
+								<td>
+									<p>Получить счет на оплату</p>
+								</td>
 						</tr>
 					</table>
 					<table>	
@@ -118,9 +120,11 @@
 								<input class="payment" type="radio" name="payment_type" id="without" value="requisites">
 							</td>
 							<td>
-								<a href="#!">
-									<img src="img/Векторный смарт-объект3.png" alt="">
-								</a>
+								<button type="button" data-toggle="modal" data-target="#requisiteModal">
+									<a href="#!">
+										<img src="img/Векторный смарт-объект3.png" alt="">
+									</a>
+								</button>	
 							</td>
 							<td>
 								<p>Реквизиты</p>
@@ -133,9 +137,11 @@
 								<input class="payment" type="radio" name="payment_type" id="without" value="cash">
 							</td>
 							<td>
-								<a href="#!">
-									<img src="img/Векторный смарт-объект4.png" alt="">
-								</a>
+								<button type="button" data-toggle="modal" data-target="#cashModal">
+									<a href="#!">
+										<img src="img/Векторный смарт-объект4.png" alt="">
+									</a>
+								</button>
 							</td>
 							<td>
 								<p>Оплатить наличными</p>
@@ -290,3 +296,60 @@
 			<!-- End calculator -->
 		</div>
 	</div>
+
+
+	<!-- score modal -->
+<div class="modal fade" id="scoreModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Получить счет на оплату</h4>
+      </div>
+      <div class="modal-body">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, rem molestiae fugiat eum quod quos facilis quibusdam, facere ullam iusto officiis doloremque error atque perspiciatis! Nisi voluptatibus, dolor earum consequuntur!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+	<!-- requisite modal -->
+
+	<div class="modal fade" id="requisiteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Реквизиты</h4>
+      </div>
+      <div class="modal-body">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, rem molestiae fugiat eum quod quos facilis quibusdam, facere ullam iusto officiis doloremque error atque perspiciatis! Nisi voluptatibus, dolor earum consequuntur!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+	<!-- cash modal -->
+
+	<div class="modal fade" id="cashModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Оплата наличными</h4>
+      </div>
+      <div class="modal-body">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, rem molestiae fugiat eum quod quos facilis quibusdam, facere ullam iusto officiis doloremque error atque perspiciatis! Nisi voluptatibus, dolor earum consequuntur!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
