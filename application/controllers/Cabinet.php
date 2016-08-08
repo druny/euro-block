@@ -16,9 +16,17 @@ class Cabinet extends CI_Controller
     public function all_orders()
     {
     	/*I manager*/
+    	$this->load->model('Cabinet_model', 'cabinet');
+    	$data['orders'] = $this->cabinet->get_all_orders();
     	$count['cart_count'] = ( ! empty($this->session->products)) ? count($this->session->products) : 0;
+    	if(empty($data['orders'])) 
+    	{
+    		echo "Пусто";
+    	}
+
     	$this->load->view('header', $count);
-    	$this->load->view('cabinet/all_orders');
+    	$this->load->view('cabinet/all_orders', $data);
     	$this->load->view('footer');
+
     }
 }

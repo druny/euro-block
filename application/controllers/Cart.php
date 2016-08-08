@@ -43,14 +43,18 @@ class Cart extends CI_Controller {
             $order_id = $this->cart->order_data($order_data);
 
             $products = $this->session->products;
-
             foreach ($products as $key => &$value) {
                 $value['product_id'] = $value['id'];
                 $value['order_id'] = $order_id;
+
+                $data = [
+                    'order_id' => $value['order_id'],
+                    'status_id' => '1'
+                ];
+
                 unset($value['id']);
             }
-
-            if ($this->cart->order_products($products))
+            if ($this->cart->order_products($products) && $this->cart->order_status($data))
             {
                 $this->clear_data();
             }

@@ -13,6 +13,11 @@ class Cart_model extends CI_Model {
     {
         return $this->db->insert_batch('ordered_products', $products);
     }
+    
+    public function order_status($data)
+    {
+    	return $this->db->insert('ordered_status', $data);
+    }
 
     
 }

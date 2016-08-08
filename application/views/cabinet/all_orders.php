@@ -1,19 +1,23 @@
 <div class="container">
 	<div class="order-info  flow  col-xs-12">
 				<h4>Все заказы</h4>
+				<?php foreach($orders as $order): ?>
 				<table class="table-order orders-space">
 					<tr>
 						<td>
-							<p>Тут</p>
+							<p>id: <?= $order['id'] ?></p>
 						</td>
 						<td>
-							<p>будут </p>
+							<p><?= $order['block_name']; ?> <?= $order['name']; ?></p>
 						</td>
 						<td>
-							<p> все заказы </p>
+							<p>Компания: <?= $order['company']; ?> </p>
 						</td>
 						<td>
-							<p>с инфой</p>
+							<p>Сумма: <?= $order['sum'] ?></p>
+						</td>
+						<td>
+							<p>Кол-во: <?= $order['amount']; ?></p>
 						</td>
 						<td>
 							<a href="#!">
@@ -24,30 +28,8 @@
 						</td>
 					</tr>
 				</table>
-
-				<table class="table-order orders-space">
-					<tr>
-						<td>
-							<p>Тут</p>
-						</td>
-						<td>
-							<p>будут </p>
-						</td>
-						<td>
-							<p> все заказы </p>
-						</td>
-						<td>
-							<p>с инфой</p>
-						</td>
-						<td>
-							<a href="#!">
-								<button class="btn btn-warning">
-									Взять задание
-								</button>
-							</a>
-						</td>
-					</tr>
-				</table>
+				<?php endforeach; ?>
+				
 
 			</div>
 			<div class="clearfix"></div>
