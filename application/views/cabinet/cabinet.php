@@ -200,7 +200,7 @@
 	</div>
 
 	<div class="calculator">
-	<img class="divide" src="img/t_1.png" alt="">
+	<img class="divide" src="/img/t_1.png" alt="">
 		<div class="container">
 			<div class="title-topic title-width">
 				<h1 class="title">Рассчитать стоимость</h1>
@@ -322,7 +322,7 @@
 				</div>
 				<div class="calc_i">
 					<button id="calc_i_sb" class="calc_i_sb">
-						<img src="img/calc.png" alt="">
+						<img src="/img/calc.png" alt="">
 						<h3>Рассчитать</h3>
 					</button>
 				</div>
