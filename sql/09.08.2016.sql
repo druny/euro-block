@@ -11,13 +11,11 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 -- Dumping database structure for euro-block
-DROP DATABASE IF EXISTS `euro-block`;
 CREATE DATABASE IF NOT EXISTS `euro-block` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `euro-block`;
 
 
 -- Dumping structure for table euro-block.blocks
-DROP TABLE IF EXISTS `blocks`;
 CREATE TABLE IF NOT EXISTS `blocks` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
@@ -43,7 +41,6 @@ INSERT INTO `blocks` (`id`, `name`, `img`) VALUES
 
 
 -- Dumping structure for table euro-block.groups
-DROP TABLE IF EXISTS `groups`;
 CREATE TABLE IF NOT EXISTS `groups` (
   `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(20) NOT NULL,
@@ -61,7 +58,6 @@ INSERT INTO `groups` (`id`, `name`, `description`) VALUES
 
 
 -- Dumping structure for table euro-block.ordered_products
-DROP TABLE IF EXISTS `ordered_products`;
 CREATE TABLE IF NOT EXISTS `ordered_products` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(10) unsigned DEFAULT NULL,
@@ -108,7 +104,6 @@ INSERT INTO `ordered_products` (`id`, `order_id`, `product_id`, `name`, `price`,
 
 
 -- Dumping structure for table euro-block.ordered_status
-DROP TABLE IF EXISTS `ordered_status`;
 CREATE TABLE IF NOT EXISTS `ordered_status` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -128,12 +123,22 @@ INSERT INTO `ordered_status` (`id`, `order_id`, `status_id`) VALUES
 	(5, 21, 1),
 	(6, 20, 1),
 	(7, 19, 1),
-	(8, 26, 1);
+	(8, 26, 1),
+	(9, 18, 1),
+	(10, 17, 1),
+	(11, 16, 1),
+	(12, 15, 1),
+	(13, 14, 1),
+	(14, 13, 1),
+	(15, 12, 1),
+	(16, 11, 1),
+	(17, 10, 1),
+	(18, 9, 1),
+	(19, 8, 1);
 /*!40000 ALTER TABLE `ordered_status` ENABLE KEYS */;
 
 
 -- Dumping structure for table euro-block.orders
-DROP TABLE IF EXISTS `orders`;
 CREATE TABLE IF NOT EXISTS `orders` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `delivery_date` date DEFAULT NULL,
@@ -182,7 +187,6 @@ INSERT INTO `orders` (`id`, `delivery_date`, `city`, `user_id`, `street`, `paid`
 
 
 -- Dumping structure for table euro-block.products
-DROP TABLE IF EXISTS `products`;
 CREATE TABLE IF NOT EXISTS `products` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `block_id` int(10) unsigned NOT NULL,
@@ -225,7 +229,6 @@ INSERT INTO `products` (`id`, `block_id`, `name`, `price`, `weight`, `average_de
 
 
 -- Dumping structure for table euro-block.status
-DROP TABLE IF EXISTS `status`;
 CREATE TABLE IF NOT EXISTS `status` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `status` varchar(50) DEFAULT NULL,
@@ -243,7 +246,6 @@ INSERT INTO `status` (`id`, `status`) VALUES
 
 
 -- Dumping structure for table euro-block.users
-DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `ip_address` varchar(45) NOT NULL,
@@ -275,7 +277,6 @@ INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`
 
 
 -- Dumping structure for table euro-block.users_groups
-DROP TABLE IF EXISTS `users_groups`;
 CREATE TABLE IF NOT EXISTS `users_groups` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` int(11) unsigned NOT NULL,
