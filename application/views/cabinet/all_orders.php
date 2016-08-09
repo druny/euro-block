@@ -33,4 +33,5 @@
 
 			</div>
 			<div class="clearfix"></div>
+			<?=$this->pagination->create_links(); ?>
 </div>

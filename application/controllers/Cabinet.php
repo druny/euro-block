@@ -17,7 +17,19 @@ class Cabinet extends CI_Controller
     {
     	/*I manager*/
     	$this->load->model('Cabinet_model', 'cabinet');
-    	$data['orders'] = $this->cabinet->get_all_orders();
+    	$this->load->library('pagination');
+
+    	$page = $this->uri->segment(3);
+    	$config = [
+    		'base_url' => base_url() . '/cabinet/all_orders',
+    		'total_rows' => $this->db->count_all('orders'),
+    		'per_page' => '10',
+    		'use_page_numbers' => TRUE
+    	];
+    	$this->pagination->initialize($config);
+
+    	$data['orders'] = $this->cabinet->get_all_orders($config['per_page'],   $page);
+
     	$count['cart_count'] = ( ! empty($this->session->products)) ? count($this->session->products) : 0;
     	if(empty($data['orders'])) 
     	{
