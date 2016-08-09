@@ -1,6 +1,8 @@
 <div class="container">
 	<div class="order-info  flow  col-xs-12">
-				<h4>Все заказы</h4>
+				<h4><a href="/cabinet/all_orders">Все заказы</a></h4>
+				<h4><a href="/cabinet/my_orders">Мои заказы</a></h4>
+				<h4><a href="/cabinet/archive">Архив заказов</a></h4>
 				<?php foreach($orders as $order): ?>
 				<table class="table-order orders-space">
 					<tr>
@@ -8,22 +10,22 @@
 							<p>id: <?= $order['id'] ?></p>
 						</td>
 						<td>
-							<p><?= $order['block_name']; ?> <?= $order['name']; ?></p>
+							<p><?= $order['first_name'] . ' ' . $order['last_name']; ?></p>
 						</td>
 						<td>
-							<p>Компания: <?= $order['company']; ?> </p>
+							<p>Город: <?= $order['city']; ?> </p>
 						</td>
 						<td>
 							<p>Сумма: <?= $order['sum'] ?></p>
 						</td>
 						<td>
-							<p>Кол-во: <?= $order['amount']; ?></p>
+							<p>Время заказа: <?= $order['order_date'] ?></p>
 						</td>
 						<td>
 							<a href="#!">
-								<button class="btn btn-warning">
+								<a href="/cabinet/take_task/<?= $order['id']; ?>" class="btn btn-warning">
 									Взять задание
-								</button>
+								</a>
 							</a>
 						</td>
 					</tr>

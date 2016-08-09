@@ -40,6 +40,9 @@ class Cart extends CI_Controller {
             $order_data = $this->generic->get_post('city, street, locality, crane, delivery_date, payment_type');
             $order_data['sum'] = $this->session->sum;
             $order_data['user_id'] = $this->ion_auth->user()->row()->id;
+            $order_data['is_active'] = 1;
+            $order_data['is_done'] = 0;
+            $order_data['order_date'] = date('Y:m:d H:i:s');
             $order_id = $this->cart->order_data($order_data);
 
             $products = $this->session->products;
@@ -47,14 +50,10 @@ class Cart extends CI_Controller {
                 $value['product_id'] = $value['id'];
                 $value['order_id'] = $order_id;
 
-                $data = [
-                    'order_id' => $value['order_id'],
-                    'status_id' => '1'
-                ];
-
                 unset($value['id']);
             }
-            if ($this->cart->order_products($products) && $this->cart->order_status($data))
+
+            if ($this->cart->order_products($products))
             {
                 $this->clear_data();
             }
