@@ -88,8 +88,17 @@ class Cabinet_model extends CI_Model
 
 	public function get_one_order($id)
 	{
+		$this->db->select('
+			orders.*,
+			users.first_name,
+			users.last_name,
+			users.company,
+			users.phone,
+			users.email,
+		');
+		$this->db->join('users', 'users.id = orders.user_id');
 		$this->db->limit(1);
-		return $this->db->get_where('orders', ['id' => $id])->row();
+		return $this->db->get_where('orders', ['orders.id' => $id])->row();
 	}
 
 	public function get_products_by_order_id($id)

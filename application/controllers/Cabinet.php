@@ -90,7 +90,9 @@ class Cabinet extends CI_Controller
 
     public function task($id)
     {
+        echo "<pre>";
         $data['order'] = $this->cabinet->get_one_order($id);
+        var_dump($data['order']);die;
         $data['products'] = $this->cabinet->get_products_by_order_id($id);
         $data['username'] = $this->ion_auth->user()->row()->username;
         $count['cart_count'] = ( ! empty($this->session->products)) ? count($this->session->products) : 0;
