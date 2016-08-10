@@ -85,4 +85,15 @@ class Cabinet_model extends CI_Model
 		$this->db->where($where_clause);
 		return $this->db->count_all_results('orders');
 	}
+
+	public function get_one_order($id)
+	{
+		$this->db->limit(1);
+		return $this->db->get_where('orders', ['id' => $id])->row();
+	}
+
+	public function get_products_by_order_id($id)
+	{
+		return $this->db->get_where('ordered_products', ['order_id' => $id])->result();
+	}
 }

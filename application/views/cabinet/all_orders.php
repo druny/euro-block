@@ -22,11 +22,9 @@
 							<p>Время заказа: <?= $order['order_date'] ?></p>
 						</td>
 						<td>
-							<a href="#!">
-								<a href="/cabinet/take_task/<?= $order['id']; ?>" class="btn btn-warning">
-									Взять задание
+								<a href="/cabinet/task/<?= $order['id']; ?>" class="btn btn-warning">
+									Открыть
 								</a>
-							</a>
 						</td>
 					</tr>
 				</table>

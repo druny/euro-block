@@ -6,7 +6,7 @@
 			<div class="personal-info current-order-bg col-lg-3 col-md-3 col-sm-12 col-xs-12">
 				<h4>Личный кабинет пользователя:</h4>
 				<button class="exit col-lg-3 col-md-3 col-sm-12 col-xs-12" href="#!" type="submit"><a class="exit-text" >Выход</a></button>
-				<p class="name col-lg-9 col-md-9 col-sm-12 col-xs-12">Имя пользователя</p>
+				<p class="name col-lg-9 col-md-9 col-sm-12 col-xs-12"><a href="/cabinet/all_orders"><?= $username; ?></a></p>
 			</div>
 
 			<div class="order-info col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -14,29 +14,15 @@
 				<table class="table-order">
 					<tr>
 						<td>
-							<p>Заказ №11102</p>
+							<p>Заказ №<?= $order->id; ?></p>
 						</td>
-						<td><p>28.05.2016</p></td>
-					</tr>
-					<tr>
-						<td>
-							<p>Блок м75</p>
-						</td>
-						<td>
-							<p>кол-во:</p>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<p>Стоимость:</p>
-						</td>
-						<td><p>100,000 р</p></td>
+						<td><p><?= $order->order_date; ?></p></td>
 					</tr>
 					<tr>
 						<td>
 							<p>оплаченно:</p>
 						</td>
-						<td></td>
+						<td><?= $order->paid; ?></td>
 					</tr>
 				</table>
 			</div>
@@ -45,35 +31,15 @@
 				<table class="table-order">
 					<tr>
 						<td>
-							<p>Заказ №11102</p>
-						</td>
-						<td><p>28.05.2016</p></td>
-					</tr>
-					<tr>
-						<td>
-							<p>Блок м75</p>
-						</td>
-						<td>
-							<p>кол-во:</p>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<p>Стоимость:</p>
-						</td>
-						<td><p>100,000р</p></td>
-					</tr>
-					<tr>
-						<td>
 							<p>отгруженно:</p>
 						</td>
-						<td></td>
+						<td><?= $order->blocks_shipped; ?></td>
 					</tr>
 					<tr>
 						<td>
 							<p>Осталось:</p>
 						</td>
-						<td></td>
+						<td><?= $order->blocks_left; ?></td>
 					</tr>
 				</table>
 			</div>
@@ -82,52 +48,34 @@
 				<table class="table-order">
 					<tr>
 						<td>
-							<p>Заказ №11102</p>
-						</td>
-						<td><p>28.05.2016</p></td>
-					</tr>
-					<tr>
-						<td>
-							<p>Блок м75</p>
-						</td>
-						<td>
-							<p>кол-во:</p>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<p>Стоимость:</p>
-						</td>
-						<td><p>100,000 р</p></td>
-					</tr>
-					<tr>
-						<td>
 							<p>отгруженно:</p>
 						</td>
-						<td></td>
+						<td><?= $order->pallets_shipped; ?></td>
 					</tr>
 					<tr>
 					<td>
 						<p>Осталось:</p>
 					</td>
-					<td></td>
+					<td><?= $order->pallets_left; ?></td>
 				</table>
 			</div>
 
 			<div class="order-info flow col-lg-10 col-md-9 col-sm-8 col-xs-12">
 				<h4>Текущий заказ</h4>
 				<table class="table-order">
-					<tr>
-						<td>
-							<p>Блок м75</p>
-						</td>
-						<td>
-							<p>кол-во: </p>
-						</td>
-						<td>
-							<p>Стоимость: 100,000 р</p>
-						</td>
-					</tr>
+					<?php foreach ($products as $product): ?>
+						<tr>
+							<td>
+								<p><?= $product->block_name . ': ' . $product->name; ?></p>
+							</td>
+							<td>
+								<p>кол-во: <?= $product->amount; ?></p>
+							</td>
+							<td>
+								<p>Стоимость: <?= $product->total_price; ?> р</p>
+							</td>
+						</tr>
+					<?php endforeach; ?>
 				</table>
 			</div>
 			<div class="order-info col-lg-2 col-md-3 col-sm-4 col-xs-12">
@@ -135,7 +83,7 @@
 				<table class="table-order">
 					<tr>
 						<td>
-							<p>100,000 Р</p>
+							<p><?= $order->sum; ?> Р</p>
 						</td>
 					</tr>
 				</table>
@@ -149,7 +97,7 @@
 							<p>Город:</p>
 						</td>
 						<td>
-							<p></p>
+							<p><?= $order->city; ?></p>
 						</td>
 					</tr>
 				</table>
@@ -159,7 +107,7 @@
 							<p>Улица:</p>
 						</td>
 						<td>
-							<p></p>
+							<p><?= $order->street; ?></p>
 						</td>
 					</tr>
 				</table>
@@ -169,20 +117,20 @@
 							<p>Населенный пункт</p>
 						</td>
 						<td>
-							<p></p>
+							<p><?= $order->locality; ?></p>
 						</td>
 					</tr>
 				</table>
 				<table class="table-order">
 					<tr>
 						<td>
-							<input type="radio">
+							<input type="radio" name="crane" <?php if ($order->crane == 1) echo "checked"; ?>>
 						</td>
 						<td>
 							<p>С краном</p>
 						</td>
 						<td>
-							<input type="radio">
+							<input type="radio" name="crane" <?php if ($order->crane == 0) echo "checked"; ?>>
 						</td>
 						<td>
 							<p>Без крана</p>
@@ -192,7 +140,7 @@
 			</div>
 			<div class="order-info col-lg-4 col-md-4 col-sm-4 col-xs-4">
 				<h4>На какое число</h4>
-				<input type="date" name="calendar" >
+				<input type="date" name="calendar" value="<?= $order->delivery_date; ?>">
 			</div>
 			
 
