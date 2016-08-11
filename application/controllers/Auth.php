@@ -818,4 +818,14 @@ class Auth extends CI_Controller {
 		if ($returnhtml) return $view_html;//This will return html on 3rd argument being true
 	}
 
+	public function permission() 
+	{
+		$count['cart_count'] = ( ! empty($this->session->products)) ? count($this->session->products) : 0;
+
+
+		$this->load->view('header', $count);
+		$this->load->view('permission');
+		$this->load->view('footer');
+	}
+
 }

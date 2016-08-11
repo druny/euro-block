@@ -103,7 +103,7 @@
 					</form>
 				</div>
 			<?php else: ?>
-				<div class="personal-info current-order-bg col-lg-3 col-md-3 col-sm-12 col-xs-12">
+				<div class="personal-info login current-order-bg col-lg-3 col-md-3 col-sm-12 col-xs-12">
 					<h4>Личный кабинет пользователя:</h4> 
 					<button class="exit col-lg-3 col-md-3 col-sm-12 col-xs-12" type="submit"><a href="/auth/logout" class="exit-text" >Выход</a></button> 
 					<p class="name col-lg-9 col-md-9 col-sm-12 col-xs-12"><a href="/cabinet"><?= $this->ion_auth->user()->row()->username; ?></a></p> 
