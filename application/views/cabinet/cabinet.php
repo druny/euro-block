@@ -15,6 +15,7 @@
 					<tr>
 						<td>
 							<p>Заказ №<?= $order->id; ?></p>
+							<input type="hidden" id="task_id" name="task_id" value="<?= $order->id; ?>">
 						</td>
 						<td><p><?= $order->order_date; ?></p></td>
 					</tr>
@@ -22,7 +23,11 @@
 						<td>
 							<p>оплаченно:</p>
 						</td>
-						<td><?= $order->paid; ?></td>
+						<td>
+							<?php if ($is_taken && !$order->is_done): ?>
+								<input type="number" name="paid" id="paid" value="<?= $order->paid; ?>">
+							<?php else: echo $order->paid; endif; ?>
+						</td>
 					</tr>
 				</table>
 			</div>
@@ -33,13 +38,21 @@
 						<td>
 							<p>отгруженно:</p>
 						</td>
-						<td><?= $order->blocks_shipped; ?></td>
+						<td>
+							<?php if ($is_taken && !$order->is_done): ?>
+								<input type="number" name="blocks_shipped" id="blocks_shipped" value="<?= $order->blocks_shipped; ?>">
+							<?php else: echo $order->blocks_shipped; endif; ?>
+						</td>
 					</tr>
 					<tr>
 						<td>
 							<p>Осталось:</p>
 						</td>
-						<td><?= $order->blocks_left; ?></td>
+						<td>
+							<?php if ($is_taken && !$order->is_done): ?>
+								<input type="number" name="blocks_left" id="blocks_left" value="<?= $order->blocks_left; ?>">
+							<?php else: echo $order->blocks_left; endif; ?>
+						</td>
 					</tr>
 				</table>
 			</div>
@@ -50,15 +63,30 @@
 						<td>
 							<p>отгруженно:</p>
 						</td>
-						<td><?= $order->pallets_shipped; ?></td>
+						<td>
+							<?php if ($is_taken && !$order->is_done): ?>
+								<input type="number" name="pallets_shipped" id="pallets_shipped" value="<?= $order->pallets_shipped; ?>">
+							<?php else: echo $order->pallets_shipped; endif; ?>
+						</td>
 					</tr>
 					<tr>
 					<td>
 						<p>Осталось:</p>
 					</td>
-					<td><?= $order->pallets_left; ?></td>
+					<td>
+						<?php if ($is_taken && !$order->is_done): ?>
+							<input type="number" name="pallets_left" id="pallets_left" value="<?= $order->pallets_left; ?>">
+						<?php else: echo $order->pallets_left; endif; ?>
+					</td>
 				</table>
 			</div>
+			<?php if ($is_taken && !$order->is_done): ?>
+				<div class="col-xs-12 ">
+					<div class="text-center">
+						<button type="button" id="change-data">OK</button>
+					</div>
+				</div>
+			<?php endif; ?>
 
 			<div class="order-info flow col-lg-10 col-md-9 col-sm-8 col-xs-12">
 				<h4>Текущий заказ</h4>
@@ -124,13 +152,13 @@
 				<table class="table-order">
 					<tr>
 						<td>
-							<input type="radio" name="crane" <?php if ($order->crane == 1) echo "checked"; ?>>
+							<input type="radio" name="crane" <?php if ($order->crane == 1) echo "checked"; ?> disabled>
 						</td>
 						<td>
 							<p>С краном</p>
 						</td>
 						<td>
-							<input type="radio" name="crane" <?php if ($order->crane == 0) echo "checked"; ?>>
+							<input type="radio" name="crane" <?php if ($order->crane == 0) echo "checked"; ?> disabled>
 						</td>
 						<td>
 							<p>Без крана</p>
@@ -140,9 +168,17 @@
 			</div>
 			<div class="order-info col-lg-4 col-md-4 col-sm-4 col-xs-4">
 				<h4>На какое число</h4>
-				<input type="date" name="calendar" value="<?= $order->delivery_date; ?>">
+				<input type="date" name="calendar" value="<?= $order->delivery_date; ?>" disabled>
+				<div class="text-center" style="">
+					<?php if ($is_taken && !$order->is_done): ?>
+						<a href="/cabinet/complete_task/<?= $order->id; ?>" class="btn">Завершить заказ</a>
+					<?php elseif(!$is_taken && !$order->is_done): ?>
+						<a href="/cabinet/take_task/<?= $order->id; ?>" class="btn">Взять заказ</a>
+					<?php elseif($order->is_done): ?>
+						Задание уже выполнено.
+					<?php endif; ?>
+				</div>
 			</div>
-			
 
 		</div>
 	</div>
