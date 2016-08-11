@@ -211,10 +211,18 @@ class Cabinet_model extends CI_Model
 	public function manager_id_task($id)
 	{
 		return $this->db->select('manager_id')
-						->where('id', $id)
 						->limit(1)
 						->get_where('orders', ['id' => $id])
 						->row();
 	}
+
+	public function user_id_task($id)
+	{
+		return $this->db->select('user_id')
+						->limit(1)
+						->get_where('orders', ['id' => $id])
+						->row();
+	}
+
 
 }

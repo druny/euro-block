@@ -822,7 +822,6 @@ class Auth extends CI_Controller {
 	{
 		$count['cart_count'] = ( ! empty($this->session->products)) ? count($this->session->products) : 0;
 
-
 		$this->load->view('header', $count);
 		$this->load->view('permission');
 		$this->load->view('footer');

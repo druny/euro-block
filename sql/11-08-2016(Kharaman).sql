@@ -1,6 +1,6 @@
 -- --------------------------------------------------------
 -- Хост:                         127.0.0.1
--- Версия сервера:               5.6.31 - MySQL Community Server (GPL)
+-- Версия сервера:               5.5.48 - MySQL Community Server (GPL)
 -- ОС Сервера:                   Win32
 -- HeidiSQL Версия:              9.3.0.4984
 -- --------------------------------------------------------
@@ -74,7 +74,7 @@ CREATE TABLE IF NOT EXISTS `ordered_products` (
   PRIMARY KEY (`id`),
   KEY `FK_ordered_products_orders` (`order_id`),
   CONSTRAINT `FK_ordered_products_orders` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы euro-block.ordered_products: ~27 rows (приблизительно)
 DELETE FROM `ordered_products`;
@@ -106,7 +106,13 @@ INSERT INTO `ordered_products` (`id`, `order_id`, `product_id`, `name`, `price`,
 	(31, 26, 3, 'андезитобазальтовый М100', 68, 'Блок стеновой', 32, 2176),
 	(32, 27, 1, 'андезитобазальтовый М50', 59, 'Блок стеновой', 12, 708),
 	(33, 27, 2, 'андезитобазальтовый М75', 62, 'Блок стеновой', 312, 19344),
-	(34, 27, 3, 'андезитобазальтовый М100', 68, 'Блок стеновой', 12, 816);
+	(34, 27, 3, 'андезитобазальтовый М100', 68, 'Блок стеновой', 12, 816),
+	(35, 28, 1, 'андезитобазальтовый М50', 59, 'Блок стеновой', 12, 708),
+	(36, 28, 2, 'андезитобазальтовый М75', 62, 'Блок стеновой', 12, 744),
+	(37, 28, 3, 'андезитобазальтовый М100', 68, 'Блок стеновой', 23, 1564),
+	(38, 29, 1, 'андезитобазальтовый М50', 59, 'Блок стеновой', 123, 7257),
+	(39, 29, 2, 'андезитобазальтовый М75', 62, 'Блок стеновой', 1, 62),
+	(40, 29, 3, 'андезитобазальтовый М100', 68, 'Блок стеновой', 1, 68);
 /*!40000 ALTER TABLE `ordered_products` ENABLE KEYS */;
 
 
@@ -136,7 +142,7 @@ CREATE TABLE IF NOT EXISTS `orders` (
   KEY `FK_orders_users_2` (`manager_id`),
   CONSTRAINT `FK_orders_users` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
   CONSTRAINT `FK_orders_users_2` FOREIGN KEY (`manager_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы euro-block.orders: ~21 rows (приблизительно)
 DELETE FROM `orders`;
@@ -162,7 +168,9 @@ INSERT INTO `orders` (`id`, `delivery_date`, `city`, `user_id`, `street`, `paid`
 	(24, '2016-09-03', 'q', 1, 'q', 0, NULL, NULL, NULL, NULL, 'q', 0, 'requisites', 12177, 1, 0, NULL, '0000-00-00 00:00:00'),
 	(25, '2016-09-03', 'q', 1, 'q', 0, NULL, NULL, NULL, NULL, 'q', 0, 'requisites', 12177, 1, 0, NULL, '0000-00-00 00:00:00'),
 	(26, '2016-08-06', 'Москва', 1, 'Кирова', 0, NULL, NULL, NULL, NULL, 'Москва', 1, 'score', 2176, 1, 0, NULL, '2016-12-16 00:00:00'),
-	(27, '2016-08-18', 'Ривия', 1, 'Советская', 2, 2, 4, 3, 4, 'Миерин', 1, 'score', 20868, 0, 1, 1, '2016-08-09 22:55:55');
+	(27, '2016-08-18', 'Ривия', 1, 'Советская', 2, 2, 4, 3, 4, 'Миерин', 1, 'score', 20868, 0, 1, 1, '2016-08-09 22:55:55'),
+	(28, '2016-08-03', 'Мариуполь', 3, 'красивых молдав', 0, NULL, NULL, NULL, NULL, 'чернорусь', 0, 'score', 3016, 1, 0, NULL, '2016-08-11 22:15:44'),
+	(29, '2016-08-11', 'Мариуполь', 3, 'красивых молдавских партизан', 0, NULL, NULL, NULL, NULL, 'чернорусь', 0, 'requisites', 7387, 0, 1, 1, '2016-08-11 22:47:02');
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 
 
@@ -254,8 +262,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 DELETE FROM `users`;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`) VALUES
-	(1, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1470773474, 1, 'Admin', 'istrator', 'ADMIN', '0'),
-	(3, '127.0.0.1', 'geralt777', '$2y$08$CgJoPNEvk8EJLHT5EW.89OdGarn6zM8rUtLOBfjMT1ioiCnI0g.XG', NULL, 'geralt@from.rivia', NULL, NULL, NULL, NULL, 1470668133, 1470677159, 1, 'Geralt', 'Rivia', 'Kaer Morhen', '0988123123');
+	(1, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1470944884, 1, 'Admin', 'istrator', 'ADMIN', '0'),
+	(3, '127.0.0.1', 'geralt777', '$2y$08$CgJoPNEvk8EJLHT5EW.89OdGarn6zM8rUtLOBfjMT1ioiCnI0g.XG', NULL, 'geralt@from.rivia', NULL, NULL, NULL, NULL, 1470668133, 1470947096, 1, 'Geralt', 'Rivia', 'Kaer Morhen', '0988123123');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 

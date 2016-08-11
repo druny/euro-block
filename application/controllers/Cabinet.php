@@ -13,7 +13,7 @@ class Cabinet extends CI_Controller
         parent::__construct();
         $this->load->model('Cabinet_model', 'cabinet');
         $this->load->library('pagination');
-        $this->user_id = $this->ion_auth->user()->row()->id;
+        $this->user_id = ($this->ion_auth->logged_in()) ? $this->ion_auth->user()->row()->id : FALSE;
     }
 
     public function index()
@@ -57,6 +57,11 @@ class Cabinet extends CI_Controller
             $this->load->view('cabinet/all_orders', $data);
             $this->load->view('footer');
         }
+        else
+        {
+            redirect('/auth/permission');
+            die;
+        }
 
     }
 
@@ -87,6 +92,11 @@ class Cabinet extends CI_Controller
             $this->load->view('header', $count);
             $this->load->view('cabinet/all_orders', $data);
             $this->load->view('footer');
+        }
+        else
+        {
+            redirect('/auth/permission');
+            die;
         }
     }
 
@@ -131,6 +141,11 @@ class Cabinet extends CI_Controller
         	$this->load->view('cabinet/all_orders', $data);
         	$this->load->view('footer');
         }
+        else
+        {
+            redirect('/auth/permission');
+            die;
+        }
     }
 
     public function take_task($task_id)
@@ -144,6 +159,11 @@ class Cabinet extends CI_Controller
             {
                 echo "exception";
             }
+        }
+        else
+        {
+            redirect('/auth/permission');
+            die;
         }
     }
 
@@ -159,31 +179,52 @@ class Cabinet extends CI_Controller
                 echo "exception";
             }
         }
+        else
+        {
+            redirect('/auth/permission');
+            die;
+        }
     }
 
     
 
     public function task($id)
     {
-        $data['order'] = $this->cabinet->get_one_order($id);
-        $data['products'] = $this->cabinet->get_products_by_order_id($id);
-        $data['username'] = $this->ion_auth->user()->row()->username;
-        $data['is_taken'] = ($data['order']->manager_id == $this->user_id) ? 1 : 0;
-        $data['is_admin'] = ($this->ion_auth->is_admin()) ? TRUE : FALSE;
-        $count['cart_count'] = ( ! empty($this->session->products)) ? count($this->session->products) : 0;
+        if ($this->ion_auth->is_admin() || $this->user_id == $this->cabinet->user_id_task($id)->user_id)
+        {
+            $data['order'] = $this->cabinet->get_one_order($id);
+            $data['products'] = $this->cabinet->get_products_by_order_id($id);
+            $data['username'] = $this->ion_auth->user()->row()->username;
+            $data['is_taken'] = ($data['order']->manager_id == $this->user_id) ? 1 : 0;
+            $data['is_admin'] = ($this->ion_auth->is_admin()) ? TRUE : FALSE;
+            $count['cart_count'] = ( ! empty($this->session->products)) ? count($this->session->products) : 0;
 
-        $this->load->view('header', $count);
-        $this->load->view('cabinet/cabinet', $data);
-        $this->load->view('footer');
+            $this->load->view('header', $count);
+            $this->load->view('cabinet/cabinet', $data);
+            $this->load->view('footer');
+        }
+        else
+        {
+            redirect('/auth/permission');
+            die;
+        }
     }
 
     public function change_additional_data()
     {
-        $task_id = $this->input->post('task_id');
-        $additional_data = $this->generic->get_post('paid, blocks_left, blocks_shipped, pallets_left, pallets_shipped');
+        if ($this->ion_auth->is_admin() && $this->input->is_ajax_request()) 
+        {
+            $task_id = $this->input->post('task_id');
+            $additional_data = $this->generic->get_post('paid, blocks_left, blocks_shipped, pallets_left, pallets_shipped');
 
-        if ($this->cabinet->insert_additional_data($task_id, $additional_data)) {
-            echo json_encode(['status' => 200]);
+            if ($this->cabinet->insert_additional_data($task_id, $additional_data)) {
+                echo json_encode(['status' => 200]);
+            }
+        }
+        else
+        {
+            redirect('/auth/permission');
+            die;
         }
     }
 
