@@ -39,30 +39,30 @@
 					    <div id="navbarCollapse" class="collapse navbar-collapse">
 					      <ul class=" navbar-nav menu">
 					        <li class="menu-item">
-								<a href="#!">О заводе</a>
+								<a href="/#factory">О заводе</a>
 							</li>
 							<li class="menu-item">
-								<a href="#!">Преимущества</a>
+								<a href="/#benefits">Преимущества</a>
 							</li>
 							<li class="menu-item">
-								<a href="#!">Продукция</a>
+								<a href="/#objects">Объекты</a>
 							</li>
 							<li class="menu-item">
-								<a href="#!">Объекты</a>
+								<a href="/#products">Продукция</a>
 							</li>
 							<li class="menu-item">
-								<a href="#!">Калькулятор</a>
+								<a href="/#calculator">Калькулятор</a>
 							</li>
 							<li class="menu-item">
-								<a href="#!">СМИ о нас</a>
+								<a href="/#mass_media">СМИ о нас</a>
 							</li>
 							<li class="menu-item">
-								<a href="#!">Отзывы</a
+								<a href="/#reviews">Отзывы</a
 							></li>
 							<li class="menu-item">
-								<a href="#!">Сертификаты</a>
+								<a href="/#certifications">Сертификаты</a>
 							</li>
-					        </ul>
+					       </ul>
 					   <li class="request nav navbar-nav ">
 					   		<a class="basket" href="/cart">
 					   			<img  class="trunk" src="/img/white-trunk.png" alt="">
