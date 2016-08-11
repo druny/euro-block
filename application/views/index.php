@@ -39,30 +39,30 @@
 					    <div id="navbarCollapse" class="collapse navbar-collapse">
 					      <ul class=" navbar-nav menu">
 					        <li class="menu-item">
-								<a href="#!">О заводе</a>
+								<a href="#factory">О заводе</a>
 							</li>
 							<li class="menu-item">
-								<a href="#!">Преимущества</a>
+								<a href="#benefits">Преимущества</a>
 							</li>
 							<li class="menu-item">
-								<a href="#!">Продукция</a>
+								<a href="#objects">Объекты</a>
 							</li>
 							<li class="menu-item">
-								<a href="#!">Объекты</a>
+								<a href="#products">Продукция</a>
 							</li>
 							<li class="menu-item">
-								<a href="#!">Калькулятор</a>
+								<a href="#calculator">Калькулятор</a>
 							</li>
 							<li class="menu-item">
-								<a href="#!">СМИ о нас</a>
+								<a href="#mass_media">СМИ о нас</a>
 							</li>
 							<li class="menu-item">
-								<a href="#!">Отзывы</a
+								<a href="#reviews">Отзывы</a
 							></li>
 							<li class="menu-item">
-								<a href="#!">Сертификаты</a>
+								<a href="#certifications">Сертификаты</a>
 							</li>
-					        </ul>
+					       </ul>
 					   <li class="request nav navbar-nav ">
 					   		<a class="basket" href="/cart">
 					   			<img  class="trunk" src="img/trunk.png" alt="">
@@ -129,6 +129,7 @@
 	</div>
 
 	<div class="info">
+	<a id="factory"></a>
 		<div class="container">
 			<div class="info-header">
 				<span class="info-title col-lg-3 col-md-3 col-sm-3 col-xs-6">Работаем <br>с 1991года</span>
@@ -166,7 +167,7 @@
 	<div class="advantages">
 	<img class="divide" src="/img/t_1.png" alt="">
 		<div class="container">
-			<div class="advantages-title">
+			<div class="advantages-title" id="benefits">
 				<h1 class="title">Преимущества андезитобальтового блока</h1>	
 			</div>
 			<div class="advantages-info">
@@ -229,7 +230,7 @@
 	<div class="objects">
 		<img class="divide" src="/img/t_1.png" alt="">
 		<div class="container">
-			<div class="title-topic">
+			<div class="title-topic" id="objects">
 				<h1 class="title">Объекты</h1>
 			</div>
 			<div class="title-descr">
@@ -290,7 +291,7 @@
 	<div class="products">
 		<img class="divide" src="/img/line.png" alt="">
 		<div class="container">
-			<div class="title-topic">
+			<div class="title-topic" id="products">
 				<h1 class="title">Продукция</h1>
 			</div>
 		<div class="items clearfix">
@@ -448,7 +449,7 @@
 	<div class="calculator">
 	<img class="divide" src="img/line.png" alt="">
 		<div class="container">
-			<div class="title-topic title-width">
+			<div class="title-topic title-width" id="calculator">
 				<h1 class="title">Рассчитать стоимость</h1>
 			</div>
 			<h2 class="calculator-title">Калькулятор расчета количества блоков</h2>
@@ -590,7 +591,7 @@
 	<div class="mass-media">
 		<img class="divide" src="img/line.png" alt="">
 		<div class="container">
-			<div class="title-topic title-width">
+			<div class="title-topic title-width" id="mass_media">
 				<h1 class="title">Что о нас пишут СМИ?</h1>
 			</div>
 			<div class="newspaper">
@@ -602,7 +603,7 @@
 	</div>
 	<div class="reviews">
 		<div class="container">
-			<div class="title-topic title-width">
+			<div class="title-topic title-width" id="reviews">
 				<h1 class="title">Отзывы наших клиентов</h1>
 			</div>
 				
@@ -676,7 +677,7 @@
 	<div class="certificates">
 	<img src="img/bg-bush.png" alt="" class="bush">
 		<div class="container">
-			<div class="certificates-title">
+			<div class="certificates-title" id="certifications">
 				<h2>Наши дипломы и сертификаты</h2>
 			</div>
 		</div>
