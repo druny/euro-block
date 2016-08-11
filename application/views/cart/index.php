@@ -6,7 +6,7 @@
 			<div class="personal-info current-order-bg col-lg-3 col-md-3 col-sm-12 col-xs-12">
 				<h4>Личный кабинет пользователя:</h4>
 				<button class="exit col-lg-3 col-md-3 col-sm-12 col-xs-12" href="#!" type="submit"><a class="exit-text" >Выход</a></button>
-				<p class="name col-lg-9 col-md-9 col-sm-12 col-xs-12">Имя пользователя</p>
+				<p class="name col-lg-9 col-md-9 col-sm-12 col-xs-12"><a href="/cabinet"><?= $username; ?></a></p>
 			</div>
 			<div class="order-info flow col-lg-10 col-md-9 col-sm-8 col-xs-12">
 				<h4>Текущий заказ</h4>

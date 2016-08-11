@@ -5,7 +5,7 @@
 			</div>
 			<div class="personal-info current-order-bg col-lg-3 col-md-3 col-sm-12 col-xs-12">
 				<h4>Личный кабинет пользователя:</h4>
-				<button class="exit col-lg-3 col-md-3 col-sm-12 col-xs-12" href="#!" type="submit"><a class="exit-text" >Выход</a></button>
+				<button class="exit col-lg-3 col-md-3 col-sm-12 col-xs-12" href="#!" type="submit"><a href="/auth/logout" class="exit-text" >Выход</a></button>
 				<p class="name col-lg-9 col-md-9 col-sm-12 col-xs-12"><a href="/cabinet/all_orders"><?= $username; ?></a></p>
 			</div>
 
@@ -173,13 +173,14 @@
 				<h4>На какое число</h4>
 				<input type="date" name="calendar" value="<?= $order->delivery_date; ?>" disabled>
 				<div class="text-center" style="">
-					<?php if ($is_taken && !$order->is_done): ?>
+					<?php if($is_admin) {
+					if ($is_taken && !$order->is_done): ?>
 						<a href="/cabinet/complete_task/<?= $order->id; ?>" class="btn">Завершить заказ</a>
 					<?php elseif(!$is_taken && !$order->is_done): ?>
 						<a href="/cabinet/take_task/<?= $order->id; ?>" class="btn">Взять заказ</a>
 					<?php elseif($order->is_done): ?>
 						Задание уже выполнено.
-					<?php endif; ?>
+					<?php endif; }?>
 				</div>
 			</div>
 			<div class="order-info delivery col-lg-4 col-md-4 col-sm-4 col-xs-12">

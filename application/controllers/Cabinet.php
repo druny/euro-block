@@ -23,20 +23,31 @@ class Cabinet extends CI_Controller
 
     public function all_orders()
     {
-        if ($this->ion_auth->is_admin())
+        if ($this->ion_auth->logged_in())
         {
             $page = $this->uri->segment(3);
             $config = [
                 'base_url' => base_url() . '/cabinet/all_orders',
-                'total_rows' => $this->cabinet->count_free_orders(),
                 'per_page' => '10',
                 'use_page_numbers' => TRUE
             ];
+
+            if ($this->ion_auth->is_admin())
+            {
+                $config['total_rows'] = $this->cabinet->count_free_orders();
+                $data['orders'] = $this->cabinet->get_all_orders($config['per_page'], $page);
+                $data['is_admin'] = TRUE;
+            }
+            else
+            {
+                $config['total_rows'] = $this->cabinet->count_user_orders($this->user_id);
+                $data['orders'] = $this->cabinet->get_all_orders($config['per_page'], $page, $this->user_id);
+                $data['is_admin'] = FALSE;
+            }
+
             $this->pagination->initialize($config);
-
-            $data['orders'] = $this->cabinet->get_all_orders($config['per_page'], $page);
-
             $count['cart_count'] = ( ! empty($this->session->products)) ? count($this->session->products) : 0;
+
             if(empty($data['orders'])) 
             {
                 echo "Пусто";
@@ -46,6 +57,7 @@ class Cabinet extends CI_Controller
             $this->load->view('cabinet/all_orders', $data);
             $this->load->view('footer');
         }
+
     }
 
     public function my_orders()
@@ -81,20 +93,33 @@ class Cabinet extends CI_Controller
     public function archive()
     {
 
-        if ($this->ion_auth->is_admin())
+        if ($this->ion_auth->logged_in())
         {
-            $manager_id = $this->user_id;
+            $user_id = $this->user_id;
 
         	$page = $this->uri->segment(3);
         	$config = [
-        		'base_url' => base_url() . '/cabinet/my_orders',
-        		'total_rows' => $this->cabinet->count_manager_done_orders($manager_id),
+        		'base_url' => base_url() . '/cabinet/archive',
         		'per_page' => '10',
         		'use_page_numbers' => TRUE
         	];
+
+            if ($this->ion_auth->is_admin()) 
+            {
+                $config['total_rows'] = $this->cabinet->count_manager_done_orders($user_id);
+                $data['is_admin'] = TRUE;
+            }
+            else
+            {
+                $config['total_rows'] = $this->cabinet->count_user_done_orders($user_id);
+                $data['is_admin'] = FALSE;
+            }
+
+
+
         	$this->pagination->initialize($config);
 
-        	$data['orders'] = $this->cabinet->get_manager_orders($config['per_page'], $page, $manager_id, TRUE);
+        	$data['orders'] = ($this->ion_auth->is_admin()) ? $this->cabinet->get_manager_orders($config['per_page'], $page, $user_id, TRUE) : $this->cabinet->get_user_done_orders($config['per_page'], $page, $user_id);
 
         	$count['cart_count'] = ( ! empty($this->session->products)) ? count($this->session->products) : 0;
         	if(empty($data['orders'])) 
@@ -144,6 +169,7 @@ class Cabinet extends CI_Controller
         $data['products'] = $this->cabinet->get_products_by_order_id($id);
         $data['username'] = $this->ion_auth->user()->row()->username;
         $data['is_taken'] = ($data['order']->manager_id == $this->user_id) ? 1 : 0;
+        $data['is_admin'] = ($this->ion_auth->is_admin()) ? TRUE : FALSE;
         $count['cart_count'] = ( ! empty($this->session->products)) ? count($this->session->products) : 0;
 
         $this->load->view('header', $count);

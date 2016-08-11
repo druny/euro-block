@@ -7,7 +7,7 @@ class Cabinet_model extends CI_Model
 {
 
 
-	public function get_all_orders($num, $page)
+	public function get_all_orders($num, $page, $user_id = FALSE)
 	{
 		$db_offset = ($page == 0) ? 0 : ($num * $page) - $num;
 		$this->db->select('
@@ -24,11 +24,18 @@ class Cabinet_model extends CI_Model
 
 		$where_clause = [
 			'orders.is_active' => '1',
-			'orders.is_done'   => '0',
-			'orders.manager_id' => NULL
+			'orders.is_done'   => '0'
 		];
-		$this->db->where($where_clause);
 
+		if ( ! $user_id) {
+			$where_clause['orders.manager_id'] = NULL;
+		}
+		else
+		{
+			$where_clause['orders.user_id'] = $user_id;
+		}
+		
+		$this->db->where($where_clause);
 		return $this->db->get('orders')->result_array();
 	}
 
@@ -74,6 +81,35 @@ class Cabinet_model extends CI_Model
 		return $this->db->get('orders')->result_array();
 	}
 
+	/**
+	 * This method puts orders of current manager
+	 *
+	 * @param boolean $is_done This argument determines which orders will be returned.
+	 */
+	public function get_user_done_orders($num, $page, $user_id)
+	{
+		$db_offset = ($page == 0) ? 0 : ($num * $page) - $num;
+		$this->db->select('
+			orders.id,
+			orders.city,
+			orders.sum,
+			orders.order_date,
+			users.first_name,
+			users.last_name
+		');
+		$this->db->join('users', 'orders.user_id = users.id', 'INNER');
+		$this->db->order_by('orders.id', 'DESC');
+		$this->db->limit($num, $db_offset);
+
+		$where_clause = [
+			'orders.is_active' => '0',
+			'orders.is_done'   => '1',
+			'orders.user_id' => $user_id
+		];
+		
+		return $this->db->where($where_clause)->get('orders')->result_array();
+	}
+
 	public function order_task($id, $manager_id)
 	{
 		return $this->db->update('orders', ['manager_id' => $manager_id], ['id' => $id]);
@@ -100,12 +136,34 @@ class Cabinet_model extends CI_Model
 		return $this->db->count_all_results('orders');
 	}
 
+	public function count_user_orders($user_id)
+	{
+		$where_clause = [
+			'user_id'   => $user_id,
+			'is_active' => 1,
+			'is_done'   => 0
+		];
+		return $this->db->where($where_clause)->count_all_results('orders');
+	}
+
 	public function count_manager_orders($id)
 	{
 		$where_clause = [
 			'orders.is_active' => '1',
 			'orders.is_done'   => '0',
 			'orders.manager_id' => $id
+		];
+
+		$this->db->where($where_clause);
+		return $this->db->count_all_results('orders');
+	}
+
+	public function count_user_done_orders($id)
+	{
+		$where_clause = [
+			'is_active' => '0',
+			'is_done'   => '1',
+			'user_id' => $id
 		];
 
 		$this->db->where($where_clause);

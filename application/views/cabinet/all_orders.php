@@ -1,7 +1,9 @@
 <div class="container">
 	<div class="order-info  flow  col-xs-12">
 				<h4><a href="/cabinet/">Все заказы</a></h4>
-				<h4><a href="/cabinet/my_orders">Мои заказы</a></h4>
+				<?php if ($is_admin): ?>
+					<h4><a href="/cabinet/my_orders">Мои заказы</a></h4>
+				<?php endif; ?>
 				<h4><a href="/cabinet/archive">Архив заказов</a></h4>
 				<?php foreach($orders as $order): ?>
 				<table class="table-order orders-space">

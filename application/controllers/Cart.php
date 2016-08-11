@@ -9,6 +9,7 @@ class Cart extends CI_Controller {
         if ( ! empty($this->session->products)) 
         {
             $data['products'] = $this->session->products;
+            $data['username'] = $this->ion_auth->user()->row()->username;
             $data['sum'] = (isset($this->session->sum)) ? $this->session->sum : 0;
 
             $this->load->view('header', $count);
@@ -28,7 +29,7 @@ class Cart extends CI_Controller {
     {
         $session_items = ['products', 'sum'];
         $this->session->unset_userdata($session_items);
-        redirect('/');
+        redirect('/cabinet');
     }
 
     public function order()
