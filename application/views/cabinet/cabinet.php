@@ -88,6 +88,9 @@
 				</div>
 			<?php endif; ?>
 
+			<div class="clearfix">
+				
+			</div>
 			<div class="order-info flow col-lg-10 col-md-9 col-sm-8 col-xs-12">
 				<h4>Текущий заказ</h4>
 				<table class="table-order">
@@ -116,7 +119,7 @@
 					</tr>
 				</table>
 			</div>
-
+			<div class="clearfix"></div>
 			<div class="order-info delivery col-lg-4 col-md-4 col-sm-4 col-xs-12">
 				<h4>Заказать доставку:</h4>
 				<table class="table-order">
@@ -179,7 +182,63 @@
 					<?php endif; ?>
 				</div>
 			</div>
+			<div class="order-info delivery col-lg-4 col-md-4 col-sm-4 col-xs-12">
+				<h4>Заказать доставку:</h4>
+				<table class="table-order">
+					<tr>
+						<td>
+							<p>Имя:</p>
+						</td>
+						<td>
+							<p><?= $order->first_name; ?></p>
+						</td>
+					</tr>
+				
+					<tr>
+						<td>
+							<p>Фамилия:</p>
+						</td>
+						<td>
+							<p><?= $order->last_name;; ?></p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>Компания:</p>
+						</td>
+						<td>
+							<p><?= $order->company; ?></p>
+						</td>
+					</tr>
+					<tr>
 
+						<td>
+							<p>Телефон:</p>
+						</td>
+						<td>
+							<p<?= $order->phone; ?></p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>E-mail:</p>
+						</td>
+						<td>
+							<p><?= $order->email; ?></p>
+						</td>
+					</tr>
+				</table>
+				<table class="table-order">
+					<tr>
+						<td>
+							<p>Тип оплаты:</p>
+						</td>
+						<td>
+							<p> <?= $order->payment_type; ?> </p>
+						</td>
+					</tr>
+				</table>
+			</div>
 		</div>
 	</div>
 
