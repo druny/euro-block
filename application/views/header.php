@@ -29,7 +29,7 @@
 							
 							<div class="mobile-info">
 				
-					       		<a class="basket" href="#!">корзина <?= $cart_count; ?></a>
+					       		<a class="basket" href="#!">корзина <?= $this->session->count ?></a>
 					       		<p class="phone">+7 (423) 230-12-18</p>
 							
 							</div>
@@ -66,7 +66,7 @@
 					   <li class="request nav navbar-nav ">
 					   		<a class="basket" href="/cart">
 					   			<img  class="trunk" src="/img/white-trunk.png" alt="">
-					   			корзина <?= $cart_count; ?>
+					   			корзина <?= $this->session->count ?>
 					   		</a>
 					   </li>
 					   <li class="request nav navbar-nav navbar-right">

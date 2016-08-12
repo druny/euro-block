@@ -45,15 +45,14 @@ class Cabinet extends CI_Controller
                 $data['is_admin'] = FALSE;
             }
 
-            $this->pagination->initialize($config);
-            $count['cart_count'] = ( ! empty($this->session->products)) ? count($this->session->products) : 0;
+            $this->pagination->initialize($config);   
 
             if(empty($data['orders'])) 
             {
                 echo "Пусто";
             }
 
-            $this->load->view('header', $count);
+            $this->load->view('header');
             $this->load->view('cabinet/all_orders', $data);
             $this->load->view('footer');
         }
@@ -83,14 +82,14 @@ class Cabinet extends CI_Controller
 
             $data['orders'] = $this->cabinet->get_manager_orders($config['per_page'], $page, $manager_id);
 
-            $count['cart_count'] = ( ! empty($this->session->products)) ? count($this->session->products) : 0;
+            
             if(empty($data['orders'])) 
             {
                 echo "Пусто";
             }
 
-            $this->load->view('header', $count);
-            $this->load->view('cabinet/all_orders', $data);
+            $this->load->view('header');
+            $this->load->view('cabinet/my_orders', $data);
             $this->load->view('footer');
         }
         else
@@ -131,13 +130,13 @@ class Cabinet extends CI_Controller
 
         	$data['orders'] = ($this->ion_auth->is_admin()) ? $this->cabinet->get_manager_orders($config['per_page'], $page, $user_id, TRUE) : $this->cabinet->get_user_done_orders($config['per_page'], $page, $user_id);
 
-        	$count['cart_count'] = ( ! empty($this->session->products)) ? count($this->session->products) : 0;
+
         	if(empty($data['orders'])) 
         	{
         		echo "Пусто";
         	}
 
-        	$this->load->view('header', $count);
+        	$this->load->view('header');
         	$this->load->view('cabinet/all_orders', $data);
         	$this->load->view('footer');
         }
@@ -197,9 +196,9 @@ class Cabinet extends CI_Controller
             $data['username'] = $this->ion_auth->user()->row()->username;
             $data['is_taken'] = ($data['order']->manager_id == $this->user_id) ? 1 : 0;
             $data['is_admin'] = ($this->ion_auth->is_admin()) ? TRUE : FALSE;
-            $count['cart_count'] = ( ! empty($this->session->products)) ? count($this->session->products) : 0;
+            
 
-            $this->load->view('header', $count);
+            $this->load->view('header');
             $this->load->view('cabinet/cabinet', $data);
             $this->load->view('footer');
         }

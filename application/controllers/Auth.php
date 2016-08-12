@@ -828,18 +828,14 @@ class Auth extends CI_Controller {
 	}
 	public function must_registr()
 	{
-		$count['cart_count'] = ( ! empty($this->session->products)) ? count($this->session->products) : 0;
-
-		$this->load->view('header', $count);
+		$this->load->view('header');
 		$this->load->view('must_registretion');
 		$this->load->view('footer');
 	}
 
 	public function error()
 	{
-		$count['cart_count'] = ( ! empty($this->session->products)) ? count($this->session->products) : 0;
-
-		$this->load->view('header', $count);
+		$this->load->view('header');
 		$this->load->view('error');
 		$this->load->view('footer');
 	}

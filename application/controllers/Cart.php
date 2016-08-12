@@ -7,7 +7,6 @@ class Cart extends CI_Controller {
     {
         if ($this->ion_auth->logged_in())
         {
-            $count['cart_count'] = ( ! empty($this->session->products)) ? count($this->session->products) : 0;
 
             if ( ! empty($this->session->products)) 
             {
@@ -15,13 +14,13 @@ class Cart extends CI_Controller {
                 $data['username'] = $this->ion_auth->user()->row()->username;
                 $data['sum'] = (isset($this->session->sum)) ? $this->session->sum : 0;
 
-                $this->load->view('header', $count);
+                $this->load->view('header');
                 $this->load->view('cart/index', $data);
                 $this->load->view('footer');
             }
             else
             {
-                $this->load->view('header', $count);
+                $this->load->view('header');
                 $this->load->view('cart/empty_basket');
                 $this->load->view('footer');
 
