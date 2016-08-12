@@ -15,10 +15,13 @@ class Sending extends CI_Controller {
 			$this->load->library('email');
 			$this->email->from('druny195@rambler.ru', 'Name');
 			$this->email->to($email);
+			$this->email->bcc($email); 
+
 			$this->email->subject('Dear, ' . $name);
 			$this->email->message('Fuck You!');
-			$this->email->send();
 
+			$this->email->send();
+			
 			$this->load->view('header', $count);
 			$this->load->view('send/formsuccess');
 			$this->load->view('footer');	

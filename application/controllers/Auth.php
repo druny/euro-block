@@ -835,4 +835,13 @@ class Auth extends CI_Controller {
 		$this->load->view('footer');
 	}
 
+	public function error()
+	{
+		$count['cart_count'] = ( ! empty($this->session->products)) ? count($this->session->products) : 0;
+
+		$this->load->view('header', $count);
+		$this->load->view('error');
+		$this->load->view('footer');
+	}
+
 }
