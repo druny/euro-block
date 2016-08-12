@@ -40,32 +40,32 @@
 	</footer>
 
 	<!-- modal -->
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal fade login" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <h4 class="modal-title" id="myModalLabel">Отправить</h4>
+	        <h4 class="modal-title login-topic" id="myModalLabel">Отправить</h4>
 	      </div>
 	      <div class="modal-body">
 	      <form method="post" action="/sending">
 			  <div class="form-group">
-			    <label for="exampleInputEmail1">Email address</label>
+			    <label for="exampleInputEmail1">Email адресс</label>
 			    <input type="email" class="form-control" name="email" id="exampleInputEmail1" placeholder="Email" required>
 			  </div>
 			  <div class="form-group">
-			    <label for="exampleInputPassword1">Name</label>
-			    <input type="text" class="form-control" name="name" id="" placeholder="Name" required>
+			    <label for="exampleInputPassword1">Имя</label>
+			    <input type="text" class="form-control" name="name" id="" placeholder="Имя" required>
 			  </div>
 				<div class="form-group">
-			    <label for="exampleInputPassword1">Phone</label>
-			    <input type="text" class="form-control"  name="phone" id="" placeholder="Phone" required>
+			    <label for="exampleInputPassword1">Телефон</label>
+			    <input type="text" class="form-control"  name="phone" id="" placeholder="Телефон" required>
 			  </div>
-			  <button type="submit" class="btn btn-default">Submit</button>
+			  <button type="submit" class="btn btn-default">Отправить</button>
 			</form>
 	      </div>
 	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
 	      </div>
 	    </div>
 	  </div>

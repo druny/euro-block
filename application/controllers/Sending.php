@@ -8,6 +8,7 @@ class Sending extends CI_Controller {
 		$email = $this->input->post('email');
 		$name = $this->input->post('name');
 		$phone = $this->input->post('phone');
+		$count['cart_count'] = ( ! empty($this->session->products)) ? count($this->session->products) : 0;
 
 		if(!empty($email) && !empty($name) && !empty($phone))
 		{
@@ -18,11 +19,11 @@ class Sending extends CI_Controller {
 			$this->email->message('Fuck You!');
 			$this->email->send();
 
-			$this->load->view('header');
+			$this->load->view('header', $count);
 			$this->load->view('send/formsuccess');
 			$this->load->view('footer');	
 		} else {
-			$this->load->view('header');
+			$this->load->view('header', $count);
 			$this->load->view('send/formnegative');
 			$this->load->view('footer');
 
