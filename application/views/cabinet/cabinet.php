@@ -175,11 +175,11 @@
 				<div class="text-center" style="">
 					<?php if($is_admin) {
 					if ($is_taken && !$order->is_done): ?>
-						<a href="/cabinet/complete_task/<?= $order->id; ?>" class="btn">Завершить заказ</a>
+						<a class="cabinet-btn btn btn-warning" href="/cabinet/complete_task/<?= $order->id; ?>" class="btn">Завершить заказ</a>
 					<?php elseif(!$is_taken && !$order->is_done): ?>
-						<a href="/cabinet/take_task/<?= $order->id; ?>" class="btn">Взять заказ</a>
+						<a class="cabinet-btn btn btn-warning" href="/cabinet/take_task/<?= $order->id; ?>">Взять заказ</a>
 					<?php elseif($order->is_done): ?>
-						Задание уже выполнено.
+						<p class="cabinet-btn btn btn-warning">Задание уже выполнено.</p>
 					<?php endif; }?>
 				</div>
 			</div>

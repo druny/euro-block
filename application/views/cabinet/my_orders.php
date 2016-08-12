@@ -22,7 +22,7 @@
                             <p>Время заказа: <?= $order['order_date'] ?></p>
                         </td>
                         <td>
-                                <a href="/cabinet/take_task/<?= $order['id']; ?>" class="btn btn-warning">
+                                <a class="cabinet-btn btn btn-warning" href="/cabinet/take_task/<?= $order['id']; ?>" >
                                     Открыть задание
                                 </a>
                         </td>
