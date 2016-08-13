@@ -1,39 +1,53 @@
 <div class="container">
 	<div class="order-info  flow  col-xs-12">
-				<h4><a href="/cabinet/">Все заказы</a></h4>
-				<?php if ($is_admin): ?>
-					<h4><a href="/cabinet/my_orders">Мои заказы</a></h4>
-				<?php endif; ?>
-				<h4><a href="/cabinet/archive">Архив заказов</a></h4>
-				<?php foreach($orders as $order): ?>
-				<table class="table-order orders-space">
-					<tr>
-						<td>
-							<p>id: <?= $order['id'] ?></p>
-						</td>
-						<td>
-							<p><?= $order['first_name'] . ' ' . $order['last_name']; ?></p>
-						</td>
-						<td>
-							<p>Город: <?= $order['city']; ?> </p>
-						</td>
-						<td>
-							<p>Сумма: <?= $order['sum'] ?></p>
-						</td>
-						<td>
-							<p>Время заказа: <?= $order['order_date'] ?></p>
-						</td>
-						<td >
-								<a href="/cabinet/task/<?= $order['id']; ?>" class="btn btn-warning cabinet-btn">
-									Открыть
-								</a>
-						</td>
-					</tr>
-				</table>
-				<?php endforeach; ?>
+		<div class="admin-btn col-sm-3 col-xs-12">
+			<a href="">
+				<p>Все заказы</p>
+			</a>
+		</div>
+		<?php if ($is_admin): ?>
+			<div class="admin-btn col-sm-4 col-xs-12">
+				<a href="/cabinet/my_orders">
+					<img src="/img/active.png" alt="active">
+					<p>Мои заказы</p>
+				</a>
+			</div>
+		<?php endif; ?>
+		<div class="admin-btn col-sm-5 col-xs-12">
+			<a href="/cabinet/archive">
+				<img src="/img/arhive.png" alt="active">
+				<p>История заказов</p>
+			</a>
+		</div>
+		<?php foreach($orders as $order): ?>
+		<table class="table-order orders-space">
+			<tr>
+				<td>
+					<p>id: <?= $order['id'] ?></p>
+				</td>
+				<td>
+					<p><?= $order['first_name'] . ' ' . $order['last_name']; ?></p>
+				</td>
+				<td>
+					<p>Город: <?= $order['city']; ?> </p>
+				</td>
+				<td>
+					<p>Сумма: <?= $order['sum'] ?></p>
+				</td>
+				<td>
+					<p>Время заказа: <?= $order['order_date'] ?></p>
+				</td>
+				<td >
+						<a href="/cabinet/task/<?= $order['id']; ?>" class="btn btn-warning cabinet-btn">
+							Открыть
+						</a>
+				</td>
+			</tr>
+		</table>
+		<?php endforeach; ?>
 				
 
-			</div>
-			<div class="clearfix"></div>
-			<?=$this->pagination->create_links(); ?>
+	</div>
+	<div class="clearfix"></div>
+	<?=$this->pagination->create_links(); ?>
 </div>

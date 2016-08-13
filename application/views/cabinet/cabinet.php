@@ -8,7 +8,24 @@
 				<button class="exit col-lg-3 col-md-3 col-sm-12 col-xs-12" href="#!" type="submit"><a href="/auth/logout" class="exit-text" >Выход</a></button>
 				<p class="name col-lg-9 col-md-9 col-sm-12 col-xs-12"><a href="/cabinet/all_orders"><?= $username; ?></a></p>
 			</div>
-
+			<div class="admin-btn col-sm-3 col-xs-12">
+                    <a href="/cabinet/all_orders">
+                        <p>Все заказы</p>
+                    </a>
+                 </div>
+			<div class="admin-btn col-sm-4 col-xs-12">
+				<a href="/cabinet/my_orders">
+					<img src="/img/active.png" alt="active">
+					<p>Мои заказы</p>
+				</a>
+			</div>
+			<div class="admin-btn col-sm-5 col-xs-12">
+				<a href="/cabinet/archive">
+					<img src="/img/arhive.png" alt="active">
+					<p>История заказов</p>
+				</a>
+			</div>
+			<div class="clearfix"></div>
 			<div class="order-info col-lg-4 col-md-4 col-sm-4 col-xs-12">
 				<h4>Оплата</h4>
 				<table class="table-order">
