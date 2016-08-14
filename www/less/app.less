@@ -915,6 +915,12 @@
 }
 .orders-space {
 	margin: 25px 0;
+	td {
+		&:last-of-type {
+			background-color: @brand-warning;
+		}
+	}
+
 }
 
 
@@ -1010,6 +1016,19 @@
 
 .cabinet-btn {
 	color: #44627e;
+	width: 100%;
+	min-width: 65px;
+	height: 41px;
+	border-radius: 0;
+	border-color: transparent;
+	position: relative;
+	&-title {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
 }
 
 .permission {

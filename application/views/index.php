@@ -25,7 +25,7 @@
 							<span class="icon-bar"></span>
 						</button>
 							<a href="#!">
-								<img class="logo" src="/img/logo.png" alt="logo">
+								<img class="logo" src="/img/logo2.png" alt="logo">
 							</a>
 							<div class="mobile-info">
 				
@@ -65,7 +65,7 @@
 					       </ul>
 					   <li class="request nav navbar-nav ">
 					   		<a class="basket" href="/cart">
-					   			<img  class="trunk" src="img/trunk.png" alt="">
+					   			<img  class="trunk" src="img/trunk2.png" alt="">
 					        	корзина <?= $this->session->count; ?>
 					        </a>
 					   </li>
