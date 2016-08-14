@@ -158,7 +158,7 @@
 		}
 	}
 	.header-video {
-		margin: 30px auto;
+		margin: 0 0 30px;
 		iframe {
 			border: 5px solid #006dd5;
 			border-radius: 5px;
@@ -166,8 +166,8 @@
 			height: 380px;
 		}
 	}
-.login {
-		margin-top: 30px;
+	.login {
+		margin-top: 24px;
 		background: linear-gradient(180deg, #028bf8, #006bd3);
 		border-radius: 10px;
 		padding: 15px;
@@ -212,9 +212,11 @@
 			}
 		}	
 	}
+	.personal-info {
+		margin-top: 39px;
+	}
 
 	.feedback {
-		margin-top: 30px;
 		background: linear-gradient(180deg, #028bf8, #006bd3);
 		border-radius: 10px;
 		padding: 15px;
@@ -775,10 +777,11 @@
 .map {
 	position: relative;
 	background-size: cover;
-	height: 350px;
+	height: 350px;f
 	.logo-bottom {
 		text-align: center;
 		img {
+			display: none;
 			position: absolute;
 			top: 30px;
 			right: 10px;
@@ -806,7 +809,6 @@
 /* Admin  styles */
 
 .personal-info {
-		margin-bottom: 55px;
 		color: #fff;
 		font-family: @main-font-bold;
 		text-transform: uppercase;
