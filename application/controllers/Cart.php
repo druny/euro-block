@@ -28,7 +28,7 @@ class Cart extends CI_Controller {
         }
         else
         {
-            redirect('/auth/permission');
+            redirect('/auth/must_registr');
             die;
         }
     }

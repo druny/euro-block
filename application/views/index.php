@@ -6,11 +6,14 @@
 	<title>Euro-Block</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
 	<link rel="stylesheet" href="/css/style.min.css">
+	<link rel="stylesheet" href="/css/template.css">
 	<script type="text/javascript" src="/js/jquery-3.0.0.min.js"></script>
 	<script src="/js/calc/init.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/popup_img.js"></script>
 </head>
 <body>
-
+	
 	<div class="header">
 		<div class="header-menu">
 			<div class="container">
@@ -215,7 +218,9 @@
 				<img class="descr-img" src="/img/info-block.png" alt="">
 
 			</div>
-			<img class="advantages-img" src="/img/vodopogloshenie.png" alt="">
+			<img class="advantages-img image" src="/img/vodopogloshenie.png" alt="info">
+			<script type="text/javascript" src="simplebox_util.js"></script>
+
 			<div class="distinction">
 				<img src="/img/first_luchshih_2007.png" alt="">
 				<img src="/img/luchiy_tovar_prim_2007.png" alt="">
@@ -595,9 +600,9 @@
 				<h1 class="title">Что о нас пишут СМИ?</h1>
 			</div>
 			<div class="newspaper">
-				<img src="/img/newspaper1.png" alt="" class="newspaper-item col-lg-3 col-md-3 col-sm-5 col-xs-12">
-				<img src="/img/newspaper2.png" alt="" class="newspaper-item col-lg-5 col-md-5 col-sm-7 col-xs-12">
-				<img src="/img/newspaper3.png" alt="" class="newspaper-item col-lg-4 col-md-4 col-sm-12 col-xs-12">
+				<img src="/img/newspaper1.png" alt="" class="newspaper-item image col-lg-3 col-md-3 col-sm-5 col-xs-12">
+				<img src="/img/newspaper2.png" alt="" class="newspaper-item image col-lg-5 col-md-5 col-sm-7 col-xs-12">
+				<img src="/img/newspaper3.png" alt="" class="newspaper-item image col-lg-4 col-md-4 col-sm-12 col-xs-12">
 			</div>
 		</div>
 	</div>

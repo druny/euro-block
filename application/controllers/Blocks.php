@@ -79,7 +79,7 @@ class Blocks extends CI_Controller
         }
         else
         {
-            redirect('/auth/permission');
+            redirect('/auth/must_register');
             die;
         }
     }
