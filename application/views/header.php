@@ -13,7 +13,8 @@
 	<header class="header-admin">
 		<div class="header-menu header-menu-admin">
 			<div class="container">
-				<nav role="navigation" class="navbar navbar-default header-list">
+				<nav role="navigation" class="navbar navbar-default header-list ">
+				<div class="container">
 			  <!-- Логотип и мобильное меню -->
 					<div class="navbar-header">
 
@@ -73,6 +74,7 @@
 							<p class="phone">+7 (423) 230-12-18</p>
 							<a class="request-call" data-toggle="modal" data-target="#myModal" href="#!">заказать обратный звонок</a>
 						</li>
+				    </div>
 				    </div>
 				</nav>
 			</div>

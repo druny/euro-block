@@ -18,6 +18,7 @@
 		<div class="header-menu">
 			<div class="container">
 				<nav role="navigation" class="navbar navbar-default header-list">
+				<div class="container">
 			  <!-- Логотип и мобильное меню -->
 					<div class="navbar-header">
 
@@ -81,7 +82,9 @@
 							
 						</li>
 				    </div>
+				   </div>
 				</nav>
+
 			</div>
 		</div>
 	<div class="container">

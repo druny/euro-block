@@ -134,7 +134,7 @@
 					</div>
 				<?php endforeach; ?>
 				<div class="clearfix"></div>
-				<input type="submit" class="to-cart btn btn-warning" value="В корзину">
+				<input type="submit" class="col-md-offset-3 to-cart btn btn-warning" value="В корзину">
 				</form>
 				
 			</div>

@@ -8,19 +8,20 @@
 				<button class="exit col-lg-3 col-md-3 col-sm-12 col-xs-12" href="#!" type="submit"><a href="/auth/logout" class="exit-text" >Выход</a></button>
 				<p class="name col-lg-9 col-md-9 col-sm-12 col-xs-12"><a href="/cabinet/all_orders"><?= $username; ?></a></p>
 			</div>
-			<div class="admin-btn col-sm-3 col-xs-12">
-                    <a href="/cabinet/all_orders">
-                        <p>Все заказы</p>
-                    </a>
-                 </div>
+			<div class="admin-btn col-sm-4 col-xs-12">
+				<a href="">
+					<img src="/img/menu-icon.png" alt="all orders">
+					<p>Все заказы</p>
+				</a>
+			</div>
 			<div class="admin-btn col-sm-4 col-xs-12">
 				<a href="/cabinet/my_orders">
 					<img src="/img/active.png" alt="active">
 					<p>Мои заказы</p>
 				</a>
 			</div>
-			<div class="admin-btn col-sm-5 col-xs-12">
-				<a href="/cabinet/archive">
+			<div class="admin-btn col-sm-4 col-xs-12">
+			<a href="/cabinet/archive">
 					<img src="/img/arhive.png" alt="active">
 					<p>История заказов</p>
 				</a>
@@ -172,17 +173,22 @@
 				<table class="table-order">
 					<tr>
 						<td>
-							<input type="radio" name="crane" <?php if ($order->crane == 1) echo "checked"; ?> disabled>
+							<input type="radio" id="with" class="radio" name="crane" <?php if ($order->crane == 1) echo "checked"; ?> disabled>
 						</td>
 						<td>
-							<p>С краном</p>
+							<label for="with">
+								<p>С краном</p>
+							</label>
 						</td>
 						<td>
-							<input type="radio" name="crane" <?php if ($order->crane == 0) echo "checked"; ?> disabled>
+							<input type="radio"  id="without" class="radio" name="crane" <?php if ($order->crane == 0) echo "checked"; ?> disabled>
 						</td>
 						<td>
-							<p>Без крана</p>
+							<label for="without">
+								<p>Без крана</p>
+							</label>
 						</td>
+						
 					</tr>
 				</table>
 			</div>
