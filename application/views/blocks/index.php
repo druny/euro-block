@@ -120,7 +120,7 @@
 						</tr>
 						<tr>
 							<td>
-								<p>130 руб.</p>
+								<p><?= $product->price; ?> руб.</p>
 							</td>
 						</tr>
 						<tr>
