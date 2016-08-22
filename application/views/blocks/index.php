@@ -136,6 +136,10 @@
 				<div class="clearfix"></div>
 				<input type="submit" class="col-md-offset-3 to-cart btn btn-warning" value="В корзину">
 				</form>
-				
+				<?php 
+				if (!$this->ion_auth->logged_in()) {
+					echo '<h1 class="text-center text-info">' . 'Чтобы купить онлайн, ' . '<a href="/register"> зарегестрируйтесь</a>' . '</h1>';
+				}
+				?>
 			</div>
 		</div>

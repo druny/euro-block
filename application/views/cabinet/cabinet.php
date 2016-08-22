@@ -188,6 +188,14 @@
 								<p>Без крана</p>
 							</label>
 						</td>
+						<td>
+							<input type="radio" id="nothing" class="radio" name="crane" <?php if($order->crane == 2) echo "checked"; ?> disabled>
+						</td>
+						<td>
+							<label for="nothing">
+								<p>Без доставки</p>
+							</label>
+						</td>
 						
 					</tr>
 				</table>

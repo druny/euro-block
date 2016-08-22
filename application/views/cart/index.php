@@ -88,6 +88,14 @@
 									<p>Без крана</p>
 								</label>
 							</td>
+							<td>
+								<input type="radio" name="crane" id="nothing" value="2">
+							</td>
+							<td>
+								<label for="nothing">
+									<p>Без доставки</p>
+								</label>
+							</td>
 						</tr>
 					</table>
 				</div>

@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="order-info  flow  col-xs-12">
 		<div class="admin-btn col-sm-4 col-xs-12">
-			<a href="">
+			<a href="/cabinet">
 				<img src="/img/menu-icon.png" alt="all orders">
 				<p>Все заказы</p>
 			</a>

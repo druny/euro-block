@@ -6,8 +6,6 @@
 	<title>Manager</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
 	<link rel="stylesheet" href="/css/style.min.css">
-	<script type="text/javascript" src="/js/jquery-3.0.0.min.js"></script>
-	<script src="/js/calc/init.js"></script>
 </head>
 <body>
 	<header class="header-admin">

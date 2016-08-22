@@ -3,16 +3,14 @@
 }
 
 .image {
-
 	cursor:pointer;
-
 }
 
 .popup {
 	position: fixed;
 	height:100%;
 	width:100%;
-	top:0;
+	top: 0px;
 	left:0;
 	display:none;
 	text-align:center;
@@ -34,4 +32,5 @@
 	max-height:94%;
 	max-width:94%;
 	margin:1% 0 0 0;
+	top: 80px;
 }

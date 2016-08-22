@@ -7,10 +7,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
 	<link rel="stylesheet" href="/css/style.min.css">
 	<link rel="stylesheet" href="/css/template.css">
-	<script type="text/javascript" src="/js/jquery-3.0.0.min.js"></script>
-	<script src="/js/calc/init.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-	<script type="text/javascript" src="/js/popup_img.js"></script>
 </head>
 <body>
 	
@@ -603,9 +599,9 @@
 				<h1 class="title">Что о нас пишут СМИ?</h1>
 			</div>
 			<div class="newspaper">
-				<img src="/img/newspaper1.png" alt="" class="newspaper-item image col-lg-3 col-md-3 col-sm-5 col-xs-12">
-				<img src="/img/newspaper2.png" alt="" class="newspaper-item image col-lg-5 col-md-5 col-sm-7 col-xs-12">
-				<img src="/img/newspaper3.png" alt="" class="newspaper-item image col-lg-4 col-md-4 col-sm-12 col-xs-12">
+				<img src="/img/newspaper1.jpg" alt="" class="newspaper-item image col-lg-3 col-md-3 col-sm-5 col-xs-12">
+				<img src="/img/newspaper2.jpg" alt="" class="newspaper-item image col-lg-5 col-md-5 col-sm-7 col-xs-12">
+				<img src="/img/newspaper3.jpg" alt="" class="newspaper-item image col-lg-4 col-md-4 col-sm-12 col-xs-12">
 			</div>
 		</div>
 	</div>
@@ -682,18 +678,4 @@
 
 		</div>
 	</div>
-	<div class="certificates">
-	<img src="img/bg-bush.png" alt="" class="bush">
-		<div class="container">
-			<div class="certificates-title" id="certifications">
-				<h2>Наши дипломы и сертификаты</h2>
-			</div>
-		</div>
-		<div class="certificates-confirm">
-			<img src="/img/certificates/2018-1.jpg" alt="" class="certificates-confirm-item">
-			<img src="/img/certificates/firescan.jpg" alt="" class="certificates-confirm-item">
-			<img src="/img/certificates/hab.jpg" alt="" class="certificates-confirm-item">
-			<img src="/img/certificates/Ekolog.jpg" alt="" class="certificates-confirm-item">
-			<img src="/img/certificates/100_luhsih_tovarov_m50_m75.jpg" alt="" class="certificates-confirm-item">
-		</div>
-	</div>
+	

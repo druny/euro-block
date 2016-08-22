@@ -60,7 +60,7 @@ class Cart extends CI_Controller {
                 foreach ($products as $key => &$value) {
                     $value['product_id'] = $value['id'];
                     $value['order_id'] = $order_id;
-
+                    $this->session->unset_userdata('count');
                     unset($value['id']);
                 }
 
