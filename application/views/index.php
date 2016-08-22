@@ -162,6 +162,7 @@
 					</p>
 					<img src="/img/05.jpg" alt="">
 				</div>
+				<div class="clearfix"></div>
 			</section>
 		</div>
 	</div>
