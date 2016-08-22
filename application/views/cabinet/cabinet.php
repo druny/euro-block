@@ -9,17 +9,19 @@
 				<p class="name col-lg-9 col-md-9 col-sm-12 col-xs-12"><a href="/cabinet/all_orders"><?= $username; ?></a></p>
 			</div>
 			<div class="admin-btn col-sm-4 col-xs-12">
-				<a href="">
+				<a href="/cabinet">
 					<img src="/img/menu-icon.png" alt="all orders">
 					<p>Все заказы</p>
 				</a>
 			</div>
+			<?php if ($is_admin): ?>
 			<div class="admin-btn col-sm-4 col-xs-12">
 				<a href="/cabinet/my_orders">
 					<img src="/img/active.png" alt="active">
 					<p>Мои заказы</p>
 				</a>
 			</div>
+			<?php endif; ?>
 			<div class="admin-btn col-sm-4 col-xs-12">
 			<a href="/cabinet/archive">
 					<img src="/img/arhive.png" alt="active">
