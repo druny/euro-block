@@ -18,7 +18,7 @@ class Sending extends CI_Controller {
 			$this->email->bcc($email); 
 
 			$this->email->subject('Dear, ' . $name);
-			$this->email->message('Fuck You!');
+			$this->email->message('You!');
 
 			$this->email->send();
 			
@@ -30,10 +30,6 @@ class Sending extends CI_Controller {
 			$this->load->view('send/formnegative');
 			$this->load->view('footer');
 
-		}
-
-		
-			
+		}	
 	}
-	
 }
