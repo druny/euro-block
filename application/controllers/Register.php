@@ -9,23 +9,46 @@ class Register extends CI_Controller
     {
         if ( ! $this->ion_auth->logged_in())
         {
-            if ($this->form_validation->run('register') == FALSE)
+            if ($this->form_validation->run('register_individual') == FALSE && $this->form_validation->run('register_organization') == FALSE)
             {
+                $data['ownership_types'] = $this->db->get('type_of_ownership')->result();
+                $data['member_types'] = $this->db->get('members_type')->result();
+
                 $this->load->view('header');
-                $this->load->view('register/index');   
+                $this->load->view('register/index', $data);   
                 $this->load->view('footer');        
             }
             else
             {
-                $identity = $this->input->post('identity');
-                $password = $this->input->post('password');
-                $email = strtolower($this->input->post('email'));
-                $additional_data = [
-                    'first_name' => $this->input->post('first_name'),
-                    'last_name'  => $this->input->post('last_name'),
-                    'company'    => $this->input->post('company'),
-                    'phone'      => $this->input->post('phone'),
-                ];
+                if ($this->form_validation->run('register_individual') == TRUE) {
+                    $identity = strtolower($this->input->post('email'));
+                    $password = $this->input->post('password');
+                    $email = strtolower($this->input->post('email'));
+                    $additional_data = [
+                        'first_name'         => $this->input->post('first_name'),
+                        'last_name'          => $this->input->post('last_name'),
+                        'passport'           => $this->input->post('passport'),
+                        'registration_place' => $this->input->post('registration_place'),
+                        'phone'              => $this->input->post('phone'),
+                        'issued_by'          => $this->input->post('issued_by'),
+                        'member_type'        => (int) $this->input->post('member_type')
+                    ];
+                }
+                else if ($this->form_validation->run('register_organization') == TRUE) {
+                    $identity = strtolower($this->input->post('email'));
+                    $password = $this->input->post('password');
+                    $email = strtolower($this->input->post('email'));
+                    $additional_data = [
+                        'first_name'         => $this->input->post('first_name'),
+                        'last_name'          => $this->input->post('last_name'),
+                        'company'            => $this->input->post('company'),
+                        'legal_address'      => $this->input->post('legal_address'),
+                        'phone'              => $this->input->post('phone'),
+                        'issued_by'          => $this->input->post('issued_by'),
+                        'member_type'        => (int) $this->input->post('member_type')
+                    ];
+                }
+
                 if ($this->ion_auth->register($identity, $password, $email, $additional_data)) {
                     redirect('/');
                 }
@@ -33,6 +56,7 @@ class Register extends CI_Controller
                 {
                     echo "Что-то пошло не так";
                 }
+                
             }
         }
         else
@@ -41,4 +65,6 @@ class Register extends CI_Controller
             die;
         }
     }
+
+
 }
