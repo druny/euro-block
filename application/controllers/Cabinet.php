@@ -227,4 +227,8 @@ class Cabinet extends CI_Controller
         }
     }
 
+    public function blank() {
+        $this->load->view('blank');
+    }
+
 }

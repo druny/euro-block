@@ -1,5 +1,7 @@
+
+
 <?= validation_errors(); ?>
-<div class="text-center">
+<div class="text-center register-form">
     <label for="individual-btn">Физ. лицо</label>
     <input type="radio" name="members_type" id="individual-btn" checked>
     <label for="organization-btn">Юр. лицо</label>
