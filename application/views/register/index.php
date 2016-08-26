@@ -1,12 +1,12 @@
 <?= validation_errors(); ?>
 <div class="text-center">
     <label for="individual-btn">Физ. лицо</label>
-    <input type="radio" name="member_type" id="individual-btn" checked>
+    <input type="radio" name="members_type" id="individual-btn" checked>
     <label for="organization-btn">Юр. лицо</label>
-    <input type="radio" name="member_type" id="organization-btn">
+    <input type="radio" name="members_type" id="organization-btn">
 </div>
 
-<form action="/register" method="post" class="form-horizontal clearfix registration " id="individual-form"> 
+<form action="/register" method="post" class="form-horizontal clearfix registration hidden-form" id="individual-form"> 
     <input type="hidden" name="member_type" value="1">
     <div class="form-group">
         <label for="email"  class="col-sm-3 control-label registration-descr">E-mail:</label>
@@ -74,7 +74,7 @@
         <input type="submit"  class="btn btn-default " name="" value="OK">
     </div>
 </form>
-<form action="/register" method="post" class="form-horizontal clearfix registration" id="organization-form"> 
+<form action="/register/register_organization" method="post" class="form-horizontal clearfix registration hidden-form" id="organization-form"> 
     <input type="hidden" name="member_type" value="2">
 
     <div class="form-group">
@@ -129,6 +129,20 @@
         <label for="legal_address"  class="col-sm-3 control-label registration-descr">Юридический адрес:</label>
         <div class="col-sm-6">
             <input type="text" class="form-control" name="legal_address" value="<?= set_value('legal_address'); ?>" id="legal_address">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="inn"  class="col-sm-3 control-label registration-descr">ИНН:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="inn" value="<?= set_value('inn'); ?>" id="inn">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="kpp"  class="col-sm-3 control-label registration-descr">КПП:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="kpp" value="<?= set_value('kpp'); ?>" id="kpp">
         </div>
     </div>
     

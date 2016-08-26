@@ -98,7 +98,7 @@
 					<h2 class="login-topic">Войти в личный кабинет</h2>
 					<div class="login-errors"><?= $this->session->flashdata('login_errors'); ?></div>
 					<form class="entrance" action="/auth/login" method="post">
-						<input type="text" name="identity" placeholder="Логин:" value="<?php if ( ! empty($this->session->flashdata('login'))) echo $this->session->flashdata('login'); ?>">
+						<input type="text" name="identity" placeholder="E-mail:" value="<?php if ( ! empty($this->session->flashdata('login'))) echo $this->session->flashdata('login'); ?>">
 						<a class="registration" href="/register">Регистрация</a> 
 						<input type="password" name="password" placeholder="Пароль:">
 						<button type="submit" id="login-btn" class="login-btn">Войти</button> 
@@ -108,7 +108,7 @@
 				<div class="personal-info login current-order-bg col-lg-3 col-md-3 col-sm-12 col-xs-12">
 					<h4>Личный кабинет пользователя:</h4> 
 					<button class="exit col-lg-3 col-md-3 col-sm-12 col-xs-12" type="submit"><a href="/auth/logout" class="exit-text" >Выход</a></button> 
-					<p class="name col-lg-9 col-md-9 col-sm-12 col-xs-12"><a href="/cabinet"><?= $this->ion_auth->user()->row()->username; ?></a></p> 
+					<p class="name col-lg-9 col-md-9 col-sm-12 col-xs-12"><a href="/cabinet"><?= $this->ion_auth->user()->row()->first_name . ' ' . $this->ion_auth->user()->row()->last_name; ?></a></p> 
 				</div>
 			<?php endif; ?>
 			<div class="header-video col-lg-9 col-md-9 col-sm-12 col-xs-12">

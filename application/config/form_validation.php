@@ -10,17 +10,17 @@ $config = [
         [
             'field' => 'passport',
             'label' => 'Паспорт',
-            'rules' => 'required|alpha_numeric'
+            'rules' => 'required'
         ],
         [
             'field' => 'passport',
             'label' => 'Паспорт',
-            'rules' => 'required|alpha_numeric'
+            'rules' => 'required'
         ],
         [
             'field' => 'issued_by',
             'label' => 'Кем выдан',
-            'rules' => 'required|alpha'
+            'rules' => 'required'
         ],
         [
             'field' => 'registration_place',
@@ -40,12 +40,12 @@ $config = [
         [
             'field' => 'first_name',
             'label' => 'Имя',
-            'rules' => 'required|alpha'
+            'rules' => 'required'
         ],
         [
             'field' => 'last_name',
             'label' => 'Фамилия',
-            'rules' => 'required|alpha'
+            'rules' => 'required'
         ],
         [
             'field' => 'phone',
@@ -67,7 +67,7 @@ $config = [
         [
             'field' => 'ownership_type',
             'label' => 'Форма собственности',
-            'rules' => 'required|numeric'
+            'rules' => 'required|in_list[1,2,3]'
         ],
         [
             'field' => 'company',
@@ -92,17 +92,27 @@ $config = [
         [
             'field' => 'first_name',
             'label' => 'Имя',
-            'rules' => 'required|alpha'
+            'rules' => 'required'
         ],
         [
             'field' => 'last_name',
             'label' => 'Фамилия',
-            'rules' => 'required|alpha'
+            'rules' => 'required'
         ],
         [
             'field' => 'phone',
             'label' => 'Телефон',
             'rules' => 'required'
+        ],
+        [
+            'field' => 'inn',
+            'label' => 'ИНН',
+            'rules' => 'required|numeric'
+        ],
+        [
+            'field' => 'kpp',
+            'label' => 'КПП',
+            'rules' => 'required|numeric'
         ],
         [
             'field' => 'member_type',

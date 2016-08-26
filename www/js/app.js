@@ -29,3 +29,28 @@ function getAdditionalData() {
 
 	return additionalData;
 }
+
+var indBtn = $('#individual-btn'),
+	orgBtn = $('#organization-btn'),
+	indForm = $('#individual-form'),
+	orgForm = $('#organization-form');
+
+
+if ( indBtn.is(':checked') ) {
+	indForm.removeClass('hidden-form');
+} else if ( orgBtn.is(':checked') ) {
+	orgForm.removeClass('hidden-form');
+}
+
+indBtn.click(function(){
+	if ( indForm.hasClass('hidden-form') ) {
+		indForm.removeClass('hidden-form');
+		orgForm.addClass('hidden-form');
+	}
+});
+orgBtn.click(function(){
+	if ( orgForm.hasClass('hidden-form') ) {
+		indForm.addClass('hidden-form');
+		orgForm.removeClass('hidden-form');
+	}
+});
