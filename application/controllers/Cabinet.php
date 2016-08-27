@@ -227,8 +227,31 @@ class Cabinet extends CI_Controller
         }
     }
 
+
+    //Для выдачи счета(квитанции)
     public function blank() {
         $this->load->view('blank');
+    }
+
+    public function dateList() {
+
+        $interval = new DateInterval('P2D');
+
+        $dateInterval = new DateTime;
+        $dateInterval->add($interval);
+        $dateTwo = $dateInterval->format('Y-m-d');
+
+        $deliver = $this->input->post('date');
+
+        $dateD = new DateTime($deliver);
+        $dateD = $dateD->format('D');
+        if($dateTwo == $deliver || $dateTwo > $deliver || $dateD == 'Sat' || $dateD == 'Sun') {
+            echo "Доставка осуществляется только в рабочие дни и не раньше 2-х дней со дня заказа.";
+        } else {
+            echo 'Доставка осуществится: ' . $deliver;
+        }
+
+        $this->load->view('test');
     }
 
 }
