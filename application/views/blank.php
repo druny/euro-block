@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="/css/style.min.css">
 </head>
 <body>
-	<div class="container">
+	<div class="container blank" >
 		<p class="text-center">Внимание! Оплата данного счета означает согласие сусловиями поставки товара. Уведмление об оплате обязательно, в противном случае не гарантируется наличие товара на складе. Товар отпускается по факту прихода денег на р/с Поставвщика, самовывозом, при наличии доверенности и паспорта.</p>
 
 		<table class="table table-striped table-bordered table-hover table-responsive">
@@ -56,7 +56,7 @@
 	</table>
 
 
-	<h2>Счет на оплату № 617 от 22 августа 2016</h2>
+	<h4>Счет на оплату № 617 от 22 августа 2016</h4>
 
 	<hr>
 
@@ -109,17 +109,26 @@
 	</table>
 	<div class="text-right">
 		<p>
-			Итого: 97 440,00
+		<strong>
+			Итого:
+		</strong>
+			 97 440,00
 		</p>
 	</div>
 	<div class="text-right">
 		<p>
-			В том числе НДС: 14 863,70
+		<strong>
+			В том числе НДС:
+		</strong>
+			 14 863,70
 		</p>
 	</div>
 	<div class="text-right">
 		<p>
-			Всего к оплате: 97 440,00
+		<strong>
+			Всего к оплате:
+		</strong>
+			 97 440,00
 		</p>
 	</div>
 	<p>Всего наименований 2, на сумму 97 440,00 руб.</p>
@@ -129,26 +138,63 @@
 		<table class="table table-responsive">
 			<tr>
 				<th>Руководитель</th>
-				<td>Генеральный директор должность</td>
-				<td>подпись</td>
-				<td>Свищов М.В. расшифровка подписи</td>
+				<td class="signature">
+					<p>Генеральный директор </p>
+				<hr>
+					<p>
+						должность
+					</p>
+				</td>
+				<td class="signature linee">
+				<hr>
+					<p>
+						подпись
+					</p>
+				</td>
+				<td class="signature">
+					<p>
+						Свищов М.В. 
+					</p>
+					<hr>
+					<p>
+						расшифровка подписи
+					</p>
+				</td>
 			</tr>
 			<tr>
 				<th colspan="2">
 					Главный (старший) бухгалтер
 				</th>
-				<td>Подпись</td>
-				<td>Акимова О.Д. расшифровка подписи</td>
+				<td class="signature linee">
+				<hr>
+					<p>
+						подпись
+					</p>
+				</td>
+				<td class="signature">
+					<p>Акимова О.Д.</p>
+					<hr> 
+					<p>расшифровка подписи</p>
+				</td>
 			</tr>
 			<tr>
-				<td colspan="2">
+				<th colspan="2">
 					Ответственный
+				</th>
+				<td class="signature linee">
+					<hr>
+					<p>
+						подпись
+					</p>
 				</td>
-				<td>подпись</td>
-				<td>Крамар М.В. расшифровка подписи</td>
+				<td class="signature">
+					<p>Крамар М.В.</p>
+					<hr>
+					<p>расшифровка подписи</p>
+				</td>
 			</tr>
 		</table>
-		<p>Примечание: </p>
+		<p><strong>Примечание:</strong></p>
 		<p>Счет действителен в течении 5-ти рабочих дней.</p>
 	</div>
 	
