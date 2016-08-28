@@ -48,7 +48,7 @@ class Cart extends CI_Controller {
 
             if ( ! empty($this->session->products) && !empty($this->input->post()) && isset($this->session->sum))
             {
-                $order_data = $this->generic->get_post('city, street, locality, crane, delivery_date, payment_type');
+                $order_data = $this->generic->get_post('street, locality, crane, delivery_date, payment_type');
                 $order_data['sum'] = $this->session->sum;
                 $order_data['user_id'] = $this->ion_auth->user()->row()->id;
                 $order_data['is_active'] = 1;

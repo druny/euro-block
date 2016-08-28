@@ -43,16 +43,6 @@
 					<table class="table-order">
 						<tr>
 							<td>
-								<p>Город:</p>
-							</td>
-							<td>
-								<input type="text" name="city">
-							</td>
-						</tr>
-					</table>
-					<table class="table-order">
-						<tr>
-							<td>
 								<p>Улица:</p>
 							</td>
 							<td>

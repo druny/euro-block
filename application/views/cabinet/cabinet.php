@@ -145,16 +145,6 @@
 				<table class="table-order">
 					<tr>
 						<td>
-							<p>Город:</p>
-						</td>
-						<td>
-							<p><?= $order->city; ?></p>
-						</td>
-					</tr>
-				</table>
-				<table class="table-order">
-					<tr>
-						<td>
 							<p>Улица:</p>
 						</td>
 						<td>
