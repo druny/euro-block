@@ -30,7 +30,7 @@ $config = [
         [
             'field' => 'password',
             'label' => 'Пароль',
-            'rules' => 'required|regex_match[/^([a-zA-Zа-яА-Я0-9@*#]{8,15})$/]'
+            'rules' => 'required|regex_match[/^([а-яА-ЯёЁa-zA-Z0-9@*#]{8,15})$/]'
         ],
         [
             'field' => 'password_confirm',
@@ -82,7 +82,7 @@ $config = [
         [
             'field' => 'password',
             'label' => 'Пароль',
-            'rules' => 'required|regex_match[/^([a-zA-Zа-яА-я0-9@*#]{8,15})$/]'
+            'rules' => 'required|regex_match[/^([а-яА-ЯёЁa-zA-Z0-9@*#]{8,15})$/]'
         ],
         [
             'field' => 'password_confirm',
