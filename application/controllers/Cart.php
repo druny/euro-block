@@ -48,13 +48,35 @@ class Cart extends CI_Controller {
 
             if ( ! empty($this->session->products) && !empty($this->input->post()) && isset($this->session->sum))
             {
-                $order_data = $this->generic->get_post('street, locality, crane, delivery_date, payment_type');
+                // check date
+
+                $interval = new DateInterval('P2D');
+
+                $dateInterval = new DateTime;
+                $dateInterval->add($interval);
+                $dateTwo = $dateInterval->format('Y-m-d');
+
+                $deliver = $this->input->post('delivery_date');
+
+                $dateD = new DateTime($deliver);
+                $dateD = $dateD->format('D');
+                if($dateTwo == $deliver || $dateTwo > $deliver || $dateD == 'Sat' || $dateD == 'Sun') {
+                    echo  "Доставка осуществляется только в рабочие дни и не раньше 2-х дней со дня заказа.";
+                    
+                    die;
+                } else {
+                    $order_data = $this->generic->get_post('street, locality, crane, delivery_date, payment_type');
+                }
+
+                // 
+                // 
                 $order_data['sum'] = $this->session->sum;
                 $order_data['user_id'] = $this->ion_auth->user()->row()->id;
                 $order_data['is_active'] = 1;
                 $order_data['is_done'] = 0;
                 $order_data['order_date'] = date('Y:m:d H:i:s');
                 $order_id = $this->cart->order_data($order_data);
+
 
                 $products = $this->session->products;
                 foreach ($products as $key => &$value) {

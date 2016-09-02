@@ -9,7 +9,6 @@
 	<link rel="stylesheet" href="/css/template.css">
 </head>
 <body>
-	
 	<div class="header">
 		<div class="header-menu">
 			<div class="container">

@@ -140,7 +140,7 @@
 				</table>
 			</div>
 			<div class="clearfix"></div>
-			<div class="order-info delivery col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="order-info delivery col-sm-5 col-xs-12">
 				<h4>Заказать доставку:</h4>
 				<table class="table-order">
 					<tr>
@@ -191,8 +191,11 @@
 						
 					</tr>
 				</table>
+				<?php if($order->payment_type == 'score'): ?>
+					<a href="/cabinet/blank/<?= $order->id ?>">Посмотреть бланк</a>
+				<?php  endif; ?>
 			</div>
-			<div class="order-info col-lg-4 col-md-4 col-sm-4 col-xs-4">
+			<div class="order-info  col-sm-3 col-xs-4">
 				<h4>На какое число</h4>
 				<input type="date" name="calendar" value="<?= $order->delivery_date; ?>" disabled>
 				<div class="text-center" style="">

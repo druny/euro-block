@@ -37,8 +37,11 @@
 				</table>
 			</div>
 			<div class="clearfix"></div>
+			<?php if(!empty($data['error_date'])): ?>
+				<h1 class="text-warning"><?= $data['error_date'] ?></h1>
+			<?php endif; ?>
 			<form action="/cart/order" method="post" class="cart-form">
-				<div class="order-info delivery col-lg-4 col-md-4 col-sm-4 col-xs-12">
+				<div class="order-info delivery  col-sm-5 col-xs-12">
 					<h4>Заказать доставку:</h4>
 					<table class="table-order">
 						<tr>
@@ -89,9 +92,10 @@
 						</tr>
 					</table>
 				</div>
-				<div class="order-info col-lg-4 col-md-4 col-sm-4 col-xs-4">
+				<div class="order-info  col-sm-3 col-xs-4">
 					<h4>На какое число</h4>
 					<input type="date" name="delivery_date" >
+					<p>Доставка осуществляется только в рабочие дни и не раньше 2-х дней со дня заказа.</p>
 				</div>
 				<div class="type-payment order-info col-lg-4 col-md-4 col-sm-4 col-xs-8">
 					<h4>Выбрать тип оплаты</h4>
@@ -101,7 +105,7 @@
 								<input class="payment" type="radio" name="payment_type" id="without" value="score">
 							</td>
 							<td>
-								<button type="button" data-toggle="modal" data-target="#scoreModal">
+								<button type="button"  data-toggle="modal" data-target="#scoreModal">
 										<a href="#!">
 											<img src="img/Векторный смарт-объект2.png" alt="">
 										</a>
@@ -305,7 +309,7 @@
         <h4 class="modal-title" id="myModalLabel">Получить счет на оплату</h4>
       </div>
       <div class="modal-body">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, rem molestiae fugiat eum quod quos facilis quibusdam, facere ullam iusto officiis doloremque error atque perspiciatis! Nisi voluptatibus, dolor earum consequuntur!
+        Для получения квитанции, выберите данный пункт, зайдите в личный кабинет и распечатайте бланк.
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

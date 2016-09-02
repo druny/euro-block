@@ -8,13 +8,14 @@
 	<link rel="stylesheet" href="/css/style.min.css">
 </head>
 <body>
+<?php var_dump($products); ?>
 	<div class="container blank" >
 		<p class="text-center">Внимание! Оплата данного счета означает согласие сусловиями поставки товара. Уведмление об оплате обязательно, в противном случае не гарантируется наличие товара на складе. Товар отпускается по факту прихода денег на р/с Поставвщика, самовывозом, при наличии доверенности и паспорта.</p>
 
 		<table class="table table-striped table-bordered table-hover table-responsive">
 		<tr>
 			<td rowspan="2" colspan="2">
-				ПАО "Дальневосточный банк", г.Владивосток Владивосток
+				ПАО "Дальневосточный банк", г.<?= $order->locality ?> Владивосток
 				<br>
 				Банк получателя
 			</td>
@@ -56,7 +57,7 @@
 	</table>
 
 
-	<h4>Счет на оплату № 617 от 22 августа 2016</h4>
+	<h4>Счет на оплату № <?= $order->id; ?> от <?= $order->delivery_date; ?></h4>
 
 	<hr>
 
@@ -71,11 +72,13 @@
 		</tr>
 		<tr>
 			<td>Покупатель: </td>
-			<th>ООО "СК ОНИКС", ИНН 2536271013, КПП 253601001, 690001, г.Владивосток, ул.Дальнозаводская, 2</th>
+			<th>ООО "СК ОНИКС", ИНН 2536271013, КПП 253601001, 690001, 
+			г.<?= $order->locality ?> , ул.<?= $order->street ?></th>
 		</tr>
 		<tr>
 			<td>Грузополучатель: </td>
-			<th>ООО "СК ОНИКС", ИНН 2536271013, КПП 253601001, 690001, г.Владивосток, ул.Дальнозаводская, 2</th>
+			<th>ООО "СК ОНИКС", ИНН 2536271013, КПП 253601001, 690001, 
+			г.<?= $order->locality ?> , ул.<?= $order->street ?></th>
 		</tr>
 	</table>
 	<table class="table table-responsive">
@@ -88,6 +91,20 @@
 			<th>Цена</th>
 			<th>Сумма</th>
 		</tr>
+		
+		<?php foreach ($products as $product): ?>
+		<tr>
+			<td><?= $product['id'] ?></td>
+			<td></td>
+			<td>Вентиляционный блок №1</td>
+			<td>240</td>
+			<td>шт</td>
+			<td>370,00</td>
+			<td>88 800,00</td>
+		</tr>
+			
+
+		<?php endforeach; ?>
 		<tr>
 			<td>1</td>
 			<td></td>
@@ -97,7 +114,7 @@
 			<td>370,00</td>
 			<td>88 800,00</td>
 		</tr>
-		<tr>
+		<!-- <tr>
 			<td>2</td>
 			<td></td>
 			<td>Доставка</td>
@@ -105,14 +122,14 @@
 			<td>шт</td>
 			<td>8 640,00</td>
 			<td>8 640,00</td>
-		</tr>
+		</tr> -->
 	</table>
 	<div class="text-right">
 		<p>
 		<strong>
 			Итого:
 		</strong>
-			 97 440,00
+			<?= $order->sum ?> р.
 		</p>
 	</div>
 	<div class="text-right">
@@ -120,7 +137,11 @@
 		<strong>
 			В том числе НДС:
 		</strong>
-			 14 863,70
+			 <?php  
+				 $nds = ($order->sum * 18) / 100;
+				 echo $nds;
+			 ?>
+			 р.
 		</p>
 	</div>
 	<div class="text-right">
@@ -128,7 +149,11 @@
 		<strong>
 			Всего к оплате:
 		</strong>
-			 97 440,00
+			 <?php 
+			 	$over = $order->sum + $nds;
+			 	echo $over; 
+			 ?>
+			 р.
 		</p>
 	</div>
 	<p>Всего наименований 2, на сумму 97 440,00 руб.</p>
