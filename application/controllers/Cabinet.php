@@ -235,9 +235,10 @@ class Cabinet extends CI_Controller
             $user = $this->ion_auth->user()->row();
             $data['order'] = $this->cabinet->get_one_order($id);
             $data['products'] = $this->cabinet->get_products_by_order_id($id);
-            $data['username'] = $this->ion_auth->user()->row()->first_name . ' ' . $this->ion_auth->user()->row()->last_name;
-            $data['products'] = $this->session->products;
-            var_dump($data);
+            
+            $user_id = $this->session->user_id;
+            $data['user'] = $this->cabinet->get_user_data($user_id);
+
             $this->load->view('blank', $data);
         }
         else 

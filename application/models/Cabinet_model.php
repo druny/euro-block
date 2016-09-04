@@ -224,5 +224,23 @@ class Cabinet_model extends CI_Model
 						->row();
 	}
 
+	public function get_user_data($id) {
+		$this->db->select('
+			type_of_ownership.type,
+			users.passport,
+			users.email,
+			users.first_name,
+			users.last_name,
+			users.company,
+			users.phone,
+			users.issued_by,
+			users.legal_address,
+			users.inn,
+			users.kpp
+		');
+		$this->db->join('type_of_ownership', 'type_of_ownership.id = users.ownership_type_id');
+		return $this->db->get_where('users', ['users.id' => $id])->row();
+	}
+
 
 }

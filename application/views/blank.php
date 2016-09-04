@@ -8,14 +8,13 @@
 	<link rel="stylesheet" href="/css/style.min.css">
 </head>
 <body>
-<?php var_dump($products); ?>
 	<div class="container blank" >
 		<p class="text-center">Внимание! Оплата данного счета означает согласие сусловиями поставки товара. Уведмление об оплате обязательно, в противном случае не гарантируется наличие товара на складе. Товар отпускается по факту прихода денег на р/с Поставвщика, самовывозом, при наличии доверенности и паспорта.</p>
 
 		<table class="table table-striped table-bordered table-hover table-responsive">
 		<tr>
 			<td rowspan="2" colspan="2">
-				ПАО "Дальневосточный банк", г.<?= $order->locality ?> Владивосток
+				ПАО "Дальневосточный банк", г.Владивосток
 				<br>
 				Банк получателя
 			</td>
@@ -30,7 +29,7 @@
 		</tr>
 		<tr>
 			<td>
-				Сч. №
+				Сч. № <?= $order->id; ?>
 			</td>
 		</tr>
 		<tr>
@@ -41,7 +40,7 @@
 				КПП 254001001
 			</td>
 			<td rowspan="2">
-				Сч. №
+				Сч. № <?= $order->id; ?>
 			</td>
 			<td rowspan="2" colspan="2">
 				40702810200100001334
@@ -72,13 +71,19 @@
 		</tr>
 		<tr>
 			<td>Покупатель: </td>
-			<th>ООО "СК ОНИКС", ИНН 2536271013, КПП 253601001, 690001, 
-			г.<?= $order->locality ?> , ул.<?= $order->street ?></th>
+			<th>
+				<?= $user->type ?> "<?= $user->company ?>", ИНН <?= $user->inn ?>, КПП <?= $user->kpp ?>,
+				г.<?= $order->locality ?> , ул.<?= $order->street ?>
+				
+			</th>
 		</tr>
 		<tr>
 			<td>Грузополучатель: </td>
-			<th>ООО "СК ОНИКС", ИНН 2536271013, КПП 253601001, 690001, 
-			г.<?= $order->locality ?> , ул.<?= $order->street ?></th>
+			<th>
+				<?= $user->type ?> "<?= $user->company ?>", ИНН <?= $user->inn ?>, КПП <?= $user->kpp ?>,
+				г.<?= $order->locality ?> , ул.<?= $order->street ?>
+				
+			</th>
 		</tr>
 	</table>
 	<table class="table table-responsive">
@@ -92,30 +97,22 @@
 			<th>Сумма</th>
 		</tr>
 		
-		<?php foreach ($products as $product): ?>
+		<?php $i = 1; foreach ($products as $product): ?>
 		<tr>
-			<td><?= $product['id'] ?></td>
+			<td><?= $i++ ?></td>
 			<td></td>
-			<td>Вентиляционный блок №1</td>
-			<td>240</td>
+			<td><?= $product->name ?></td>
+			<td><?= $product->amount ?></td>
 			<td>шт</td>
-			<td>370,00</td>
-			<td>88 800,00</td>
+			<td><?= $product->price ?> </td>
+			<td><?= $product->total_price ?></td>
 		</tr>
 			
 
 		<?php endforeach; ?>
-		<tr>
-			<td>1</td>
-			<td></td>
-			<td>Вентиляционный блок №1</td>
-			<td>240</td>
-			<td>шт</td>
-			<td>370,00</td>
-			<td>88 800,00</td>
-		</tr>
-		<!-- <tr>
-			<td>2</td>
+		
+		<!--  <tr>
+			<td><?= $i ?></td>
 			<td></td>
 			<td>Доставка</td>
 			<td>1</td>
@@ -156,8 +153,8 @@
 			 р.
 		</p>
 	</div>
-	<p>Всего наименований 2, на сумму 97 440,00 руб.</p>
-	<strong>Девяносто семь тысяч четыреста сорок рублей 00 копеек</strong>
+	<p>Всего наименований <?= count($products) ?>, на сумму <?= $over ?> р.</p>
+	<!-- <strong>Девяносто семь тысяч четыреста сорок рублей 00 копеек</strong> -->
 
 	<hr>
 		<table class="table table-responsive">
