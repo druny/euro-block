@@ -61,7 +61,7 @@ class Register extends CI_Controller
             {
                 $data['ownership_types'] = $this->db->get('type_of_ownership')->result();
                 $data['member_types'] = $this->db->get('members_type')->result();
-
+                
                 $this->load->view('header');
                 $this->load->view('register/index', $data);   
                 $this->load->view('footer');        

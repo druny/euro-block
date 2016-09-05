@@ -229,24 +229,17 @@ class Cabinet extends CI_Controller
 
 
     //Для выдачи счета(квитанции)
-    public function blank() {
+    public function blank($id) {
         if ($this->ion_auth->logged_in())
         {
             $user = $this->ion_auth->user()->row();
-            if ($user->member_type == 1)
-            {
-                $data['user'][] = $user->first_name; 
-                $data['user'][] = $user->last_name; 
-                $data['user'][] = $user->first_name; 
-                $data['user'][] = $user->first_name; 
-                $data['user'][] = $user->first_name; 
-            }
-            else 
-            {
+            $data['order'] = $this->cabinet->get_one_order($id);
+            $data['products'] = $this->cabinet->get_products_by_order_id($id);
+            
+            $user_id = $this->session->user_id;
+            $data['user'] = $this->cabinet->get_user_data($user_id);
 
-            }
-            $data['products'] = $this->session->products;
-            $this->load->view('blank');
+            $this->load->view('blank', $data);
         }
         else 
         {
