@@ -75,7 +75,7 @@ class Register extends CI_Controller
                         'first_name'         => $this->input->post('first_name'),
                         'last_name'          => $this->input->post('last_name'),
                         'company'            => $this->input->post('company'),
-                        'ownership_type'     => (int) $this->input->post('ownership_type'),
+                        'ownership_type_id'     => (int) $this->input->post('ownership_type'),
                         'legal_address'      => $this->input->post('legal_address'),
                         'phone'              => $this->input->post('phone'),
                         'inn'                => (int) $this->input->post('inn'),
