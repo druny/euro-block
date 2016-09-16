@@ -13,63 +13,63 @@
     <div class="form-group">
         <label for="email"  class="col-sm-3 control-label registration-descr">E-mail:</label>
         <div class="col-sm-6">
-            <input type="email" class="form-control" name="email" value="<?= set_value('email'); ?>" id="email">
+            <input type="email" class="form-control" name="email" value="<?= set_value('email'); ?>" id="email" required>
         </div>
     </div>
 
     <div class="form-group">
         <label for="first_name"  class="col-sm-3 control-label registration-descr">Имя:</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" name="first_name" value="<?= set_value('first_name'); ?>" id="first_name">
+            <input type="text" class="form-control" name="first_name" value="<?= set_value('first_name'); ?>" id="first_name" required>
         </div>
     </div>
 
     <div class="form-group">
         <label for="last_name"  class="col-sm-3 control-label registration-descr">Фамилия:</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" name="last_name" value="<?= set_value('last_name'); ?>" id="last_name">
+            <input type="text" class="form-control" name="last_name" value="<?= set_value('last_name'); ?>" id="last_name" required>
         </div>
     </div>
 
     <div class="form-group">
         <label for="passport"  class="col-sm-3 control-label registration-descr">Серия и номер паспорта:</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" name="passport" value="<?= set_value('passport'); ?>" id="passport">
+            <input type="text" class="form-control" name="passport" value="<?= set_value('passport'); ?>" id="passport" required>
         </div>
     </div>
 
     <div class="form-group">
         <label for="issued_by"  class="col-sm-3 control-label registration-descr">Кем выдан:</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" name="issued_by" value="<?= set_value('issued_by'); ?>" id="issued_by">
+            <input type="text" class="form-control" name="issued_by" value="<?= set_value('issued_by'); ?>" id="issued_by" required>
         </div>
     </div>
 
     <div class="form-group">
         <label for="registration_place"  class="col-sm-3 control-label registration-descr">Место регистрации:</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" name="registration_place" value="<?= set_value('registration_place'); ?>" id="registration_place">
+            <input type="text" class="form-control" name="registration_place" value="<?= set_value('registration_place'); ?>" id="registration_place" required>
         </div>
     </div>
 
     <div class="form-group">
         <label for="phone"  class="col-sm-3 control-label registration-descr">Телефон:</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" name="phone" value="<?= set_value('phone'); ?>" id="phone">
+            <input type="text" class="form-control" name="phone" value="<?= set_value('phone'); ?>" id="phone" required>
         </div>
     </div>
     
     <div class="form-group">
         <label for="password"  class="col-sm-3 control-label registration-descr">Пароль:</label>
         <div class="col-sm-6">
-            <input type="password" class="form-control" name="password" value="<?= set_value('password'); ?>" id="password">
+            <input type="password" class="form-control" name="password" value="<?= set_value('password'); ?>" id="password" required>
         </div>
     </div>
 
     <div class="form-group">
         <label for="password_confirm"  class="col-sm-3 control-label registration-descr">Подтвердите пароль:</label>
         <div class="col-sm-6">
-            <input type="password" class="form-control" name="password_confirm" value="<?= set_value('password_confirm'); ?>" id="password_confirm">
+            <input type="password" class="form-control" name="password_confirm" value="<?= set_value('password_confirm'); ?>" id="password_confirm" required>
         </div>
     </div>
      <div class="col-sm-offset-3 col-sm-9">
@@ -82,7 +82,7 @@
     <div class="form-group">
         <label for="email"  class="col-sm-3 control-label registration-descr">E-mail:</label>
         <div class="col-sm-6">
-            <input type="email" class="form-control" name="email" value="<?= set_value('email'); ?>" id="email">
+            <input type="email" class="form-control" name="email" value="<?= set_value('email'); ?>" id="email" required>
         </div>
     </div>
 
@@ -92,7 +92,7 @@
             <?php foreach ($ownership_types as $ownership_type): ?>
                 <div class="">
                     <label for="<?= $ownership_type->type; ?>"><?= $ownership_type->type; ?></label>
-                    <input type="radio" class="" name="ownership_type" value="<?= $ownership_type->id; ?>" id="<?= $ownership_type->type; ?>">
+                    <input type="radio" class="" name="ownership_type" value="<?= $ownership_type->id; ?>" id="<?= $ownership_type->type; ?>" required>
                 </div>
             <?php endforeach; ?>
         </div>
@@ -102,63 +102,64 @@
     <div class="form-group">
         <label for="company"  class="col-sm-3 control-label registration-descr">Название компании:</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" name="company" value="<?= set_value('company'); ?>" id="company">
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label for="first_name"  class="col-sm-3 control-label registration-descr">Имя:</label>
-        <div class="col-sm-6">
-            <input type="text" class="form-control" name="first_name" value="<?= set_value('first_name'); ?>" id="first_name">
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label for="last_name"  class="col-sm-3 control-label registration-descr">Фамилия:</label>
-        <div class="col-sm-6">
-            <input type="text" class="form-control" name="last_name" value="<?= set_value('last_name'); ?>" id="last_name">
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label for="phone"  class="col-sm-3 control-label registration-descr">Телефон:</label>
-        <div class="col-sm-6">
-            <input type="text" class="form-control" name="phone" value="<?= set_value('phone'); ?>" id="phone">
+            <input type="text" class="form-control" name="company" value="<?= set_value('company'); ?>" id="company" required>
         </div>
     </div>
 
     <div class="form-group">
         <label for="legal_address"  class="col-sm-3 control-label registration-descr">Юридический адрес:</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" name="legal_address" value="<?= set_value('legal_address'); ?>" id="legal_address">
+            <input type="text" class="form-control" name="legal_address" value="<?= set_value('legal_address'); ?>" id="legal_address" required>
         </div>
     </div>
 
     <div class="form-group">
         <label for="inn"  class="col-sm-3 control-label registration-descr">ИНН:</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" name="inn" value="<?= set_value('inn'); ?>" id="inn">
+            <input type="text" class="form-control" name="inn" value="<?= set_value('inn'); ?>" id="inn" required>
         </div>
     </div>
 
     <div class="form-group">
         <label for="kpp"  class="col-sm-3 control-label registration-descr">КПП:</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" name="kpp" value="<?= set_value('kpp'); ?>" id="kpp">
+            <input type="text" class="form-control" name="kpp" value="<?= set_value('kpp'); ?>" id="kpp" required>
         </div>
     </div>
+
+    <div class="form-group">
+        <label for="first_name"  class="col-sm-3 control-label registration-descr">Имя:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="first_name" value="<?= set_value('first_name'); ?>" id="first_name" required>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="last_name"  class="col-sm-3 control-label registration-descr">Фамилия:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="last_name" value="<?= set_value('last_name'); ?>" id="last_name" required>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="phone"  class="col-sm-3 control-label registration-descr">Телефон:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="phone" value="<?= set_value('phone'); ?>" id="phone" required>
+        </div>
+    </div>
+
     
     <div class="form-group">
         <label for="password"  class="col-sm-3 control-label registration-descr">Пароль:</label>
         <div class="col-sm-6">
-            <input type="password" class="form-control" name="password" value="<?= set_value('password'); ?>" id="password">
+            <input type="password" class="form-control" name="password" value="<?= set_value('password'); ?>" id="password" required>
         </div>
     </div>
 
     <div class="form-group">
         <label for="password_confirm"  class="col-sm-3 control-label registration-descr">Подтвердите пароль:</label>
         <div class="col-sm-6">
-            <input type="password" class="form-control" name="password_confirm" value="<?= set_value('password_confirm'); ?>" id="password_confirm">
+            <input type="password" class="form-control" name="password_confirm" value="<?= set_value('password_confirm'); ?>" id="password_confirm" required>
         </div>
     </div>
      <div class="col-sm-offset-3 col-sm-9">

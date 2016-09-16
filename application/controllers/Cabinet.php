@@ -236,9 +236,9 @@ class Cabinet extends CI_Controller
             $data['order'] = $this->cabinet->get_one_order($id);
             $data['products'] = $this->cabinet->get_products_by_order_id($id);
             
-            $user_id = $this->session->user_id;
+            $user_id = $data['order']->user_id;
             $data['user'] = $this->cabinet->get_user_data($user_id);
-
+            //var_dump($data);
             $this->load->view('blank', $data);
         }
         else 

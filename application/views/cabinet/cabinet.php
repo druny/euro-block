@@ -192,7 +192,12 @@
 					</tr>
 				</table>
 				<?php if($order->payment_type == 'score'): ?>
-					<a href="/cabinet/blank/<?= $order->id ?>">Посмотреть бланк</a>
+					<a class="text-primary" href="/cabinet/blank/<?= $order->id ?>">
+						<h4>
+							<img src="/img/print.png">
+							Посмотреть бланк
+						</h4>
+					</a>
 				<?php  endif; ?>
 			</div>
 			<div class="order-info  col-sm-3 col-xs-4">

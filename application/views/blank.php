@@ -8,7 +8,11 @@
 	<link rel="stylesheet" href="/css/style.min.css">
 </head>
 <body>
-	<div class="container blank" >
+	<a href='javascript:window.print(); void 0;' class="none-print">
+		<img  src="/img/printer-icon.gif">
+		<p>Распечатать</p>
+	</a>
+	<div class="container blank">
 		<p class="text-center">Внимание! Оплата данного счета означает согласие сусловиями поставки товара. Уведмление об оплате обязательно, в противном случае не гарантируется наличие товара на складе. Товар отпускается по факту прихода денег на р/с Поставвщика, самовывозом, при наличии доверенности и паспорта.</p>
 
 		<table class="table table-striped table-bordered table-hover table-responsive">
@@ -219,6 +223,7 @@
 		<p><strong>Примечание:</strong></p>
 		<p>Счет действителен в течении 5-ти рабочих дней.</p>
 	</div>
-	
+
+
 </body>
 </html>

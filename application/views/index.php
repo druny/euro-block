@@ -592,7 +592,7 @@
 		</div>
 	</div>
 
-	<div class="mass-media">
+	<!-- div class="mass-media">
 		<img class="divide" src="img/line.png" alt="">
 		<div class="container">
 			<div class="title-topic title-width" id="mass_media">
@@ -609,11 +609,11 @@
 		<div class="container">
 			<div class="title-topic title-width" id="reviews">
 				<h1 class="title">Отзывы наших клиентов</h1>
-			</div>
+			</div> -->
 				
 			<!-- Slider start -->
 
-			<div id="carousel" class="carousel slide app-slide" data-ride="carousel">
+			<!-- <div id="carousel" class="carousel slide app-slide" data-ride="carousel">
 				<ol class="carousel-indicators">
 					<li class="active" data-target="#carousel" data-slide-to="0"></li>
 					<li data-target="#carousel" data-slide-to="1"></li>
@@ -673,7 +673,7 @@
 					<img src="/img/btn-right.png" alt="">
 				</a>
 			</div>
-			
+			 -->
 			<!-- Slider end -->
 
 		</div>

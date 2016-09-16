@@ -895,11 +895,13 @@ html {
 .table-order {
 			width: 100%;
 			border: 1px solid #000;
+			table-layout: auto;
 			tr {
 				overflow: scroll;
 				background-color: #f8f7fd;
 				border-collapse: collapse;
 				border: 1px solid #000;
+
 				input[type=radio] {
 					margin-left: 15px;
 					margin-top: 5px;
@@ -1159,4 +1161,12 @@ html {
 }
 .blank {
 	margin-top: -60px;
+}
+.none-print img{
+	width: 100px;
+}
+@media print { 
+   .none-print {
+   		display: none;
+   }
 }
