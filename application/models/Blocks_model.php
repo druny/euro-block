@@ -45,5 +45,20 @@ class Blocks_model extends CI_Model
         $this->db->where_in('products.id', $products_id);
         return $this->db->get('products')->result_array();
     }
+
+    public function get_products() {
+        $this->db->select('
+            products.id AS id,
+            products.name AS name,
+            products.price AS price,
+            blocks.name AS block_name
+        ');
+        $this->db->join('blocks', 'blocks.id = products.block_id', 'left');
+        return $this->db->get('products')->result();
+    }
+
+    public function get_blocks() {
+        return $this->db->get('blocks')->result();
+    }
     
 }

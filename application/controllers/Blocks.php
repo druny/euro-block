@@ -78,11 +78,28 @@ class Blocks extends CI_Controller
             die;
         }
         else
-        {
-            redirect('/auth/must_register');
-            die;
-        }
+            {
+                redirect('/auth/must_register');
+                die;
+            }
     }
 
+    public function catalog() 
+    {
+        if ($this->ion_auth->logged_in())
+        {
+            $data['username'] = $this->ion_auth->user()->row()->username;
+            $data['products'] = $this->blocks->get_products();
+            $data['blocks'] = $this->blocks->get_blocks();
 
+            $this->load->view('header');
+            $this->load->view('blocks/catalog', $data);
+            $this->load->view('footer');
+        }else
+            {
+                redirect('register');
+                die;
+            }
+ 
+    }
 }
