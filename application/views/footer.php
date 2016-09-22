@@ -57,32 +57,36 @@
 	</footer>
 
 	<!-- modal -->
-	<div class="modal fade login " id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal fade  " id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content mymodal">
-	      <div class="modal-header">
-	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <h4 class="modal-title login-topic" id="myModalLabel">Отправить</h4>
-	      </div>
 	      <div class="modal-body">
+	      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		        <span aria-hidden="true">
+		        	<img src="/img/modal-close.png" alr="close">
+		        </span>
+	       </button>
+
+	      <h4 class="modal-title" id="myModalLabel">
+	      	Заполните форму и получите <br>
+	      	<strong>Прайс-лист</strong>
+	      	на почту
+	      </h4>
+
 	      <form method="post" action="/sending">
 			  <div class="form-group">
-			    <label for="exampleInputEmail1">Email адресс</label>
-			    <input type="email" class="form-control" name="email" id="exampleInputEmail1" placeholder="Email" required>
+			    <input type="text" class="form-control name" name="name" id="" placeholder="Имя" required>
 			  </div>
 			  <div class="form-group">
-			    <label for="exampleInputPassword1">Имя</label>
-			    <input type="text" class="form-control" name="name" id="" placeholder="Имя" required>
+			    <input type="email" class="form-control email" name="email" id="exampleInputEmail1" placeholder="Email" required>
 			  </div>
 				<div class="form-group">
-			    <label for="exampleInputPassword1">Телефон</label>
-			    <input type="text" class="form-control"  name="phone" id="" placeholder="Телефон" required>
+			    <input type="text" class="form-control phone"  name="phone" id="" placeholder="Телефон" required>
 			  </div>
-			  <button type="submit" class="btn btn-default">Отправить</button>
+			  <button type="submit" class="btn btn-default get">
+			  	<p class="get-text">Отправить</p>
+			  </button>
 			</form>
-	      </div>
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
 	      </div>
 	    </div>
 	  </div>

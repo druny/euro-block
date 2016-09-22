@@ -171,7 +171,7 @@ html {
 			height: 380px;
 		}
 	}
-	.login {
+		.login {
 		margin-top: 24px;
 		background: linear-gradient(180deg, #028bf8, #006bd3);
 		border-radius: 10px;
@@ -226,6 +226,7 @@ html {
 		border-radius: 10px;
 		padding: 15px;
 		border: 3px solid #006bd3;
+		
 		.my-icon {
    		 	position: relative;
 		}
@@ -241,10 +242,11 @@ html {
 		    left: -15px;
 		    top: 15px;
 		    margin-bottom: 15px;
+
 		}
 		&-topic {
 			font-family: @main-font-bold;
-			font-size: 23px;
+			//font-size: 23px;
 			text-transform: uppercase;
 			color: #fff;
 			text-align: center;
@@ -263,33 +265,35 @@ html {
 				color: #000;
 				padding-left: 10px;
 			}
-		.get {
-			width: 100%;
-			margin-top: 20px;
-			border: none;
-			border-radius: 5px;
-			height: 40px;
-			background-color: #fdca00;
-			&-img {
-				margin-top: -5px;
-				margin-right: 10px;
-				width: 30px;
-				
-			}
-			&-text {
-				margin-top: 5px;
-				margin-left: 10px;
-				font-size: 20px;
-				font-family: @main-font-book;
-				color: #000;
-				text-transform: uppercase;
-				display: inline-block;
-			}
-		}
 
 	}
 }
 
+
+
+.get {
+	width: 100%;
+	margin-top: 20px;
+	boder: none;
+	border-radius: 5px;
+	height: 40px;
+	background-color: #fdca00;
+	&-img {
+		margin-top: -5px;
+		margin-right: 10px;
+		width: 30px;		
+	}
+	&-text {
+		margin-top: 5px;
+		margin-left: 10px;
+		font-size: 16px;
+		font-weight: bold;
+		font-family: @main-font-book;
+		color: #000;
+		text-transform: uppercase;
+		display: inline-block;
+	}
+}
 
 .info {
 	background: #fff url(../img/info-bg.png) no-repeat;
@@ -1103,9 +1107,51 @@ html {
 	
 }
 
+
 // modal
 .mymodal {
 	background: #3e09ff;
+	.modal-title {
+		font-family: @main-font-book;
+		color: #fff;
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 16px;
+		margin-bottom: 15px;
+	}
+	.form-control {
+		border-radius: 0;
+		text-transform: uppercase;
+		font-family: @main-font-book;
+		font-size: 15px;
+		color: #000;
+		padding-left: 45px;
+		font-weight: bold;
+		
+		background: #fff url(/img/input-name.png) no-repeat;
+		background-position: 10px 0px;
+		background-size: contain;
+	}
+	.email {
+		background-image: url(/img/input-mail.png);
+	}
+	.phone {
+		background-image: url(/img/input-phone.png);
+		
+	}
+	input:focus {
+   		border: 3px solid #fff;
+	}
+	.close {
+		opacity: 2;
+		position: relative;
+		top: -30px;
+		right: -30px;
+		:hover {
+			opacity: 1;
+		}
+	}
+
 }
 
 .org-type-fields {
