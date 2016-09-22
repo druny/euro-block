@@ -52,12 +52,12 @@
 							<li class="menu-item">
 								<a href="/#calculator">Калькулятор</a>
 							</li>
-							<li class="menu-item">
+							<!-- <li class="menu-item">
 								<a href="/#mass_media">СМИ о нас</a>
 							</li>
 							<li class="menu-item">
 								<a href="/#reviews">Отзывы</a
-							></li>
+							></li> -->
 							<li class="menu-item">
 								<a href="/#certifications">Сертификаты</a>
 							</li>
