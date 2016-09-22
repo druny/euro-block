@@ -114,16 +114,20 @@
 				<iframe width="700" height="420" src="https://www.youtube.com/embed/2xhnCsNFrbI?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 			</div>
 			<div class="feedback col-lg-3 col-md-3 col-sm-12 col-xs-12">
-				<h2 class="feedback-topic">Оставьте заявку и получите полный прайс-лист</h2>
-				<form action="#!" method="post">
-					<input type="text" placeholder="Введите ваше имя:">
-					<input type="phone" placeholder="Введите телефон">
-					<input type="text" placeholder="Введите e-mail">
+				<h3 class="feedback-topic">
+					Хотите купить блоки прямо сейчас?*
+				</h3>
+				<div class="text-center">
+					<img src="/img/products/block01.png" alt="Хотите купить блоки прямо сейчас?*">
+				</div>
+				<h5 class="feedback-topic">*только для зарегестрированных пользователей</h5>
+				<a href="/blocks/catalog">
 					<button  class="get" type="submit">
 						<img class="get-img" src="/img/send.png" alt="">
-						<p class="get-text" >Получить</p>
+						<p class="get-text" >Перейти в каталог</p>
 					</button>
-				</form>
+				</a>
+
 				<i class="my-icon"><i></i></i>
 			</div>
 		</div>
@@ -218,7 +222,7 @@
 
 			</div>
 			<img class="advantages-img image" src="/img/vodopogloshenie.png" alt="info">
-			<script type="text/javascript" src="simplebox_util.js"></script>
+			
 
 			<div class="distinction">
 				<img src="/img/first_luchshih_2007.png" alt="">
