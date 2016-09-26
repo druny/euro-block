@@ -328,7 +328,8 @@
         <h4 class="modal-title" id="myModalLabel">Реквизиты</h4>
       </div>
       <div class="modal-body">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, rem molestiae fugiat eum quod quos facilis quibusdam, facere ullam iusto officiis doloremque error atque perspiciatis! Nisi voluptatibus, dolor earum consequuntur!
+        <p>5469500010207050</p> 
+        <p>Марк Владимирович</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -347,7 +348,7 @@
         <h4 class="modal-title" id="myModalLabel">Оплата наличными</h4>
       </div>
       <div class="modal-body">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, rem molestiae fugiat eum quod quos facilis quibusdam, facere ullam iusto officiis doloremque error atque perspiciatis! Nisi voluptatibus, dolor earum consequuntur!
+        <p>Оплата у нас в офисе</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

@@ -28,6 +28,9 @@ class Blocks extends CI_Controller
         if ($this->ion_auth->logged_in())
         {
             $amount = $this->blocks->prepare_data($this->input->post());
+            if(in_array(0, $amount)){
+                echo 'Некоторая переменная не содержит значения'; die;
+            }
             $data = $this->blocks->get_products_by_id($this->blocks->products_id);
             $sum = 0;
 
@@ -41,7 +44,7 @@ class Blocks extends CI_Controller
             {
                 $this->session->products = $data;
                 $this->session->sum = $sum;
-                $this->session->count =  ( ! empty($this->session->products)) ? count($this->session->products) : 0;
+                $this->session->count =  count($this->session->products);
             }
             else
             {
@@ -73,8 +76,7 @@ class Blocks extends CI_Controller
                     $this->session->sum = $current_sum;
                 }
             }
-
-            redirect('/cart');
+            redirect($_SERVER['HTTP_REFERER']);
             die;
         }
         else

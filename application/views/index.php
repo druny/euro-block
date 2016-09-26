@@ -28,7 +28,7 @@
 							</a>
 							<div class="mobile-info">
 				
-					       		<a class="basket" href="/cart">корзина <?= $this->session->count; ?></a>
+					       		<a class="basket" href="/cart">корзина <?= count($this->session->products); ?></a>
 					       		<p class="phone">+7 (423) 230-12-18</p>
 							
 							</div>
@@ -61,11 +61,14 @@
 							<li class="menu-item">
 								<a href="#certifications">Сертификаты</a>
 							</li>
-					       </ul>
+							<li class="menu-item">
+								<a href="/blocks/catalog">Каталог</a>
+							</li>
+					      </ul>
 					   <li class="request nav navbar-nav ">
 					   		<a class="basket" href="/cart">
 					   			<img  class="trunk" src="img/trunk2.png" alt="">
-					        	корзина <?= $this->session->count; ?>
+					        	корзина <?= count($this->session->products) ?>
 					        </a>
 					   </li>
 					   <li class="request nav navbar-nav navbar-right">

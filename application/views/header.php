@@ -28,7 +28,7 @@
 							
 							<div class="mobile-info">
 				
-					       		<a class="basket" href="#!">корзина <?= $this->session->count ?></a>
+					       		<a class="basket" href="#!">корзина <?= count($this->session->products) ?></a>
 					       		<p class="phone">+7 (423) 230-12-18</p>
 							
 							</div>
@@ -61,17 +61,21 @@
 							<li class="menu-item">
 								<a href="/#certifications">Сертификаты</a>
 							</li>
+							<li class="menu-item">
+								<a href="/blocks/catalog">Каталог</a>
+							</li>
 					       </ul>
 					   <li class="request nav navbar-nav ">
 					   		<a class="basket" href="/cart">
 					   			<img  class="trunk" src="/img/white-trunk2.png" alt="">
-					   			корзина <?= $this->session->count ?>
+					   			корзина <?= count($this->session->products) ?>
 					   		</a>
 					   </li>
 					   <li class="request nav navbar-nav navbar-right">
 							<p class="phone">+7 (423) 230-12-18</p>
 							<a class="request-call" data-toggle="modal" data-target="#myModal" href="#!">заказать обратный звонок</a>
 						</li>
+
 				    </div>
 				    </div>
 				</nav>
