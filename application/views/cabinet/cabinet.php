@@ -29,7 +29,7 @@
 				</a>
 			</div>
 			<div class="clearfix"></div>
-			<div class="order-info col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="order-info  col-sm-4 col-xs-12">
 				<h4>Оплата</h4>
 				<table class="table-order">
 					<tr>
@@ -49,9 +49,11 @@
 							<?php else: echo $order->paid; endif; ?>
 						</td>
 					</tr>
+					
 				</table>
 			</div>
-			<div class="order-info col-lg-4 col-md-4 col-sm-4 col-xs-12">
+
+			<div class="order-info  col-sm-4 col-xs-12">
 				<h4>Отгрузка</h4>
 				<table class="table-order">
 					<tr>
@@ -76,7 +78,7 @@
 					</tr>
 				</table>
 			</div>
-			<div class="order-info col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="order-info  col-sm-4 col-xs-12">
 				<h4>Отгрузка поддонов</h4>
 				<table class="table-order">
 					<tr>
@@ -107,12 +109,23 @@
 					</div>
 				</div>
 			<?php endif; ?>
-
+				
 			<div class="clearfix">
 				
 			</div>
+
 			<div class="order-info flow col-lg-10 col-md-9 col-sm-8 col-xs-12">
 				<h4>Текущий заказ</h4>
+				<table class="table-order  col-sm-4 col-xs-12">
+					<tr>
+						<td>
+							<p>Необходимое кол-во поддонов:
+
+							<?= $order->number_of_pallets ?></p>
+						</td>
+					</tr>
+				</table>
+				<br>
 				<table class="table-order">
 					<?php foreach ($products as $product): ?>
 						<tr>
@@ -138,10 +151,19 @@
 						</td>
 					</tr>
 				</table>
+
+			<h4>Оплата за доставку</h4>
+				<table class="table-order">
+					<td>
+						<p><?= $order->delivery_cost;?> р</p>
+					</td>
+				</table>
 			</div>
+
 			<div class="clearfix"></div>
 			<div class="order-info delivery col-sm-5 col-xs-12">
-				<h4>Заказать доставку:</h4>
+			<?php if($is_admin): ?>
+				<h4>Доставка:</h4>
 				<table class="table-order">
 					<tr>
 						<td>
@@ -158,7 +180,7 @@
 							<p>Населенный пункт</p>
 						</td>
 						<td>
-							<p><?= $order->locality; ?></p>
+							<p><?= $order->settlement; ?></p>
 						</td>
 					</tr>
 				</table>
@@ -191,15 +213,25 @@
 						
 					</tr>
 				</table>
-				<?php if($order->payment_type == 'score'): ?>
-					<a class="text-primary" href="/cabinet/blank/<?= $order->id ?>">
+				<?php endif; ?>
+				<?php  if($order->payment_type == 'score'): ?>
+
+					<a class="text-primary" href="/cabinet/blank/<?= $order->id; ?>">
 						<h4>
 							<img src="/img/print.png">
 							Посмотреть бланк
 						</h4>
 					</a>
-				<?php  endif; ?>
+		
+				<?php  elseif($order->payment_type == 'requisites'): ?>
+					<h4 class="text-warning">Реквизиты для оплаты: </h4>
+					<h4>5469500010207050</h4> 
+       			 	<h4>Марк Владимирович</h4>
+       			<?php endif; ?>
+				
 			</div>
+
+			<?php if($is_admin): ?>
 			<div class="order-info  col-sm-3 col-xs-4">
 				<h4>На какое число</h4>
 				<input type="date" name="calendar" value="<?= $order->delivery_date; ?>" disabled>
@@ -271,6 +303,7 @@
 					</tr>
 				</table>
 			</div>
+		<?php endif; ?>
 		</div>
 	</div>
 

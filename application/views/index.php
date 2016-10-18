@@ -109,7 +109,11 @@
 			<?php else: ?>
 				<div class="personal-info login current-order-bg col-lg-3 col-md-3 col-sm-12 col-xs-12">
 					<h4>Личный кабинет пользователя:</h4> 
-					<button class="exit col-lg-3 col-md-3 col-sm-12 col-xs-12" type="submit"><a href="/auth/logout" class="exit-text" >Выход</a></button> 
+					<a href="/auth/logout" class="exit-text" >
+						<button class="exit col-lg-3 col-md-3 col-sm-12 col-xs-12" type="submit">
+							Выход
+						</button> 
+					</a>
 					<p class="name col-lg-9 col-md-9 col-sm-12 col-xs-12"><a href="/cabinet"><?= $this->ion_auth->user()->row()->first_name . ' ' . $this->ion_auth->user()->row()->last_name; ?></a></p> 
 				</div>
 			<?php endif; ?>
@@ -121,7 +125,9 @@
 					Хотите купить блоки прямо сейчас?*
 				</h3>
 				<div class="text-center">
-					<img src="/img/products/block01.png" alt="Хотите купить блоки прямо сейчас?*">
+					<a href="/blocks/catalog">
+						<img src="/img/products/block01.png" alt="Хотите купить блоки прямо сейчас?*">
+					</a>
 				</div>
 				<h5 class="feedback-topic">*только для зарегестрированных пользователей</h5>
 				<a href="/blocks/catalog">

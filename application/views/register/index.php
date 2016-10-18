@@ -11,21 +11,21 @@
 <form action="/register" method="post" class="form-horizontal clearfix registration hidden-form" id="individual-form"> 
     <input type="hidden" name="member_type" value="1">
     <div class="form-group">
-        <label for="email"  class="col-sm-3 control-label registration-descr">E-mail:</label>
+        <label for="email"  class="col-sm-3 control-label registration-descr">E-mail*:</label>
         <div class="col-sm-6">
             <input type="email" class="form-control" name="email" value="<?= set_value('email'); ?>" id="email" required>
         </div>
     </div>
 
     <div class="form-group">
-        <label for="first_name"  class="col-sm-3 control-label registration-descr">Имя:</label>
+        <label for="first_name"  class="col-sm-3 control-label registration-descr">Имя*:</label>
         <div class="col-sm-6">
             <input type="text" class="form-control" name="first_name" value="<?= set_value('first_name'); ?>" id="first_name" required>
         </div>
     </div>
 
     <div class="form-group">
-        <label for="last_name"  class="col-sm-3 control-label registration-descr">Фамилия:</label>
+        <label for="last_name"  class="col-sm-3 control-label registration-descr">Фамилия*:</label>
         <div class="col-sm-6">
             <input type="text" class="form-control" name="last_name" value="<?= set_value('last_name'); ?>" id="last_name" required>
         </div>
@@ -34,40 +34,40 @@
     <div class="form-group">
         <label for="passport"  class="col-sm-3 control-label registration-descr">Серия и номер паспорта:</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" name="passport" value="<?= set_value('passport'); ?>" id="passport" required>
+            <input type="text" class="form-control" name="passport" value="<?= set_value('passport'); ?>" id="passport">
         </div>
     </div>
 
     <div class="form-group">
         <label for="issued_by"  class="col-sm-3 control-label registration-descr">Кем выдан:</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" name="issued_by" value="<?= set_value('issued_by'); ?>" id="issued_by" required>
+            <input type="text" class="form-control" name="issued_by" value="<?= set_value('issued_by'); ?>" id="issued_by">
         </div>
     </div>
 
     <div class="form-group">
-        <label for="registration_place"  class="col-sm-3 control-label registration-descr">Место регистрации:</label>
+        <label for="registration_place"  class="col-sm-3 control-label registration-descr">Место регистрации*:</label>
         <div class="col-sm-6">
             <input type="text" class="form-control" name="registration_place" value="<?= set_value('registration_place'); ?>" id="registration_place" required>
         </div>
     </div>
 
     <div class="form-group">
-        <label for="phone"  class="col-sm-3 control-label registration-descr">Телефон:</label>
+        <label for="phone"  class="col-sm-3 control-label registration-descr">Телефон*:</label>
         <div class="col-sm-6">
             <input type="text" class="form-control" name="phone" value="<?= set_value('phone'); ?>" id="phone" required>
         </div>
     </div>
     
     <div class="form-group">
-        <label for="password"  class="col-sm-3 control-label registration-descr">Пароль:</label>
+        <label for="password"  class="col-sm-3 control-label registration-descr">Пароль*:</label>
         <div class="col-sm-6">
             <input type="password" class="form-control" name="password" value="<?= set_value('password'); ?>" id="password" required>
         </div>
     </div>
 
     <div class="form-group">
-        <label for="password_confirm"  class="col-sm-3 control-label registration-descr">Подтвердите пароль:</label>
+        <label for="password_confirm"  class="col-sm-3 control-label registration-descr">Подтвердите пароль*:</label>
         <div class="col-sm-6">
             <input type="password" class="form-control" name="password_confirm" value="<?= set_value('password_confirm'); ?>" id="password_confirm" required>
         </div>
@@ -80,7 +80,7 @@
     <input type="hidden" name="member_type" value="2">
 
     <div class="form-group">
-        <label for="email"  class="col-sm-3 control-label registration-descr">E-mail:</label>
+        <label for="email"  class="col-sm-3 control-label registration-descr">E-mail*:</label>
         <div class="col-sm-6">
             <input type="email" class="form-control" name="email" value="<?= set_value('email'); ?>" id="email" required>
         </div>
@@ -100,49 +100,49 @@
 
 
     <div class="form-group">
-        <label for="company"  class="col-sm-3 control-label registration-descr">Название компании:</label>
+        <label for="company"  class="col-sm-3 control-label registration-descr">Название компании*:</label>
         <div class="col-sm-6">
             <input type="text" class="form-control" name="company" value="<?= set_value('company'); ?>" id="company" required>
         </div>
     </div>
 
     <div class="form-group">
-        <label for="legal_address"  class="col-sm-3 control-label registration-descr">Юридический адрес:</label>
+        <label for="legal_address"  class="col-sm-3 control-label registration-descr">Юридический адрес*:</label>
         <div class="col-sm-6">
             <input type="text" class="form-control" name="legal_address" value="<?= set_value('legal_address'); ?>" id="legal_address" required>
         </div>
     </div>
 
     <div class="form-group">
-        <label for="inn"  class="col-sm-3 control-label registration-descr">ИНН:</label>
+        <label for="inn"  class="col-sm-3 control-label registration-descr">ИНН*:</label>
         <div class="col-sm-6">
             <input type="text" class="form-control" name="inn" value="<?= set_value('inn'); ?>" id="inn" required>
         </div>
     </div>
 
     <div class="form-group">
-        <label for="kpp"  class="col-sm-3 control-label registration-descr">КПП:</label>
+        <label for="kpp"  class="col-sm-3 control-label registration-descr">КПП*:</label>
         <div class="col-sm-6">
             <input type="text" class="form-control" name="kpp" value="<?= set_value('kpp'); ?>" id="kpp" required>
         </div>
     </div>
 
     <div class="form-group">
-        <label for="first_name"  class="col-sm-3 control-label registration-descr">Имя:</label>
+        <label for="first_name"  class="col-sm-3 control-label registration-descr">Имя*:</label>
         <div class="col-sm-6">
             <input type="text" class="form-control" name="first_name" value="<?= set_value('first_name'); ?>" id="first_name" required>
         </div>
     </div>
 
     <div class="form-group">
-        <label for="last_name"  class="col-sm-3 control-label registration-descr">Фамилия:</label>
+        <label for="last_name"  class="col-sm-3 control-label registration-descr">Фамилия*:</label>
         <div class="col-sm-6">
             <input type="text" class="form-control" name="last_name" value="<?= set_value('last_name'); ?>" id="last_name" required>
         </div>
     </div>
 
     <div class="form-group">
-        <label for="phone"  class="col-sm-3 control-label registration-descr">Телефон:</label>
+        <label for="phone"  class="col-sm-3 control-label registration-descr">Телефон*:</label>
         <div class="col-sm-6">
             <input type="text" class="form-control" name="phone" value="<?= set_value('phone'); ?>" id="phone" required>
         </div>
@@ -150,14 +150,14 @@
 
     
     <div class="form-group">
-        <label for="password"  class="col-sm-3 control-label registration-descr">Пароль:</label>
+        <label for="password"  class="col-sm-3 control-label registration-descr">Пароль*:</label>
         <div class="col-sm-6">
             <input type="password" class="form-control" name="password" value="<?= set_value('password'); ?>" id="password" required>
         </div>
     </div>
 
     <div class="form-group">
-        <label for="password_confirm"  class="col-sm-3 control-label registration-descr">Подтвердите пароль:</label>
+        <label for="password_confirm"  class="col-sm-3 control-label registration-descr">Подтвердите пароль*:</label>
         <div class="col-sm-6">
             <input type="password" class="form-control" name="password_confirm" value="<?= set_value('password_confirm'); ?>" id="password_confirm" required>
         </div>

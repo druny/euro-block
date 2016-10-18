@@ -67,8 +67,8 @@
 						</tr>
 					</table>
 				</div>
-				<form action="/blocks/cart_add" method="post" class="product-item">
 				<?php foreach ($products as $product): ?>
+				<form action="/blocks/cart_add" method="post" class="product-item">
 				<div class="product-info col-lg-3 col-md-6 col-sm-6 col-xs-6 clearfix-right">
 				<input type="hidden" name="block_id" value="<?= $block->id; ?>">
 				
@@ -131,11 +131,13 @@
 							</td>
 						</tr>
 					</table>
+					<input type="submit" class="to-cart btn btn-warning" value="В корзину">
 					</div>
-				<?php endforeach; ?>
-				<div class="clearfix"></div>
-				<input type="submit" class="col-md-offset-3 to-cart btn btn-warning" value="В корзину">
+				
+				
+	
 				</form>
+				<?php endforeach; ?>
 				<?php 
 				if (!$this->ion_auth->logged_in()) {
 					echo '<h1 class="text-center text-info">' . 'Чтобы купить онлайн, ' . '<a href="/register"> зарегестрируйтесь</a>' . '</h1>';

@@ -41,9 +41,25 @@
 				<h1 class="text-warning"><?= $data['error_date'] ?></h1>
 			<?php endif; ?>
 			<form action="/cart/order" method="post" class="cart-form">
-				<div class="order-info delivery  col-sm-5 col-xs-12">
+				<div class="order-info delivery  col-sm-12 col-xs-12">
 					<h4>Заказать доставку:</h4>
 					<table class="table-order">
+						<tr>
+							<td>
+								<p>Населенный пункт</p>
+							</td>
+							<td>
+
+								<select name="settlement_id" id="">
+								<?php foreach ($settlements as $settlement): ?>
+									<option value="<?= $settlement['id'] ?>">
+										<?= $settlement['name'] ?>
+									</option>
+								<?php endforeach; ?>
+								</select>
+							</td>
+						</tr>
+					
 						<tr>
 							<td>
 								<p>Улица:</p>
@@ -53,17 +69,7 @@
 							</td>
 						</tr>
 					</table>
-					<table class="table-order">
-						<tr>
-							<td>
-								<p>Населенный пункт</p>
-							</td>
-							<td>
-								<input type="text" name="locality">
-							</td>
-						</tr>
-					</table>
-					<table class="table-order">
+					<table class="table-order col-sm-6 col-xs-12">
 						<tr>
 							<td>
 								<input type="radio" name="crane" id="with" value="1">
@@ -92,12 +98,12 @@
 						</tr>
 					</table>
 				</div>
-				<div class="order-info  col-sm-3 col-xs-4">
+				<div class="order-info  col-sm-5 col-xs-12">
 					<h4>На какое число</h4>
 					<input type="date" name="delivery_date" >
 					<p>Доставка осуществляется только в рабочие дни и не раньше 2-х дней со дня заказа.</p>
 				</div>
-				<div class="type-payment order-info col-lg-4 col-md-4 col-sm-4 col-xs-8">
+				<div class="type-payment order-info col-sm-7 col-xs-12">
 					<h4>Выбрать тип оплаты</h4>
 					<table>
 						<tr>
@@ -112,7 +118,9 @@
 								</button>
 							</td>
 								<td>
-									<p>Получить счет на оплату</p>
+									<button type="button"  data-toggle="modal" data-target="#scoreModal">
+										<p>Получить счет на оплату</p>
+									</button>
 								</td>
 						</tr>
 					</table>
@@ -129,7 +137,9 @@
 								</button>	
 							</td>
 							<td>
-								<p>Реквизиты</p>
+								<button type="button" data-toggle="modal" data-target="#requisiteModal">
+									<p>Реквизиты</p>
+								</button>
 							</td>
 						</tr>
 					</table>
@@ -146,11 +156,14 @@
 								</button>
 							</td>
 							<td>
-								<p>Оплатить наличными</p>
+								<button type="button" data-toggle="modal" data-target="#cashModal">
+									<p>Оплатить наличными</p>
+								</button>
 							</td>
 						</tr>
 					</table>
 				</div>
+				<div class="clearfix"></div>
 				<div class="col-sm-offset-8">
 					<button class="btn btn-warning">Заказать</button>
 				</div>

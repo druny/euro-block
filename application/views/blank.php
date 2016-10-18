@@ -76,16 +76,21 @@
 		<tr>
 			<td>Покупатель: </td>
 			<th>
-				<?= $user->type ?> "<?= $user->company ?>", ИНН <?= $user->inn ?>, КПП <?= $user->kpp ?>,
-				г.<?= $order->locality ?> , ул.<?= $order->street ?>
+			<?php if(isset($user->type)): ?>
+				<?= $user->type ?> "<?= $user->company ?>", 
+				ИНН <?= $user->inn ?>, КПП <?= $user->kpp ?>,
+			<?php endif;?>	
+				г.<?= $order->settlement ?> , ул.<?= $order->street ?>
 				
 			</th>
 		</tr>
 		<tr>
 			<td>Грузополучатель: </td>
 			<th>
+			<?php if(isset($user->type)): ?>
 				<?= $user->type ?> "<?= $user->company ?>", ИНН <?= $user->inn ?>, КПП <?= $user->kpp ?>,
-				г.<?= $order->locality ?> , ул.<?= $order->street ?>
+			<?php endif;?>	
+				г.<?= $order->settlement ?> , ул.<?= $order->street ?>
 				
 			</th>
 		</tr>
@@ -135,6 +140,15 @@
 	</div>
 	<div class="text-right">
 		<p>
+			<strong>
+				Доставка: 
+			</strong>
+			<?= 
+				 $order->delivery_cost
+			 ?>
+			 р.
+		</p>
+		<p>
 		<strong>
 			В том числе НДС:
 		</strong>
@@ -151,7 +165,7 @@
 			Всего к оплате:
 		</strong>
 			 <?php 
-			 	$over = $order->sum + $nds;
+			 	$over = $order->sum + $nds + $order->delivery_cost;
 			 	echo $over; 
 			 ?>
 			 р.
