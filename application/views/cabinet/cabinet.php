@@ -30,7 +30,10 @@
 			</div>
 			<div class="clearfix"></div>
 			<div class="order-info  col-sm-4 col-xs-12">
-				<h4>Оплата</h4>
+				<img src="/img/purse.png" alt="" class="col-md-4 col-sm-5 col-xs-3">
+				<h4>
+					Оплата
+				</h4>
 				<table class="table-order">
 					<tr>
 						<td>
@@ -54,7 +57,9 @@
 			</div>
 
 			<div class="order-info  col-sm-4 col-xs-12">
+				<img src="/img/delivery.jpg" alt="" class="col-md-4 col-sm-6 col-xs-3">
 				<h4>Отгрузка</h4>
+				<br>
 				<table class="table-order">
 					<tr>
 						<td>
@@ -79,6 +84,7 @@
 				</table>
 			</div>
 			<div class="order-info  col-sm-4 col-xs-12">
+				<img src="/img/pallet.jpg" alt="" class="col-md-4 col-sm-6 col-xs-3">
 				<h4>Отгрузка поддонов</h4>
 				<table class="table-order">
 					<tr>
@@ -114,18 +120,12 @@
 				
 			</div>
 
-			<div class="order-info flow col-lg-10 col-md-9 col-sm-8 col-xs-12">
+			<div class="order-info flow  col-xs-12">
+			<br>
+				<img src="/img/buy.jpg" alt="" class=" col-md-1 col-xs-2">
 				<h4>Текущий заказ</h4>
-				<table class="table-order  col-sm-4 col-xs-12">
-					<tr>
-						<td>
-							<p>Необходимое кол-во поддонов:
+			
 
-							<?= $order->number_of_pallets ?></p>
-						</td>
-					</tr>
-				</table>
-				<br>
 				<table class="table-order">
 					<?php foreach ($products as $product): ?>
 						<tr>
@@ -141,9 +141,55 @@
 						</tr>
 					<?php endforeach; ?>
 				</table>
+				<br>
+				<table class="table-order  col-sm-4 col-xs-12">
+					<tr>
+						<td>
+							<p>Необходимое кол-во поддонов:
+
+							<?= $order->number_of_pallets ?></p>
+						</td>
+						<td>
+							<p>
+								Стоимостью: 
+								<?php echo $order->number_of_pallets * 450; ?> 
+								P
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<p>
+								Сумма включается в доставку и возвращается при сдаче поддонов
+							</p>
+						</td>
+
+					</tr>
+				</table>
+				<br>
 			</div>
-			<div class="order-info col-lg-2 col-md-3 col-sm-4 col-xs-12">
-			<h4>Всего к оплате</h4>
+			<br>
+			<div class="order-info  col-md-3 col-sm-6 col-xs-12">
+			<br>
+			<?php  if($order->payment_type == 'score'): ?>
+
+					<a class="text-primary" href="/cabinet/blank/<?= $order->id; ?>">
+						<h4>
+							<img src="/img/print.png">
+							Посмотреть бланк
+						</h4>
+					</a>
+		
+				<?php  elseif($order->payment_type == 'requisites'): ?>
+					<h4 class="text-warning">Реквизиты для оплаты: </h4>
+					<h4>5469500010207050</h4> 
+       			 	<h4>Марк Владимирович</h4>
+       			<?php endif; ?>
+       		</div>
+			<div class="order-info  col-md-3 col-sm-6 col-xs-12">
+			<img src="/img/buy.jpg" alt="" class=" col-md-4 col-xs-3">
+			<h4>Оплата за товары</h4>
+			<br>
 				<table class="table-order">
 					<tr>
 						<td>
@@ -151,6 +197,10 @@
 						</td>
 					</tr>
 				</table>
+			</div>	
+			<div class="order-info  col-md-3 col-sm-6 col-xs-12">
+
+			<img src="/img/delivery.jpg" alt="" class="col-md-4 col-xs-3">
 
 			<h4>Оплата за доставку</h4>
 				<table class="table-order">
@@ -160,7 +210,18 @@
 				</table>
 			</div>
 
+			<div class="order-info  col-md-3 col-sm-6 col-xs-12">
+			<img src="/img/money.jpg" alt="" class=" col-md-4 col-xs-3">
+			<h4>Всего к оплате</h4>
+				<table class="table-order">
+					<td>
+						<p><?= $order->delivery_cost + $order->sum?> р</p>
+					</td>
+				</table>
+			</div>
+
 			<div class="clearfix"></div>
+			<br>
 			<div class="order-info delivery col-sm-5 col-xs-12">
 			<?php if($is_admin): ?>
 				<h4>Доставка:</h4>
@@ -214,20 +275,7 @@
 					</tr>
 				</table>
 				<?php endif; ?>
-				<?php  if($order->payment_type == 'score'): ?>
-
-					<a class="text-primary" href="/cabinet/blank/<?= $order->id; ?>">
-						<h4>
-							<img src="/img/print.png">
-							Посмотреть бланк
-						</h4>
-					</a>
-		
-				<?php  elseif($order->payment_type == 'requisites'): ?>
-					<h4 class="text-warning">Реквизиты для оплаты: </h4>
-					<h4>5469500010207050</h4> 
-       			 	<h4>Марк Владимирович</h4>
-       			<?php endif; ?>
+				
 				
 			</div>
 

@@ -97,10 +97,10 @@ class Cart extends CI_Controller {
                         $amount_produts = $this->session->products[$i]['amount'];
 
                         $pallets += ceil($amount_produts / $on_one_pallet);
-                        if( $pallets > $max_pallets) {
+                        /*if( $pallets > $max_pallets) {
                             die('Максимальное число товара на 1 заказ:' . 
                                 $on_one_pallet * $max_pallets);
-                        }
+                        }*/
                         if( $pallets < $min_pallets) {
                             $pallets = 8;
                         }
