@@ -30,7 +30,7 @@
 			</div>
 			<div class="clearfix"></div>
 			<div class="order-info  col-sm-4 col-xs-12">
-				<img src="/img/purse.png" alt="" class="col-md-4 col-sm-5 col-xs-3">
+				<img src="/img/purce.png" alt="" class=" col-sm-3 col-xs-2">
 				<h4>
 					Оплата
 				</h4>
@@ -57,9 +57,9 @@
 			</div>
 
 			<div class="order-info  col-sm-4 col-xs-12">
-				<img src="/img/delivery.jpg" alt="" class="col-md-4 col-sm-6 col-xs-3">
+				<img src="/img/delivery.png" alt="" class=" col-sm-3 col-xs-2">
 				<h4>Отгрузка</h4>
-				<br>
+				
 				<table class="table-order">
 					<tr>
 						<td>
@@ -84,7 +84,7 @@
 				</table>
 			</div>
 			<div class="order-info  col-sm-4 col-xs-12">
-				<img src="/img/pallet.jpg" alt="" class="col-md-4 col-sm-6 col-xs-3">
+				<img src="/img/pallet.png" alt="" class="col-sm-3 col-xs-2">
 				<h4>Отгрузка поддонов</h4>
 				<table class="table-order">
 					<tr>
@@ -122,7 +122,7 @@
 
 			<div class="order-info flow  col-xs-12">
 			<br>
-				<img src="/img/buy.jpg" alt="" class=" col-md-1 col-xs-2">
+				<img src="/img/shop.png" alt="" class=" col-md-1 col-xs-2">
 				<h4>Текущий заказ</h4>
 			
 
@@ -187,7 +187,7 @@
        			<?php endif; ?>
        		</div>
 			<div class="order-info  col-md-3 col-sm-6 col-xs-12">
-			<img src="/img/buy.jpg" alt="" class=" col-md-4 col-xs-3">
+			<img src="/img/shop.png" alt="" class=" col-md-4 col-sm-3 col-xs-2">
 			<h4>Оплата за товары</h4>
 			<br>
 				<table class="table-order">
@@ -198,9 +198,10 @@
 					</tr>
 				</table>
 			</div>	
-			<div class="order-info  col-md-3 col-sm-6 col-xs-12">
 
-			<img src="/img/delivery.jpg" alt="" class="col-md-4 col-xs-3">
+			<div class="order-info  col-md-3 col-sm-6 col-xs-12">
+		
+			<img src="/img/delivery.png" alt="" class=" col-md-4 col-sm-3 col-xs-2">
 
 			<h4>Оплата за доставку</h4>
 				<table class="table-order">
@@ -211,8 +212,9 @@
 			</div>
 
 			<div class="order-info  col-md-3 col-sm-6 col-xs-12">
-			<img src="/img/money.jpg" alt="" class=" col-md-4 col-xs-3">
+			<img src="/img/money.png" alt="" class="col-md-4 col-sm-3 col-xs-2">
 			<h4>Всего к оплате</h4>
+			<br>
 				<table class="table-order">
 					<td>
 						<p><?= $order->delivery_cost + $order->sum?> р</p>

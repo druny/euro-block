@@ -62,6 +62,9 @@
 								<a href="#certifications">Сертификаты</a>
 							</li>
 							<li class="menu-item">
+								<a href="#contacts">Контакты</a>
+							</li>
+							<li class="menu-item">
 								<a href="/blocks/catalog">Каталог</a>
 							</li>
 					      </ul>
@@ -210,9 +213,9 @@
 			</span>
 			<span class="descr">
 				<h2 class="descr-title">Экологичный</h2>
-				<p class="descr-text">лок имеет соответсвующие
+				<p class="descr-text">Блок имеет соответсвующие
 					сертификаты, без применения
-					химических материалов.
+					химических материалов
 				</p>
 			</span>
 			<span class="descr">
@@ -254,12 +257,12 @@
 				<p>
 					Из тереховских блоков на Дальнем Востоке России построены
 					сотни современных зданий разной этажности и назначения
-					На этой странице представлены некоторые из них.
+					На этой странице представлены некоторые из них
 				</p>
 			</div>
 			
 			<div class="objects-items-first clearfix">
-				<div class="itemscol-lg-4 col-md-4 col-sm-6 col-xs-12">
+				<div class="items col-lg-4 col-md-4 col-sm-6 col-xs-12">
 					<img src="/img/items/1.jpg" alt="">
 					<p>КСК «Фетисов Арена» (г. Владивосток, ул. Маковского, 284)</p>
 				</div>
@@ -315,7 +318,7 @@
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
 				<img class="item-img" src="/img/products/block01.png" alt="">
 				<a href="/blocks/product/1" class="item-title">Блок стеновой m50/ М75/ m100</a>
-				<p class="item-description">Мркировка: КСР-ПР-ПС-39-50-F50-1450; ГОСТ 6133–99</p>
+				<p class="item-description">Маркировка: КСР-ПР-ПС-39-50-F50-1450; ГОСТ 6133–99</p>
 				<!-- <a href="/blocks/product/1">
 					<button type="submit" class="item-button">
 						<img src="/img/black-bus.png" alt="">
@@ -327,7 +330,7 @@
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
 				<img class="item-img" src="/img/products/block02.png" alt="">
 				<a href="/blocks/product/2" class="item-title">Блок перегородочный</a>
-				<p class="item-description">Мркировка: КПР-ПР-ПС-39-35-F50-1390</p>
+				<p class="item-description">Маркировка: КПР-ПР-ПС-39-35-F50-1390</p>
 				<!-- <a href="/blocks/product/2">
 					<button type="submit" class="item-button">
 						<img src="/img/black-bus.png" alt="">
@@ -338,7 +341,7 @@
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
 				<img class="item-img" src="/img/products/block03.png" alt="">
 				<a href="/blocks/product/3" class="item-title">Блок стеновой рядовой</a>
-				<p class="item-description">Мркировка: КСР-ПР ПС-ПСБ-39-35-F25-1000</p>
+				<p class="item-description">Маркировка: КСР-ПР ПС-ПСБ-39-35-F25-1000</p>
 				<!-- <a href="/blocks/product/3">
 					<button type="submit" class="item-button">
 						<img src="/img/black-bus.png" alt="">
@@ -349,7 +352,7 @@
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
 				<img class="item-img" src="/img/products/block04.png" alt="">
 				<a href="/blocks/product/4" class="item-title">Блок стеновой угловой</a>
-				<p class="item-description">Мркировка: КСР-УГ ПС-ПСБ-49,5-35-F25-1000</p>
+				<p class="item-description">Маркировка: КСР-УГ ПС-ПСБ-49,5-35-F25-1000</p>
 				<!-- <a href="/blocks/product/4">
 					<button type="submit" class="item-button">
 						<img src="/img/black-bus.png" alt="">
@@ -360,7 +363,7 @@
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
 				<img class="item-img" src="/img/products/block05.png" alt="">
 				<a href="/blocks/product/5" class="item-title">Блок половинчатый перевязочный </a>
-				<p class="item-description">Мркировка: КСР-ПЗ ПС-ПСБ-19-35-F25-1000</p>
+				<p class="item-description">Маркировка: КСР-ПЗ ПС-ПСБ-19-35-F25-1000</p>
 				<!-- <a href="/blocks/product/5">
 					<button type="submit" class="item-button">
 						<img src="/img/black-bus.png" alt="">

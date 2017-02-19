@@ -63,7 +63,7 @@ class Cart extends CI_Controller {
                 if( $crane != 2 ) {
 
                     $interval = new DateInterval('P2D');
-
+                    date_default_timezone_set('Europe/Moscow');
                     $dateInterval = new DateTime;
                     $dateInterval->add($interval);
                     $dateTwo = $dateInterval->format('Y-m-d');

@@ -1,5 +1,18 @@
 <div class="current-order">
 		<div class="container">
+		<div class="admin-btn col-sm-4 col-xs-12">
+			<a href="/cabinet">
+				<img src="/img/menu-icon.png" alt="all orders">
+				<p>Все заказы</p>
+			</a>
+		</div>
+		
+		<div class="admin-btn col-sm-4 col-xs-12">
+			<a href="/cabinet/archive">
+				<img src="/img/arhive.png" alt="active">
+				<p>История заказов</p>
+			</a>
+		</div>
 			<div class="current-order-title current-order-bg col-lg-8 col-md-8 col-sm-12 col-xs-12">
 				<h1>Здесь вы можете:  посмотреть историю заказов, заказать новую партию, посомтреть отгрузки</h1>
 			</div>

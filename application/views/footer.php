@@ -28,7 +28,7 @@
 		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2912.297071816657!2d131.8820859157817!3d43.11928519480818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5fb38df8421fc627%3A0x3d775aeed1867b7a!2sul.+Mordovtseva%2C+6%2C+Vladivostok%2C+Primorskiy+kray%2C+Russia%2C+690091!5e0!3m2!1sen!2sua!4v1470691526101" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
 		</div>
 	</div>
-	<footer class="location">
+	<footer class="location" id="contacts">
 		<div class="container">
 			<div class="location-content col-md-4 col-xs-5">
 				<h4>Позвоните нам по телефону</h4>
@@ -42,11 +42,10 @@
 			<div class="location-content col-md-5 col-xs-7">
 				<h4>Приходите к нам в офис</h4>
 				<p>
-					- во Владивостоке: ул. Мордовцева, 6 (вход со двора, 6-й этаж);
+					- в г. Владивосток: ул. Мордовцева, 6 (вход со двора, 6-й этаж)
 				</p>
 				<p>
-					- в Тереховке: станция Барановский, ул. Тополиная, 1
-					(слева от проходной завода).
+					- в с.Тереховка: станция Барановский, ул. Тополиная, 1 (слева от проходной завода)
 				</p>
 			</div>
 			<div class="location-content col-md-3 col-xs-12">
