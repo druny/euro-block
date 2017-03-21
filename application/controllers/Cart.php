@@ -106,10 +106,11 @@ class Cart extends CI_Controller {
                         }
                         
                         $block_id = 
-                        ($this->session->products[0]['block_id'] <= 5) ? $this->session->products[0]['block_id'] : 1;
+                            ($this->session->products[0]['block_id'] <= 5) ? $this->session->products[0]['block_id'] : 1;
+
                         $block_amount = $this->session->products[$i]['amount'];
                         $data[$i] = $this->cart->get_delivery_cost($settlement_id, $block_id, $price_for); 
-                        
+
                         $delivery_cost += 
                             $data[$i][0][$price_for] * $block_amount;
                     }

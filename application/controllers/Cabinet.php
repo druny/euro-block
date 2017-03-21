@@ -235,13 +235,29 @@ class Cabinet extends CI_Controller
             $user = $this->ion_auth->user()->row();
             $data['order'] = $this->cabinet->get_one_order($id);
             $data['products'] = $this->cabinet->get_products_by_order_id($id);
-            
             $user_id = $data['order']->user_id;
             $data['user'] = $this->cabinet->get_user_data($user_id);
-            //var_dump($data);
             $this->load->view('blank', $data);
         }
         else 
+        {
+            echo "fuck off!";
+        }
+    }
+
+    public function blank_pallets($id) {
+        if ($this->ion_auth->logged_in())
+        {
+            $user = $this->ion_auth->user()->row();
+            $data['order'] = $this->cabinet->get_one_order($id);
+            $data['products'] = $this->cabinet->get_products_by_order_id($id);
+            $user_id = $data['order']->user_id;
+            $data['user'] = $this->cabinet->get_user_data($user_id);
+            $data['pallets'] =   450 * $data['order']->number_of_pallets;
+            $this->load->view('blank_pallets', $data);
+
+        }
+        else
         {
             echo "fuck off!";
         }

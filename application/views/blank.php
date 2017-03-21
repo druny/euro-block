@@ -143,9 +143,7 @@
 			<strong>
 				Доставка: 
 			</strong>
-			<?= 
-				 $order->delivery_cost
-			 ?>
+			<?= $order->delivery_cost -=  450 * $order->number_of_pallets ?>
 			 р.
 		</p>
 		<p>
@@ -172,7 +170,6 @@
 		</p>
 	</div>
 	<p>Всего наименований <?= count($products) ?>, на сумму <?= $over ?> р.</p>
-	<!-- <strong>Девяносто семь тысяч четыреста сорок рублей 00 копеек</strong> -->
 
 	<hr>
 		<table class="table table-responsive">
@@ -237,7 +234,5 @@
 		<p><strong>Примечание:</strong></p>
 		<p>Счет действителен в течении 5-ти рабочих дней.</p>
 	</div>
-
-
 </body>
 </html>

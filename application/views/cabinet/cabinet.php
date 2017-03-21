@@ -169,23 +169,31 @@
 				<br>
 			</div>
 			<br>
-			<div class="order-info  col-md-3 col-sm-6 col-xs-12">
 			<br>
 			<?php  if($order->payment_type == 'score'): ?>
-
+                <div class="order-info  col-sm-6 col-xs-12">
 					<a class="text-primary" href="/cabinet/blank/<?= $order->id; ?>">
 						<h4>
 							<img src="/img/print.png">
 							Посмотреть бланк
 						</h4>
 					</a>
-		
+                </div>
+                <div class="order-info   col-sm-6 col-xs-12">
+                <a class="text-primary" href="/cabinet/blank_pallets/<?=$order->id?>">
+                    <h4>
+                        <img src="/img/print.png">
+                        Бланк за поддоны
+                    </h4>
+                </a>
+                </div>
 				<?php  elseif($order->payment_type == 'requisites'): ?>
+                <div class="order-info  col-md-3 col-sm-6 col-xs-12">
 					<h4 class="text-warning">Реквизиты для оплаты: </h4>
 					<h4>5469500010207050</h4> 
        			 	<h4>Марк Владимирович</h4>
+                </div>
        			<?php endif; ?>
-       		</div>
 			<div class="order-info  col-md-3 col-sm-6 col-xs-12">
 			<img src="/img/shop.png" alt="" class=" col-md-4 col-sm-3 col-xs-2">
 			<h4>Оплата за товары</h4>

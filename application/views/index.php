@@ -145,7 +145,7 @@
 		</div>
 	</div>
 
-	<div class="info">
+	<!--<div class="info">
 	<a id="factory"></a>
 		<div class="container">
 			<div class="info-header">
@@ -180,7 +180,7 @@
 				<div class="clearfix"></div>
 			</section>
 		</div>
-	</div>
+	</div>-->
 
 	<div class="advantages">
 	<img class="divide" src="/img/t_1.png" alt="">
