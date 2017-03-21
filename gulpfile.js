@@ -24,7 +24,7 @@ var css_result_filename = 'style';
 /*
 * List of JS files which should be concatenated.
 */
-var js_concat_files = ['www/js/transition.js', 'www/js/collapse.js', 'www/js/app.js'];
+var js_concat_files = ['www/js/transition.js', 'www/js/collapse.js', 'www/js/modal.js', 'www/js/carousel.js', 'www/js/calc/init.js', 'www/js/app.js'];
 
 /* 
 * Concatenated JS file.
@@ -94,13 +94,18 @@ gulp.task('jade', function(){
     .pipe(gulp.dest('./www/'))
 });*/
 
-var localhost = '192.168.1.56';
+var domain = 'euro-block';
 // var localhost  = '192.168.1.18';
 gulp.task('browser-sync', function() {
-	browserSync({
+	/*browserSync({
         		server: {
 			baseDir: './www'
 		}
+    });*/
+    browserSync.init({
+                
+            proxy: 'http://euro-block/'
+        
     });
 });
 

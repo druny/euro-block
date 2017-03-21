@@ -97,11 +97,15 @@
 			}
 		}
 		.login {
+			margin-top: 27px;
 			.entrance {
 				input {
 					width: 45%;
 				}
 			}
+		}
+		.personal-info {
+			margin-top: 53px;
 		}
 	}
 	.info {
@@ -111,7 +115,7 @@
 			}
 		}
 		&-description {
-			height: 1050px;
+			//height: 1050px;
 			.main-descr {
 				width: 350px;
 			}
@@ -232,7 +236,7 @@
 			height: 230px;
 		}
 		p {
-			font-size: 14px;
+			font-size: 12px;
 		}
 
 	}
@@ -369,7 +373,7 @@
 			height: 110px;
 		}
 		&-description{
-			height: 1680px;
+			//height: 1680px;
 			.main-descr {
 				width: 100%;
 				text-align: center;
@@ -394,7 +398,7 @@
 			height: 250px;
 		}
 		p {
-			font-size: 15px;
+			font-size: 11px;
 			width: 90%;
 		}
 
@@ -443,6 +447,13 @@
 		&-description {
 			width: 100%;
 		}
+	}
+	.cabinet-btn {
+		height: 59px;
+	}
+
+	.header .login {
+		margin-bottom: 30px;
 	}
 
 }
@@ -515,7 +526,7 @@
 	}
 	.info {
 		&-description{
-			height: 1715px;
+			//height: 1715px;
 		}
 	}
 	.divide {
@@ -535,7 +546,7 @@
 			height: 100%;
 		}
 		p {
-			font-size: 18px;
+			font-size: 16px;
 		}
 
 	}
@@ -648,17 +659,17 @@
 	}
 	.info {
 		&-description{
-			height: 1850px;
+			//height: 1850px;
 		}
 	}
 	.products {
 
 	.items {
-
+		
 		.item {
+			text-align: center;
 			&-img {
 				margin: 0;
-				max-width: 100%;
 			}
 		}
 	}
@@ -698,6 +709,28 @@
 }
 }
 
+@media(max-width: 554px) {
+	.product {
+		&-info {
+			tr:nth-of-type(1), tr:nth-of-type(10), tr:last-of-type {
+				font-size: 14px;
+			}
+		}
+	}
+
+	.permission {
+		.code {
+			font-size: 55px;
+		}
+		.text {
+
+			font-size: 30px;
+		}
+
+	
+	}
+}
+
 @media(max-width: 529px) {
 	
 	.title-width {
@@ -711,7 +744,8 @@
 			height: 150px;
 		}
 		&-description{
-			height: 1920px;
+			padding-bottom: 50px;
+			margin-bottom: 10px;
 		}
 		.divide {
 			bottom: 80px;
@@ -808,7 +842,7 @@
 	}
 	.info {
 		&-description{
-			height: 2200px;
+			//height: 2200px;
 		}
 	}
 .mass-media {
@@ -821,8 +855,15 @@
 		}
 	}
 }
-	.calc_i_sb {
-		width: 200px;
+.calc_i_sb {
+		width: 100%;
+	}
+}
+
+@media(max-width: 441px) {
+	.table-order {
+		overflow-y: auto;
+		display: block;
 	}
 }
 
@@ -862,7 +903,7 @@
 		}
 		&-description{
 			padding: 0;
-			height: 2050px;
+			//height: 2050px;
 			.descr {
 				margin: 0;
 				width: 100%;
@@ -879,4 +920,10 @@
 
 
 
+}
+
+@media (min-width: 992px) {
+	.navbar-header {
+		padding-left: 20px;
+	}
 }

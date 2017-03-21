@@ -30,7 +30,7 @@ $(function() {
 	$('#calc-brick').change(function() {
 		var index = $('#calc-brick')[0].selectedIndex;
 			photo = $('#calc-brick option').eq(index).data('photo');
-		$('#calc_brick-photo').css('backgroundImage', 'url('+ photo +')');
+		$('#calc_brick-photo').css('backgroundImage', 'url(/'+ photo +')');
 	});
 	$('#calc-brick').change();
 	function getVal(id) {

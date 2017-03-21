@@ -5,15 +5,14 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Manager</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
-	<link rel="stylesheet" href="css/style.min.css">
-	<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
-	<script src="js/calc/init.js"></script>
+	<link rel="stylesheet" href="/css/style.min.css">
 </head>
 <body>
 	<header class="header-admin">
 		<div class="header-menu header-menu-admin">
 			<div class="container">
-				<nav role="navigation" class="navbar navbar-default header-list">
+				<nav role="navigation" class="navbar navbar-default header-list ">
+				<div class="container">
 			  <!-- Логотип и мобильное меню -->
 					<div class="navbar-header">
 
@@ -23,10 +22,13 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-							<img class="logo" src="img/logo-bg.png" alt="logo">
+							<a href="/">
+								<img class="logo" src="/img/logo-bg2.png" alt="logo">
+							</a>
+							
 							<div class="mobile-info">
 				
-					       		<a class="basket" href="#!">корзина 0</a>
+					       		<a class="basket" href="#!">корзина <?= count($this->session->products) ?></a>
 					       		<p class="phone">+7 (423) 230-12-18</p>
 							
 							</div>
@@ -36,38 +38,45 @@
 					    <div id="navbarCollapse" class="collapse navbar-collapse">
 					      <ul class=" navbar-nav menu">
 					        <li class="menu-item">
-								<a href="#!">О заводе</a>
+								<a href="/#factory">О заводе</a>
 							</li>
 							<li class="menu-item">
-								<a href="#!">Преимущества</a>
+								<a href="/#benefits">Преимущества</a>
 							</li>
 							<li class="menu-item">
-								<a href="#!">Продукция</a>
+								<a href="/#objects">Объекты</a>
 							</li>
 							<li class="menu-item">
-								<a href="#!">Объекты</a>
+								<a href="/#products">Продукция</a>
 							</li>
 							<li class="menu-item">
-								<a href="#!">Калькулятор</a>
+								<a href="/#calculator">Калькулятор</a>
+							</li>
+							<!-- <li class="menu-item">
+								<a href="/#mass_media">СМИ о нас</a>
 							</li>
 							<li class="menu-item">
-								<a href="#!">СМИ о нас</a>
+								<a href="/#reviews">Отзывы</a
+							></li> -->
+							<li class="menu-item">
+								<a href="/#certifications">Сертификаты</a>
 							</li>
 							<li class="menu-item">
-								<a href="#!">Отзывы</a
-							></li>
-							<li class="menu-item">
-								<a href="#!">Сертификаты</a>
+								<a href="/blocks/catalog">Каталог</a>
 							</li>
-					        </ul>
+					       </ul>
 					   <li class="request nav navbar-nav ">
-					   		<img  class="trunk" src="img/white-trunk.png" alt="">
-					        <a class="basket" href="#!">корзина 0</a>
+					   		<a class="basket" href="/cart">
+					   			<img  class="trunk" src="/img/white-trunk2.png" alt="">
+					   			корзина <?= count($this->session->products) ?>
+					   		</a>
 					   </li>
 					   <li class="request nav navbar-nav navbar-right">
 							<p class="phone">+7 (423) 230-12-18</p>
-							<a class="request-call" href="#!">заказать обратный звонок</a>
+							<a class="request-call" data-toggle="modal" data-target="#myModal" href="#!">заказать обратный звонок</a>
 						</li>
+
+				    </div>
 				    </div>
 				</nav>
 			</div>

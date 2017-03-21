@@ -90,7 +90,9 @@ class Auth extends CI_Controller {
 				'type' => 'password',
 			);
 
-			$this->_render_page('auth/login', $this->data);
+			$this->session->set_flashdata('login_errors', $this->data['message']);
+			$this->session->set_flashdata('login', $this->input->post('identity'));
+			redirect('/', 'refresh');
 		}
 	}
 
@@ -104,7 +106,7 @@ class Auth extends CI_Controller {
 
 		// redirect them to the login page
 		$this->session->set_flashdata('message', $this->ion_auth->messages());
-		redirect('auth/login', 'refresh');
+		redirect('/', 'refresh');
 	}
 
 	// change password
@@ -814,6 +816,28 @@ class Auth extends CI_Controller {
 		$view_html = $this->load->view($view, $this->viewdata, $returnhtml);
 
 		if ($returnhtml) return $view_html;//This will return html on 3rd argument being true
+	}
+
+	public function permission() 
+	{
+		$count['cart_count'] = ( ! empty($this->session->products)) ? count($this->session->products) : 0;
+
+		$this->load->view('header', $count);
+		$this->load->view('permission');
+		$this->load->view('footer');
+	}
+	public function must_registr()
+	{
+		$this->load->view('header');
+		$this->load->view('must_registretion');
+		$this->load->view('footer');
+	}
+
+	public function error()
+	{
+		$this->load->view('header');
+		$this->load->view('error');
+		$this->load->view('footer');
 	}
 
 }

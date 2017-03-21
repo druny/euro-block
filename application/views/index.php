@@ -5,16 +5,15 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Euro-Block</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
-	<link rel="stylesheet" href="css/style.min.css">
-	<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
-	<script src="js/calc/init.js"></script>
+	<link rel="stylesheet" href="/css/style.min.css">
+	<link rel="stylesheet" href="/css/template.css">
 </head>
 <body>
-
 	<div class="header">
 		<div class="header-menu">
 			<div class="container">
 				<nav role="navigation" class="navbar navbar-default header-list">
+				<div class="container">
 			  <!-- Логотип и мобильное меню -->
 					<div class="navbar-header">
 
@@ -25,11 +24,11 @@
 							<span class="icon-bar"></span>
 						</button>
 							<a href="#!">
-								<img class="logo" src="img/logo.png" alt="logo">
+								<img class="logo" src="/img/logo2.png" alt="logo">
 							</a>
 							<div class="mobile-info">
 				
-					       		<a class="basket" href="#!">корзина 0</a>
+					       		<a class="basket" href="/cart">корзина <?= count($this->session->products); ?></a>
 					       		<p class="phone">+7 (423) 230-12-18</p>
 							
 							</div>
@@ -39,33 +38,41 @@
 					    <div id="navbarCollapse" class="collapse navbar-collapse">
 					      <ul class=" navbar-nav menu">
 					        <li class="menu-item">
-								<a href="#!">О заводе</a>
+								<a href="#factory">О заводе</a>
 							</li>
 							<li class="menu-item">
-								<a href="#!">Преимущества</a>
+								<a href="#benefits">Преимущества</a>
 							</li>
 							<li class="menu-item">
-								<a href="#!">Продукция</a>
+								<a href="#objects">Объекты</a>
 							</li>
 							<li class="menu-item">
-								<a href="#!">Объекты</a>
+								<a href="#products">Продукция</a>
 							</li>
 							<li class="menu-item">
-								<a href="#!">Калькулятор</a>
+								<a href="#calculator">Калькулятор</a>
+							</li>
+							<!-- <li class="menu-item">
+								<a href="#mass_media">СМИ о нас</a>
 							</li>
 							<li class="menu-item">
-								<a href="#!">СМИ о нас</a>
+								<a href="#reviews">Отзывы</a
+							></li> -->
+							<li class="menu-item">
+								<a href="#certifications">Сертификаты</a>
 							</li>
 							<li class="menu-item">
-								<a href="#!">Отзывы</a
-							></li>
-							<li class="menu-item">
-								<a href="#!">Сертификаты</a>
+								<a href="#contacts">Контакты</a>
 							</li>
-					        </ul>
+							<li class="menu-item">
+								<a href="/blocks/catalog">Каталог</a>
+							</li>
+					      </ul>
 					   <li class="request nav navbar-nav ">
-					   		<img  class="trunk" src="img/trunk.png" alt="">
-					        <a class="basket" href="#!">корзина 0</a>
+					   		<a class="basket" href="/cart">
+					   			<img  class="trunk" src="img/trunk2.png" alt="">
+					        	корзина <?= count($this->session->products) ?>
+					        </a>
 					   </li>
 					   <li class="request nav navbar-nav navbar-right">
 							<p class="phone">+7 (423) 230-12-18</p>
@@ -76,7 +83,9 @@
 							
 						</li>
 				    </div>
+				   </div>
 				</nav>
+
 			</div>
 		</div>
 	<div class="container">
@@ -86,38 +95,58 @@
 				</div>
 				<div class="title-block-second">
 					<p>Идеальная геометрия блока, высокая прочность и долговечность
-					Напрямую с завода с доставкой на Ваш объект за 1 день</p>
+					Напрямую <br>с завода с доставкой на Ваш объект за 1 день</p>
 				</div>
 			</div>
-			<div class="login col-lg-3 col-md-3 col-sm-12 col-xs-12">
-				<h2 class="login-topic">Войти в личный кабинет</h2>
-				<form class="entrance" action="#!" method="post">
-					<input type="text" name="login" placeholder="Логин:">
-					<a class="registration" href="#!">Регистрация</a> 
-					<input type="password" name="password" placeholder="Пароль:">
-					<button type="submit" class="login-btn">Войти</button> 
-				</form>
-			</div>
+			<?php if ( ! $this->ion_auth->logged_in()): ?>
+				<div class="login col-lg-3 col-md-3 col-sm-12 col-xs-12">
+					<h2 class="login-topic">Войти в личный кабинет</h2>
+					<div class="login-errors"><?= $this->session->flashdata('login_errors'); ?></div>
+					<form class="entrance" action="/auth/login" method="post">
+						<input type="text" name="identity" placeholder="E-mail:" value="<?php if ( ! empty($this->session->flashdata('login'))) echo $this->session->flashdata('login'); ?>">
+						<a class="registration" href="/register">Регистрация</a> 
+						<input type="password" name="password" placeholder="Пароль:">
+						<button type="submit" id="login-btn" class="login-btn">Войти</button> 
+					</form>
+				</div>
+			<?php else: ?>
+				<div class="personal-info login current-order-bg col-lg-3 col-md-3 col-sm-12 col-xs-12">
+					<h4>Личный кабинет пользователя:</h4> 
+					<a href="/auth/logout" class="exit-text" >
+						<button class="exit col-lg-3 col-md-3 col-sm-12 col-xs-12" type="submit">
+							Выход
+						</button> 
+					</a>
+					<p class="name col-lg-9 col-md-9 col-sm-12 col-xs-12"><a href="/cabinet"><?= $this->ion_auth->user()->row()->first_name . ' ' . $this->ion_auth->user()->row()->last_name; ?></a></p> 
+				</div>
+			<?php endif; ?>
 			<div class="header-video col-lg-9 col-md-9 col-sm-12 col-xs-12">
 				<iframe width="700" height="420" src="https://www.youtube.com/embed/2xhnCsNFrbI?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 			</div>
 			<div class="feedback col-lg-3 col-md-3 col-sm-12 col-xs-12">
-				<h2 class="feedback-topic">Оставьте заявку и получите полный прайс-лист</h2>
-				<form action="#!" method="post">
-					<input type="text" placeholder="Введите ваше имя:">
-					<input type="phone" placeholder="Введите телефон">
-					<input type="text" placeholder="Введите e-mail">
+				<h3 class="feedback-topic">
+					Хотите купить блоки прямо сейчас?*
+				</h3>
+				<div class="text-center">
+					<a href="/blocks/catalog">
+						<img src="/img/products/block01.png" alt="Хотите купить блоки прямо сейчас?*">
+					</a>
+				</div>
+				<h5 class="feedback-topic">*только для зарегестрированных пользователей</h5>
+				<a href="/blocks/catalog">
 					<button  class="get" type="submit">
-						<img class="get-img" src="img/send.png" alt="">
-						<p class="get-text" >Получить</p>
+						<img class="get-img" src="/img/send.png" alt="">
+						<p class="get-text" >Перейти в каталог</p>
 					</button>
-				</form>
+				</a>
+
 				<i class="my-icon"><i></i></i>
 			</div>
 		</div>
 	</div>
 
-	<div class="info">
+	<!--<div class="info">
+	<a id="factory"></a>
 		<div class="container">
 			<div class="info-header">
 				<span class="info-title col-lg-3 col-md-3 col-sm-3 col-xs-6">Работаем <br>с 1991года</span>
@@ -127,7 +156,7 @@
 			</div>
 			<section  class="info-description">
 				<div class="info-description-first col-lg-5 col-md-6 col-sm-12 col-xs-12">
-					<img src="img/1991.png" alt="">
+					<img src="/img/1991.png" alt="">
 					<p class="main-descr">
 						Тереховский завод бетонных изделий – приморский производитель уникальных строительных материалов из андезитобазальта для строительства домов любой этажности.
 					</p>
@@ -135,10 +164,10 @@
 						Завод построен финскими и российскими специалистами в 1991-м году в селе Тереховка Приморского края, рядом с единственным на Дальнем Востоке карьером андезитобазальтов. 
 						Эта вулканическая горная порода сочетает в себе легкость и прочность, практически не впитывает влагу (что критически важно для строительства во влажном климате), является экологически чистым и безопасным природным материалом.
 					</p>
-					<img src="img/liniya.png" alt="">
+					<img src="/img/liniya.png" alt="">
 				</div>
 				<div class="info-description-second col-lg-7 col-md-6 col-sm-12 col-xs-12">
-					<img src="img/secondDescr.png" alt="">
+					<img src="/img/secondDescr.png" alt="">
 					<p class="descr descr-second">
 						Помимо стеновых, перегородочных и вентиляционных блоков из андезитобазальта, Тереховский завод производит несколько видов тротуарной плитки, дорожные и тротуарные бордюры.
 					</p>
@@ -146,16 +175,17 @@
 						Наличие собственного карьера позволяет Тереховскому заводу предлагать оптимальные для потребителей цены на свою продукцию.
 						А возможность купить необходимые вам строительные материалы в любом объеме непосредственно у производителя не только позволяет сэкономить,но и является гарантией качества продукции и защитой от подделок.
 					</p>
-					<img src="img/05.jpg" alt="">
+					<img src="/img/05.jpg" alt="">
 				</div>
+				<div class="clearfix"></div>
 			</section>
 		</div>
-	</div>
+	</div>-->
 
 	<div class="advantages">
-	<img class="divide" src="img/t_1.png" alt="">
+	<img class="divide" src="/img/t_1.png" alt="">
 		<div class="container">
-			<div class="advantages-title">
+			<div class="advantages-title" id="benefits">
 				<h1 class="title">Преимущества андезитобальтового блока</h1>	
 			</div>
 			<div class="advantages-info">
@@ -183,9 +213,9 @@
 			</span>
 			<span class="descr">
 				<h2 class="descr-title">Экологичный</h2>
-				<p class="descr-text">лок имеет соответсвующие
+				<p class="descr-text">Блок имеет соответсвующие
 					сертификаты, без применения
-					химических материалов.
+					химических материалов
 				</p>
 			</span>
 			<span class="descr">
@@ -200,76 +230,78 @@
 				<h2 class="descr-title">Идеальная геометрия</h2>
 				<p class="descr-text">390×190×188 мм</p>
 			</span>
-				<img class="descr-img" src="img/info-block.png" alt="">
+				<img class="descr-img" src="/img/info-block.png" alt="">
 
 			</div>
-			<img class="advantages-img" src="img/vodopogloshenie.png" alt="">
+			<img class="advantages-img image" src="/img/vodopogloshenie.png" alt="info">
+			
+
 			<div class="distinction">
-				<img src="img/first_luchshih_2007.png" alt="">
-				<img src="img/luchiy_tovar_prim_2007.png" alt="">
+				<img src="/img/first_luchshih_2007.png" alt="">
+				<img src="/img/luchiy_tovar_prim_2007.png" alt="">
 			</div>
 			<div class="eko">
-				<img src="img/1eko.png" alt="">
-				<img src="img/2eko.png" alt="">
+				<img src="/img/1eko.png" alt="">
+				<img src="/img/2eko.png" alt="">
 			</div>
 		</div>
 		
 	</div>
 	<div class="objects">
-		<img class="divide" src="img/t_1.png" alt="">
+		<img class="divide" src="/img/t_1.png" alt="">
 		<div class="container">
-			<div class="title-topic">
+			<div class="title-topic" id="objects">
 				<h1 class="title">Объекты</h1>
 			</div>
 			<div class="title-descr">
 				<p>
 					Из тереховских блоков на Дальнем Востоке России построены
 					сотни современных зданий разной этажности и назначения
-					На этой странице представлены некоторые из них.
+					На этой странице представлены некоторые из них
 				</p>
 			</div>
 			
 			<div class="objects-items-first clearfix">
-				<div class="itemscol-lg-4 col-md-4 col-sm-6 col-xs-12">
-					<img src="img/items/1.jpg" alt="">
+				<div class="items col-lg-4 col-md-4 col-sm-6 col-xs-12">
+					<img src="/img/items/1.jpg" alt="">
 					<p>КСК «Фетисов Арена» (г. Владивосток, ул. Маковского, 284)</p>
 				</div>
 				<div class="items col-lg-4 col-md-4 col-sm-6 col-xs-12">
-					<img src="img/items/2.jpg" alt="">
+					<img src="/img/items/2.jpg" alt="">
 					<p>Гостиница «Hyatt Vladivostok, Burny» (г. Владивосток, ул. Набережная, 13)</p>
 				</div>
 				<div class="items col-lg-4 col-md-4 col-sm-6 col-xs-12">
-					<img src="img/items/3.jpg" alt="">
+					<img src="/img/items/3.jpg" alt="">
 					<p>Торгово-развлекательный центр «Clover House» (г. Владивосток,  ул. Семёновская, 15)</p>
 				</div>
 				<div class="items col-lg-4 col-md-4 col-sm-6 col-xs-12">
-					<img src="img/items/4.jpg" alt="">
+					<img src="/img/items/4.jpg" alt="">
 					<p>Здание Пенсионного фонда РФ (г. Владивосток, ул. Фонтанная, 16)</p>
 				</div>
 				<div class="items col-lg-4 col-md-4 col-sm-6 col-xs-12">
-					<img src="img/items/5.jpg" alt="">
+					<img src="/img/items/5.jpg" alt="">
 					<p>Гостиница «Hyatt Regency Vladivostok,  Golden Horn» (г. Владивосток,  Корабельная Набережная, 10)</p>
 				</div>
 				<div class="items col-lg-4 col-md-4 col-sm-6 col-xs-12">
-					<img src="img/items/6.jpg" alt="">
+					<img src="/img/items/6.jpg" alt="">
 					<p>Торговый комплекс «Центральный» (г. Владивосток, ул. Светланская, 29)</p>
 				</div>				
 			</div>
 			<div class="objects-items-second clearfix">
 				<div class="items col-lg-3 col-md-3 col-sm-6 col-xs-12">
-					<img src="img/items/7.jpg" alt="">
+					<img src="/img/items/7.jpg" alt="">
 					<p>Жилой комплекс «Некрасов» (г. Владивосток,  ул. 2-я Круговая, 12)</p>
 				</div>
 				<div class="items col-lg-3 col-md-3 col-sm-6 col-xs-12">
-					<img src="img/items/8.jpg" alt="">
+					<img src="/img/items/8.jpg" alt="">
 					<p>Офисное здание (г. Владивосток, ул. Мордовцева, 6)</p>
 				</div>
 				<div class="items col-lg-3 col-md-3 col-sm-6 col-xs-12">
-					<img src="img/items/9.jpg" alt="">
+					<img src="/img/items/9.jpg" alt="">
 					<p>Жилой дом  (г. Владивосток, ул. Каплунова, 6)</p>
 				</div>
 				<div class="items col-lg-3 col-md-3 col-sm-6 col-xs-12">
-					<img src="img/items/10.jpg" alt="">
+					<img src="/img/items/10.jpg" alt="">
 					<p>Бизнес-центр «Capital Tower»  (г. Владивосток, ул. Западная, 7)</p>
 				</div>
 			</div>
@@ -277,137 +309,158 @@
 		</div>
 	</div>
 	<div class="products">
-		<img class="divide" src="img/line.png" alt="">
+		<img class="divide" src="/img/line.png" alt="">
 		<div class="container">
-			<div class="title-topic">
+			<div class="title-topic" id="products">
 				<h1 class="title">Продукция</h1>
 			</div>
 		<div class="items clearfix">
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
-				<img class="item-img" src="img/products/block01.png" alt="">
-				<a href="#!" class="item-title">Блок стеновой m50/ М75/ m100</a>
-				<p class="item-description">Мркировка: КСР-ПР-ПС-39-50-F50-1450; ГОСТ 6133–99</p>
-				<button type="submit" class="item-button">
-					<img src="img/black-bus.png" alt="">
-					<h3>Перейти</h3>
-				</button>
+				<img class="item-img" src="/img/products/block01.png" alt="">
+				<a href="/blocks/product/1" class="item-title">Блок стеновой m50/ М75/ m100</a>
+				<p class="item-description">Маркировка: КСР-ПР-ПС-39-50-F50-1450; ГОСТ 6133–99</p>
+				<!-- <a href="/blocks/product/1">
+					<button type="submit" class="item-button">
+						<img src="/img/black-bus.png" alt="">
+						<h3>Перейти</h3>
+					</button>
+				</a> -->
+				
 			</div>
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
-				<img class="item-img" src="img/products/block02.png" alt="">
-				<a href="#!" class="item-title">Блок перегородочный</a>
-				<p class="item-description">Мркировка: КПР-ПР-ПС-39-35-F50-1390</p>
-				<button type="submit" class="item-button">
-					<img src="img/black-bus.png" alt="">
-					<h3>Перейти</h3>
-				</button>
+				<img class="item-img" src="/img/products/block02.png" alt="">
+				<a href="/blocks/product/2" class="item-title">Блок перегородочный</a>
+				<p class="item-description">Маркировка: КПР-ПР-ПС-39-35-F50-1390</p>
+				<!-- <a href="/blocks/product/2">
+					<button type="submit" class="item-button">
+						<img src="/img/black-bus.png" alt="">
+						<h3>Перейти</h3>
+					</button>
+				</a> -->
 			</div>
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
-				<img class="item-img" src="img/products/block03.png" alt="">
-				<a href="#!" class="item-title">Блок стеновой рядовой</a>
-				<p class="item-description">Мркировка: КСР-ПР ПС-ПСБ-39-35-F25-1000</p>
-				<button type="submit" class="item-button">
-					<img src="img/black-bus.png" alt="">
-					<h3>Перейти</h3>
-				</button>
+				<img class="item-img" src="/img/products/block03.png" alt="">
+				<a href="/blocks/product/3" class="item-title">Блок стеновой рядовой</a>
+				<p class="item-description">Маркировка: КСР-ПР ПС-ПСБ-39-35-F25-1000</p>
+				<!-- <a href="/blocks/product/3">
+					<button type="submit" class="item-button">
+						<img src="/img/black-bus.png" alt="">
+						<h3>Перейти</h3>
+					</button>
+				</a> -->
 			</div>
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
-				<img class="item-img" src="img/products/block04.png" alt="">
-				<a href="#!" class="item-title">Блок стеновой угловой</a>
-				<p class="item-description">Мркировка: КСР-УГ ПС-ПСБ-49,5-35-F25-1000</p>
-				<button type="submit" class="item-button">
-					<img src="img/black-bus.png" alt="">
-					<h3>Перейти</h3>
-				</button>
+				<img class="item-img" src="/img/products/block04.png" alt="">
+				<a href="/blocks/product/4" class="item-title">Блок стеновой угловой</a>
+				<p class="item-description">Маркировка: КСР-УГ ПС-ПСБ-49,5-35-F25-1000</p>
+				<!-- <a href="/blocks/product/4">
+					<button type="submit" class="item-button">
+						<img src="/img/black-bus.png" alt="">
+						<h3>Перейти</h3>
+					</button>
+				</a> -->
 			</div>
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
-				<img class="item-img" src="img/products/block05.png" alt="">
-				<a href="#!" class="item-title">Блок половинчатый перевязочный </a>
-				<p class="item-description">Мркировка: КСР-ПЗ ПС-ПСБ-19-35-F25-1000</p>
-				<button type="submit" class="item-button">
-					<img src="img/black-bus.png" alt="">
-					<h3>Перейти</h3>
-				</button>
+				<img class="item-img" src="/img/products/block05.png" alt="">
+				<a href="/blocks/product/5" class="item-title">Блок половинчатый перевязочный </a>
+				<p class="item-description">Маркировка: КСР-ПЗ ПС-ПСБ-19-35-F25-1000</p>
+				<!-- <a href="/blocks/product/5">
+					<button type="submit" class="item-button">
+						<img src="/img/black-bus.png" alt="">
+						<h3>Перейти</h3>
+					</button>
+				</a> -->
 			</div>
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
-				<img class="item-img" src="img/products/Euroblock6.png" alt="">
-				<a href="#!" class="item-title">Евроблок стеновой</a>
+				<img class="item-img" src="/img/products/Euroblock6.png" alt="">
+				<a href="/blocks/product/7" class="item-title">Евроблок стеновой</a>
 				<p class="item-description"></p>
-				<button type="submit" class="item-button">
-					<img src="img/black-bus.png" alt="">
-					<h3>Перейти</h3>
-				</button>
+				<!-- <a href="/blocks/product/7">
+					<button type="submit" class="item-button">
+						<img src="/img/black-bus.png" alt="">
+						<h3>Перейти</h3>
+					</button>	
+				</a> -->
 			</div>
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
-				<img class="item-img" src="img/products/Ventblock7.png" alt="">
-				<a href="#!" class="item-title">Блоки вентиляционные</a>
-			
-				<button type="submit" class="item-button">
-					<img src="img/black-bus.png" alt="">
-					<h3>Перейти</h3>
-				</button>
+				<img class="item-img" src="/img/products/Ventblock7.png" alt="">
+				<a href="/blocks/product/6" class="item-title">Блоки вентиляционные</a>
+				<!-- <a href="/blocks/product/6">
+					<button type="submit" class="item-button">
+						<img src="/img/black-bus.png" alt="">
+						<h3>Перейти</h3>
+					</button>
+				</a> -->
 			</div>
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
-				<img class="item-img" src="img/products/plitka01_red8.png" alt="">
-				<a href="#!" class="item-title">Брусчатка фигурная "Волна"</a>
-				
-				<button type="submit" class="item-button">
-					<img src="img/black-bus.png" alt="">
-					<h3>Перейти</h3>
-				</button>
+				<img class="item-img" src="/img/products/plitka01_red8.png" alt="">
+				<a href="/blocks/product/8" class="item-title">Брусчатка фигурная "Волна"</a>
+				<!-- <a href="/blocks/product/8">
+					<button type="submit" class="item-button">
+						<img src="/img/black-bus.png" alt="">
+						<h3>Перейти</h3>
+					</button>
+				</a> -->
 			</div>
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
-				<img class="item-img" src="img/products/plitka02 9.png" alt="">
-				<a href="#!" class="item-title">Брусчатка прямоугольная</a>
-				
-				<button type="submit" class="item-button">
-					<img src="img/black-bus.png" alt="">
-					<h3>Перейти</h3>
-				</button>
+				<img class="item-img" src="/img/products/plitka02 9.png" alt="">
+				<a href="/blocks/product/8" class="item-title">Брусчатка прямоугольная</a>
+				<!-- <a href="/blocks/product/8">
+					<button type="submit" class="item-button">
+						<img src="/img/black-bus.png" alt="">
+						<h3>Перейти</h3>
+					</button>
+				</a> -->
 			</div>
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
-				<img class="item-img" src="img/products/plitka_new2 (1)10.png" alt="">
-				<a href="#!" class="item-title">Брусчатка  «Старый город»</a>
-				
-				<button type="submit" class="item-button">
-					<img src="img/black-bus.png" alt="">
-					<h3>Перейти</h3>
-				</button>
+				<img class="item-img" src="/img/products/plitka_new2 (1)10.png" alt="">
+				<a href="/blocks/product/8" class="item-title">Брусчатка  «Старый город»</a>
+				<!-- <a href="/blocks/product/8">
+					<button type="submit" class="item-button">
+						<img src="/img/black-bus.png" alt="">
+						<h3>Перейти</h3>
+					</button>
+				</a> -->
 			</div>
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
-				<img class="item-img" src="img/products/bordur3 11.png" alt="">
-				<a href="#!" class="item-title">Бордюр тротуарный</a>
-				
-				<button type="submit" class="item-button">
-					<img src="img/black-bus.png" alt="">
-					<h3>Перейти</h3>
-				</button>
+				<img class="item-img" src="/img/products/bordur3 11.png" alt="">
+				<a href="/blocks/product/9" class="item-title">Бордюр тротуарный</a>
+				<!-- <a href="/blocks/product/9">
+					<button type="submit" class="item-button">
+						<img src="/img/black-bus.png" alt="">
+						<h3>Перейти</h3>
+					</button>
+				</a> -->
 			</div>
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
-				<img class="item-img" src="img/products/bordur12.png" alt="">
-				<a href="#!" class="item-title">Бордюр дорожный</a>
-				
-				<button type="submit" class="item-button">
-					<img src="img/black-bus.png" alt="">
-					<h3>Перейти</h3>
-				</button>
+				<img class="item-img" src="/img/products/bordur12.png" alt="">
+				<a href="/blocks/product/9" class="item-title">Бордюр дорожный</a>
+				<!-- <a href="/blocks/product/9">
+					<button type="submit" class="item-button">
+						<img src="/img/black-bus.png" alt="">
+						<h3>Перейти</h3>
+					</button>
+				</a> -->
 			</div>
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
-				<img class="item-img" src="img/products/plitka_120_120 13.png" alt="">
-				<a href="#!" class="item-title">Брусчатка "Квадрат"</a>
-				
-				<button type="submit" class="item-button">
-					<img src="img/black-bus.png" alt="">
-					<h3>Перейти</h3>
-				</button>
+				<img class="item-img" src="/img/products/plitka_120_120 13.png" alt="">
+				<a href="/blocks/product/8" class="item-title">Брусчатка "Квадрат"</a>
+				<!-- <a href="/blocks/product/8">
+					<button type="submit" class="item-button">
+						<img src="/img/black-bus.png" alt="">
+						<h3>Перейти</h3>
+					</button>
+				</a> -->
 			</div>
 			<div class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
-				<img class="item-img" src="img/products/scheb_gr_4(14).png" alt="">
-				<a href="#!" class="item-title">Щебень</a>
-				
-				<button type="submit" class="item-button">
-					<img src="img/black-bus.png" alt="">
-					<h3>Перейти</h3>
-				</button>
+				<img class="item-img" src="/img/products/scheb_gr_4(14).png" alt="">
+				<a href="/blocks/product/10" class="item-title">Щебень</a>
+				<!-- <a href="/blocks/product/10">
+					<button type="submit" class="item-button">
+						<img src="/img/black-bus.png" alt="">
+						<h3>Перейти</h3>
+					</button>
+				</a> -->
 			</div>
 		</div>
 	</div>
@@ -416,7 +469,7 @@
 	<div class="calculator">
 	<img class="divide" src="img/line.png" alt="">
 		<div class="container">
-			<div class="title-topic title-width">
+			<div class="title-topic title-width" id="calculator">
 				<h1 class="title">Рассчитать стоимость</h1>
 			</div>
 			<h2 class="calculator-title">Калькулятор расчета количества блоков</h2>
@@ -536,7 +589,7 @@
 				</div>
 				<div class="calc_i">
 					<button id="calc_i_sb" class="calc_i_sb">
-						<img src="img/calc.png" alt="">
+						<img src="/img/calc.png" alt="">
 						<h3>Рассчитать</h3>
 					</button>
 				</div>
@@ -555,28 +608,28 @@
 		</div>
 	</div>
 
-	<div class="mass-media">
+	<!-- div class="mass-media">
 		<img class="divide" src="img/line.png" alt="">
 		<div class="container">
-			<div class="title-topic title-width">
+			<div class="title-topic title-width" id="mass_media">
 				<h1 class="title">Что о нас пишут СМИ?</h1>
 			</div>
 			<div class="newspaper">
-				<img src="img/newspaper1.png" alt="" class="newspaper-item col-lg-3 col-md-3 col-sm-5 col-xs-12">
-				<img src="img/newspaper2.png" alt="" class="newspaper-item col-lg-5 col-md-5 col-sm-7 col-xs-12">
-				<img src="img/newspaper3.png" alt="" class="newspaper-item col-lg-4 col-md-4 col-sm-12 col-xs-12">
+				<img src="/img/newspaper1.jpg" alt="" class="newspaper-item image col-lg-3 col-md-3 col-sm-5 col-xs-12">
+				<img src="/img/newspaper2.jpg" alt="" class="newspaper-item image col-lg-5 col-md-5 col-sm-7 col-xs-12">
+				<img src="/img/newspaper3.jpg" alt="" class="newspaper-item image col-lg-4 col-md-4 col-sm-12 col-xs-12">
 			</div>
 		</div>
 	</div>
 	<div class="reviews">
 		<div class="container">
-			<div class="title-topic title-width">
+			<div class="title-topic title-width" id="reviews">
 				<h1 class="title">Отзывы наших клиентов</h1>
-			</div>
+			</div> -->
 				
 			<!-- Slider start -->
 
-			<div id="carousel" class="carousel slide app-slide" data-ride="carousel">
+			<!-- <div id="carousel" class="carousel slide app-slide" data-ride="carousel">
 				<ol class="carousel-indicators">
 					<li class="active" data-target="#carousel" data-slide-to="0"></li>
 					<li data-target="#carousel" data-slide-to="1"></li>
@@ -584,7 +637,7 @@
 				</ol>
 				<div class="carousel-inner" role="listbox">
 					<div class="item active app-item">
-						<img src="img/reviews/first-review.png" alt="">
+						<img src="/img/reviews/first-review.png" alt="">
 						<div class="carousel-caption app-slide-descr">
 							<h3 class="carousel-title">
 								Наталья Валентиновна Пескова
@@ -599,7 +652,7 @@
 						</div>
 					</div>
 					<div class="item app-item">
-						<img src="img/reviews/first-review.png" alt="">
+						<img src="/img/reviews/first-review.png" alt="">
 						<div class="carousel-caption">
 							<h3 class="carousel-title">
 								Второй
@@ -614,7 +667,7 @@
 						</div>
 					</div>
 					<div class="item app-item">
-						<img src="img/reviews/first-review.png" alt="">
+						<img src="/img/reviews/first-review.png" alt="">
 						<div class="carousel-caption">
 							<h3 class="carousel-title">
 								Третий
@@ -630,47 +683,15 @@
 				</div>
 
 				<a href="#carousel" class="prev-slide btn-slide" data-slide="prev" role="button">
-					<img  src="img/btn-left.png" alt="">
+					<img  src="/img/btn-left.png" alt="">
 				</a>
 				<a href="#carousel" class="next-slide btn-slide" data-slide="next" role="button">
-					<img src="img/btn-right.png" alt="">
+					<img src="/img/btn-right.png" alt="">
 				</a>
 			</div>
-			
+			 -->
 			<!-- Slider end -->
 
-		</div>
-	</div>
-	<div class="certificates">
-	<img src="img/bg-bush.png" alt="" class="bush">
-		<div class="container">
-			<div class="certificates-title">
-				<h2>Наши дипломы и сертификаты</h2>
-			</div>
-		</div>
-		<div class="certificates-confirm">
-			<img src="img/certificates/2018-1.jpg" alt="" class="certificates-confirm-item">
-			<img src="img/certificates/firescan.jpg" alt="" class="certificates-confirm-item">
-			<img src="img/certificates/hab.jpg" alt="" class="certificates-confirm-item">
-			<img src="img/certificates/Ekolog.jpg" alt="" class="certificates-confirm-item">
-			<img src="img/certificates/100_luhsih_tovarov_m50_m75.jpg" alt="" class="certificates-confirm-item">
-		</div>
-	</div>
-	<div class="contacts">
-		<div class="container">
-			<div class="contacts-title">
-				<h2>Контакты:</h2>
-			</div>
-			<div class="contacts-description">
-				<p>Для того, чтобы обезопасить своих клиентов от покупки поддельных некачественных стройматериалов, Тереховский завод дает возможность приобрести свою продукцию любому клиенту напрямую, непосредственно у производителя.</p>
-			</div>
-		</div>
-	</div>
-	<div class="map">
-		<div class="logo-bottom">
-			<a href="#!">
-				<img class="logo" src="img/logo.png" alt="logo">
-			</a>
 		</div>
 	</div>
 	
