@@ -29,64 +29,105 @@
 				</a>
 			</div>
 			<div class="clearfix"></div>
-			<div class="order-info  col-sm-4 col-xs-12">
-				<img src="/img/purce.png" alt="" class=" col-sm-3 col-xs-2">
-				<h4>
-					Оплата
-				</h4>
+            <h1>Заказ №<?= $order->id ?> от <?= $order->order_date ?></h1>
+            <input type="hidden" id="task_id" value="<?= $order->id ?>">
+            <div class="order-info flow col-sm-6 col-xs-12">
+                <img src="/img/shop.png" alt="" class="col-sm-3 col-xs-2">
+                <h4>Всего заказано</h4>
+                <table class="table-order">
+                    <?php foreach ($products as $product): ?>
+                        <tr>
+                            <td>
+                                <p><?= /*$product->block_name . ': ' .*/ $product->name; ?></p>
+                            </td>
+                            <td>
+                                <p>кол-во: <?= $product->amount; ?></p>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </table>
+            </div>
+            <div class="order-info  col-sm-6 col-xs-12">
+                <img src="/img/delivery.png" alt="" class=" col-sm-3 col-xs-2">
+                <h4>Всего отгружено</h4>
+
+                <table class="table-order">
+                    <tr>
+                        <td>
+                            <p>отгруженно:</p>
+                        </td>
+                        <td>
+                            <?php if ($is_taken && !$order->is_done): ?>
+                                <input type="number" name="blocks_shipped" id="blocks_shipped" value="<?= $order->blocks_shipped; ?>">
+                            <?php else: echo $order->blocks_shipped; endif; ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Осталось:</p>
+                        </td>
+                        <td>
+                            <?php if ($is_taken && !$order->is_done): ?>
+                                <input type="number" name="blocks_left" id="blocks_left" value="<?= $order->blocks_left; ?>">
+                            <?php else: echo $order->blocks_left; endif; ?>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="clearfix"></div>
+
+			<div class="order-info col-xs-12">
+				<img src="/img/purce.png" alt="" class="col-md-1 col-xs-2">
+				<h4>Оплата за товар</h4>
 				<table class="table-order">
 					<tr>
-						<td>
-							<p>Заказ №<?= $order->id; ?></p>
-							<input type="hidden" id="task_id" name="task_id" value="<?= $order->id; ?>">
-						</td>
-						<td><p><?= $order->order_date; ?></p></td>
-					</tr>
-					<tr>
-						<td>
-							<p>оплаченно:</p>
-						</td>
-						<td>
-							<?php if ($is_taken && !$order->is_done): ?>
+						<td><p>оплаченно:</p></td>
+						<td><?php if ($is_taken && !$order->is_done): ?>
 								<input type="number" name="paid" id="paid" value="<?= $order->paid; ?>">
 							<?php else: echo $order->paid; endif; ?>
 						</td>
+                        <td><p>Осталось:</p></td>
+                        <td><p> <?= $order->sum - $order->paid ?></p></td>
 					</tr>
-					
 				</table>
 			</div>
 
-			<div class="order-info  col-sm-4 col-xs-12">
-				<img src="/img/delivery.png" alt="" class=" col-sm-3 col-xs-2">
-				<h4>Отгрузка</h4>
-				
-				<table class="table-order">
-					<tr>
-						<td>
-							<p>отгруженно:</p>
-						</td>
-						<td>
-							<?php if ($is_taken && !$order->is_done): ?>
-								<input type="number" name="blocks_shipped" id="blocks_shipped" value="<?= $order->blocks_shipped; ?>">
-							<?php else: echo $order->blocks_shipped; endif; ?>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<p>Осталось:</p>
-						</td>
-						<td>
-							<?php if ($is_taken && !$order->is_done): ?>
-								<input type="number" name="blocks_left" id="blocks_left" value="<?= $order->blocks_left; ?>">
-							<?php else: echo $order->blocks_left; endif; ?>
-						</td>
-					</tr>
-				</table>
-			</div>
-			<div class="order-info  col-sm-4 col-xs-12">
-				<img src="/img/pallet.png" alt="" class="col-sm-3 col-xs-2">
+            <div class="order-info col-sm-6 col-xs-12">
+                <img src="/img/delivery.png" class="col-md-2 col-xs-3">
+
+                <h4>Оплата за доставку</h4>
+                <table class="table-order">
+                    <td><p><?= $order->delivery_cost;?> р</p></td>
+                </table>
+            </div>
+            <div class="order-info  col-sm-6 col-xs-12">
+                <img src="/img/shop.png"  class="col-md-2 col-xs-3">
+                <h4>Оплата за товары</h4>
+                <table class="table-order">
+                    <tr>
+                        <td>
+                            <p><?= $order->sum; ?> Р</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+			<div class="order-info  col-xs-12">
+				<img src="/img/pallet.png" alt="" class="col-md-1 col-xs-2">
 				<h4>Отгрузка поддонов</h4>
-				<table class="table-order">
+
+                <table class="table-order  col-sm-4 col-xs-12">
+                    <tr>
+                        <td>
+                            <p>Необходимое кол-во поддонов:
+                                <?= $order->number_of_pallets ?></p>
+                        </td>
+                        <td>
+                            <p>Стоимостью:
+                                <?php echo $order->number_of_pallets * 450 ?>
+                                P</p>
+                        </td>
+                    </tr>
 					<tr>
 						<td>
 							<p>отгруженно:</p>
@@ -98,80 +139,31 @@
 						</td>
 					</tr>
 					<tr>
-					<td>
-						<p>Осталось:</p>
-					</td>
-					<td>
-						<?php if ($is_taken && !$order->is_done): ?>
-							<input type="number" name="pallets_left" id="pallets_left" value="<?= $order->pallets_left; ?>">
-						<?php else: echo $order->pallets_left; endif; ?>
-					</td>
+                        <td>
+                            <p>Осталось:</p>
+                        </td>
+                        <td>
+                            <?php if ($is_taken && !$order->is_done): ?>
+                                <input type="number" name="pallets_left" id="pallets_left" value="<?= $order->pallets_left; ?>">
+                            <?php else: echo $order->pallets_left; endif; ?>
+                        </td>
+                    </tr>
 				</table>
-			</div>
-			<?php if ($is_taken && !$order->is_done): ?>
-				<div class="col-xs-12 ">
-					<div class="text-center">
-						<button type="button" id="change-data">OK</button>
-					</div>
-				</div>
-			<?php endif; ?>
-				
-			<div class="clearfix">
-				
-			</div>
+            </div>
+            <?php if ($is_taken && !$order->is_done): ?>
+                <div class="col-xs-12 ">
+                    <div class="text-center">
+                        <button class="btn btn-success" type="button" id="change-data">Send</button>
+                    </div>
+                </div>
+            <?php endif; ?>
 
-			<div class="order-info flow  col-xs-12">
-			<br>
-				<img src="/img/shop.png" alt="" class=" col-md-1 col-xs-2">
-				<h4>Текущий заказ</h4>
-			
+            <div class="clearfix">
 
-				<table class="table-order">
-					<?php foreach ($products as $product): ?>
-						<tr>
-							<td>
-								<p><?= $product->block_name . ': ' . $product->name; ?></p>
-							</td>
-							<td>
-								<p>кол-во: <?= $product->amount; ?></p>
-							</td>
-							<td>
-								<p>Стоимость: <?= $product->total_price; ?> р</p>
-							</td>
-						</tr>
-					<?php endforeach; ?>
-				</table>
-				<br>
-				<table class="table-order  col-sm-4 col-xs-12">
-					<tr>
-						<td>
-							<p>Необходимое кол-во поддонов:
-
-							<?= $order->number_of_pallets ?></p>
-						</td>
-						<td>
-							<p>
-								Стоимостью: 
-								<?php echo $order->number_of_pallets * 450; ?> 
-								P
-							</p>
-						</td>
-					</tr>
-					<tr>
-						<td colspan="2">
-							<p>
-								Сумма включается в доставку и возвращается при сдаче поддонов
-							</p>
-						</td>
-
-					</tr>
-				</table>
-				<br>
-			</div>
-			<br>
-			<br>
+            </div>
+            <br>
 			<?php  if($order->payment_type == 'score'): ?>
-                <div class="order-info  col-sm-6 col-xs-12">
+                <div class="order-info text-center col-sm-6 col-xs-12">
 					<a class="text-primary" href="/cabinet/blank/<?= $order->id; ?>">
 						<h4>
 							<img src="/img/print.png">
@@ -179,7 +171,7 @@
 						</h4>
 					</a>
                 </div>
-                <div class="order-info   col-sm-6 col-xs-12">
+                <div class="order-info text-center  col-sm-6 col-xs-12">
                 <a class="text-primary" href="/cabinet/blank_pallets/<?=$order->id?>">
                     <h4>
                         <img src="/img/print.png">
@@ -188,41 +180,17 @@
                 </a>
                 </div>
 				<?php  elseif($order->payment_type == 'requisites'): ?>
-                <div class="order-info  col-md-3 col-sm-6 col-xs-12">
+                <div class="order-info  text-center col-xs-12">
 					<h4 class="text-warning">Реквизиты для оплаты: </h4>
 					<h4>5469500010207050</h4> 
        			 	<h4>Марк Владимирович</h4>
                 </div>
        			<?php endif; ?>
-			<div class="order-info  col-md-3 col-sm-6 col-xs-12">
-			<img src="/img/shop.png" alt="" class=" col-md-4 col-sm-3 col-xs-2">
-			<h4>Оплата за товары</h4>
-			<br>
-				<table class="table-order">
-					<tr>
-						<td>
-							<p><?= $order->sum; ?> Р</p>
-						</td>
-					</tr>
-				</table>
-			</div>	
 
-			<div class="order-info  col-md-3 col-sm-6 col-xs-12">
-		
-			<img src="/img/delivery.png" alt="" class=" col-md-4 col-sm-3 col-xs-2">
-
-			<h4>Оплата за доставку</h4>
-				<table class="table-order">
-					<td>
-						<p><?= $order->delivery_cost;?> р</p>
-					</td>
-				</table>
-			</div>
-
-			<div class="order-info  col-md-3 col-sm-6 col-xs-12">
-			<img src="/img/money.png" alt="" class="col-md-4 col-sm-3 col-xs-2">
-			<h4>Всего к оплате</h4>
-			<br>
+			<div class="order-info col-xs-12">
+                <img src="/img/money.png" alt="" class="col-md-1 col-sm-2 col-xs-3">
+                <h4>Всего к оплате</h4>
+                <br>
 				<table class="table-order">
 					<td>
 						<p><?= $order->delivery_cost + $order->sum?> р</p>
@@ -232,7 +200,7 @@
 
 			<div class="clearfix"></div>
 			<br>
-			<div class="order-info delivery col-sm-5 col-xs-12">
+			<div class="order-info delivery  col-sm-12">
 			<?php if($is_admin): ?>
 				<h4>Доставка:</h4>
 				<table class="table-order">
@@ -285,26 +253,25 @@
 					</tr>
 				</table>
 				<?php endif; ?>
-				
-				
 			</div>
 
 			<?php if($is_admin): ?>
-			<div class="order-info  col-sm-3 col-xs-4">
+			<div class="order-info  col-sm-5 col-xs-12">
 				<h4>На какое число</h4>
 				<input type="date" name="calendar" value="<?= $order->delivery_date; ?>" disabled>
-				<div class="text-center" style="">
+				<div  style="">
+                    <br>
 					<?php if($is_admin) {
 					if ($is_taken && !$order->is_done): ?>
-						<a class="cabinet-btn btn btn-warning" href="/cabinet/complete_task/<?= $order->id; ?>" class="btn">Завершить заказ</a>
+						<a class="btn btn-warning" href="/cabinet/complete_task/<?= $order->id; ?>" class="btn">Завершить заказ</a>
 					<?php elseif(!$is_taken && !$order->is_done): ?>
-						<a class="cabinet-btn btn btn-warning" href="/cabinet/take_task/<?= $order->id; ?>">Взять заказ</a>
+						<a class="btn btn-warning" href="/cabinet/take_task/<?= $order->id; ?>">Взять заказ</a>
 					<?php elseif($order->is_done): ?>
-						<p class="cabinet-btn btn btn-warning">Задание уже выполнено.</p>
+						<p class="btn btn-warning">Задание уже выполнено.</p>
 					<?php endif; }?>
 				</div>
 			</div>
-			<div class="order-info delivery col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="order-info delivery   col-sm-7 col-xs-12">
 				<h4>Заказать доставку:</h4>
 				<table class="table-order">
 					<tr>

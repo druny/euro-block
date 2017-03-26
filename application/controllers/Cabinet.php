@@ -227,7 +227,6 @@ class Cabinet extends CI_Controller
         }
     }
 
-
     //Для выдачи счета(квитанции)
     public function blank($id) {
         if ($this->ion_auth->logged_in())
