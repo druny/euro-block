@@ -116,10 +116,7 @@
 			<td><?= $product->price ?> </td>
 			<td><?= $product->total_price ?></td>
 		</tr>
-			
-
 		<?php endforeach; ?>
-		
 		<!--  <tr>
 			<td><?= $i ?></td>
 			<td></td>

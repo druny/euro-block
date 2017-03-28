@@ -6,7 +6,6 @@
 				<p>Все заказы</p>
 			</a>
 		</div>
-		
 		<div class="admin-btn col-sm-4 col-xs-12">
 			<a href="/cabinet/archive">
 				<img src="/img/arhive.png" alt="active">
@@ -62,7 +61,6 @@
 								<p>Населенный пункт</p>
 							</td>
 							<td>
-
 								<select name="settlement_id" id="">
 								<?php foreach ($settlements as $settlement): ?>
 									<option value="<?= $settlement['id'] ?>">
@@ -72,7 +70,6 @@
 								</select>
 							</td>
 						</tr>
-					
 						<tr>
 							<td>
 								<p>Улица:</p>
@@ -130,11 +127,11 @@
 										</a>
 								</button>
 							</td>
-								<td>
-									<button type="button"  data-toggle="modal" data-target="#scoreModal">
-										<p>Получить счет на оплату</p>
-									</button>
-								</td>
+                            <td>
+                                <button type="button"  data-toggle="modal" data-target="#scoreModal">
+                                    <p>Получить счет на оплату</p>
+                                </button>
+                            </td>
 						</tr>
 					</table>
 					<table>	
@@ -190,7 +187,6 @@
 				<h1 class="title">Рассчитать стоимость</h1>
 			</div>
 			<h2 class="calculator-title">Калькулятор расчета количества блоков</h2>
-
 
 			<!-- Start calculator -->
 			<div id="calc" class="calc">
@@ -325,7 +321,6 @@
 		</div>
 	</div>
 
-
 	<!-- score modal -->
 <div class="modal fade" id="scoreModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -345,7 +340,6 @@
 </div>
 
 	<!-- requisite modal -->
-
 	<div class="modal fade" id="requisiteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -365,7 +359,6 @@
 </div>
 
 	<!-- cash modal -->
-
 	<div class="modal fade" id="cashModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

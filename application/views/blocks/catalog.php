@@ -37,25 +37,22 @@
 				<?php endforeach; ?>
 				</table>
 			</div>
-			
 		</div>
 			
 			<?php 
 				if (!$this->ion_auth->logged_in()) {
 					echo '<h1 class="text-center text-info">' . 'Чтобы купить онлайн, ' . '<a href="/register"> зарегестрируйтесь</a>' . '</h1>';
 				}
-				?>
+            ?>
 </div>
 
-
 	<div class="calculator">
-	<img class="divide" src="/img/t_1.png" alt="">
+	    <img class="divide" src="/img/t_1.png" alt="">
 		<div class="container">
 			<div class="title-topic title-width">
 				<h1 class="title">Рассчитать стоимость</h1>
 			</div>
 			<h2 class="calculator-title">Калькулятор расчета количества блоков</h2>
-
 
 			<!-- Start calculator -->
 			<div id="calc" class="calc">

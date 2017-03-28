@@ -12,7 +12,6 @@
     <h4>Распечатать</h4><br><br><br>
 </a>
 
-
 <!-- Pallets -->
 <div class="container blank">
     <p class="text-center">Внимание! Оплата данного счета означает согласие сусловиями поставки товара. Уведмление об оплате обязательно, в противном случае не гарантируется наличие товара на складе. Товар отпускается по факту прихода денег на р/с Поставвщика, самовывозом, при наличии доверенности и паспорта.</p>
@@ -61,11 +60,9 @@
         </tr>
     </table>
 
-
     <h4>Счет на оплату № <?= $order->id; ?>-2 от <?= $order->delivery_date; ?></h4>
 
     <hr>
-
     <table class="table table-responsive">
         <tr>
             <td>Поставщик: </td>
@@ -83,7 +80,6 @@
                     ИНН <?= $user->inn ?>, КПП <?= $user->kpp ?>,
                 <?php endif;?>
                 г.<?= $order->settlement ?> , ул.<?= $order->street ?>
-
             </th>
         </tr>
         <tr>
@@ -93,7 +89,6 @@
                     <?= $user->type ?> "<?= $user->company ?>", ИНН <?= $user->inn ?>, КПП <?= $user->kpp ?>,
                 <?php endif;?>
                 г.<?= $order->settlement ?> , ул.<?= $order->street ?>
-
             </th>
         </tr>
     </table>
@@ -122,24 +117,16 @@
             <td class="signature">
                 <p>Генеральный директор </p>
                 <hr>
-                <p>
-                    должность
-                </p>
+                <p>должность</p>
             </td>
             <td class="signature linee">
                 <hr>
-                <p>
-                    подпись
-                </p>
+                <p>подпись</p>
             </td>
             <td class="signature">
-                <p>
-                    Свищов М.В.
-                </p>
+                <p>Свищов М.В.</p>
                 <hr>
-                <p>
-                    расшифровка подписи
-                </p>
+                <p>расшифровка подписи</p>
             </td>
         </tr>
         <tr>
@@ -148,9 +135,7 @@
             </th>
             <td class="signature linee">
                 <hr>
-                <p>
-                    подпись
-                </p>
+                <p>подпись</p>
             </td>
             <td class="signature">
                 <p>Акимова О.Д.</p>
@@ -164,9 +149,7 @@
             </th>
             <td class="signature linee">
                 <hr>
-                <p>
-                    подпись
-                </p>
+                <p>подпись</p>
             </td>
             <td class="signature">
                 <p>Крамар М.В.</p>
@@ -178,6 +161,5 @@
     <p><strong>Примечание:</strong></p>
     <p>Счет действителен в течении 5-ти рабочих дней.</p>
 </div>
-
 </body>
 </html>

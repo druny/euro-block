@@ -1,5 +1,3 @@
-
-
 <?= validation_errors(); ?>
 <div class="text-center register-form">
     <label for="individual-btn">Физ. лицо</label>
@@ -97,7 +95,6 @@
             <?php endforeach; ?>
         </div>
     </div>
-
 
     <div class="form-group">
         <label for="company"  class="col-sm-3 control-label registration-descr">Название компании*:</label>

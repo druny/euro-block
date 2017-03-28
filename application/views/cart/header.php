@@ -25,12 +25,9 @@
 						</button>
 							<img class="logo" src="img/logo-bg.png" alt="logo">
 							<div class="mobile-info">
-				
 					       		<a class="basket" href="#!">корзина 0</a>
 					       		<p class="phone">+7 (423) 230-12-18</p>
-							
 							</div>
-
 						</div>
 					  <!-- Навигационное меню -->
 					    <div id="navbarCollapse" class="collapse navbar-collapse">

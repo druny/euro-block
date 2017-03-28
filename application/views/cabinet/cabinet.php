@@ -11,7 +11,7 @@
 			<div class="admin-btn col-sm-4 col-xs-12">
 				<a href="/cabinet">
 					<img src="/img/menu-icon.png" alt="all orders">
-					<p>Все заказы</p>
+					<p>Текущие заказы</p>
 				</a>
 			</div>
 			<?php if ($is_admin): ?>
@@ -29,10 +29,10 @@
 				</a>
 			</div>
 			<div class="clearfix"></div>
-            <h1>Заказ №<?= $order->id ?> от <?= $order->order_date ?></h1>
+            <h3>Заказ №<?= $order->id ?> от <?= $order->order_date ?></h3>
             <input type="hidden" id="task_id" value="<?= $order->id ?>">
             <div class="order-info flow col-sm-6 col-xs-12">
-                <img src="/img/shop.png" alt="" class="col-sm-3 col-xs-2">
+                <img src="/img/shop.png" alt="" class="col-md-2 col-xs-3">
                 <h4>Всего заказано</h4>
                 <table class="table-order">
                     <?php foreach ($products as $product): ?>
@@ -48,9 +48,8 @@
                 </table>
             </div>
             <div class="order-info  col-sm-6 col-xs-12">
-                <img src="/img/delivery.png" alt="" class=" col-sm-3 col-xs-2">
+                <img src="/img/delivery.png" alt="" class="col-md-2 col-xs-3">
                 <h4>Всего отгружено</h4>
-
                 <table class="table-order">
                     <tr>
                         <td>
@@ -86,7 +85,7 @@
 								<input type="number" name="paid" id="paid" value="<?= $order->paid; ?>">
 							<?php else: echo $order->paid; endif; ?>
 						</td>
-                        <td><p>Осталось:</p></td>
+                        <td style="border-left: 1px solid black"><p>Осталось:</p></td>
                         <td><p> <?= $order->sum - $order->paid ?></p></td>
 					</tr>
 				</table>
@@ -102,7 +101,7 @@
             </div>
             <div class="order-info  col-sm-6 col-xs-12">
                 <img src="/img/shop.png"  class="col-md-2 col-xs-3">
-                <h4>Оплата за товары</h4>
+                <h4>Оплата за доставку</h4>
                 <table class="table-order">
                     <tr>
                         <td>
@@ -163,7 +162,7 @@
             </div>
             <br>
 			<?php  if($order->payment_type == 'score'): ?>
-                <div class="order-info text-center col-sm-6 col-xs-12">
+                <div class="order-info col-sm-6 col-xs-12">
 					<a class="text-primary" href="/cabinet/blank/<?= $order->id; ?>">
 						<h4>
 							<img src="/img/print.png">
@@ -171,7 +170,7 @@
 						</h4>
 					</a>
                 </div>
-                <div class="order-info text-center  col-sm-6 col-xs-12">
+                <div class="order-info col-sm-6 col-xs-12">
                 <a class="text-primary" href="/cabinet/blank_pallets/<?=$order->id?>">
                     <h4>
                         <img src="/img/print.png">
