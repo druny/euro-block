@@ -1,5 +1,5 @@
 <div class="current-order">
-		<div class="container">
+		<div class="container" style=" width: 90%; margin: 0 auto;">
 			<div class="current-order-title current-order-bg col-lg-8 col-md-8 col-sm-12 col-xs-12">
 				<h1>Здесь вы можете:  посмотреть историю заказов, заказать новую партию, посомтреть отгрузки</h1>
 			</div>
@@ -30,6 +30,7 @@
 			</div>
 			<div class="clearfix"></div>
             <h3>Заказ №<?= $order->id ?> от <?= $order->order_date ?></h3>
+            <br><br>
             <input type="hidden" id="task_id" value="<?= $order->id ?>">
             <div class="order-info flow col-sm-6 col-xs-12">
                 <img src="/img/shop.png" alt="" class="col-md-2 col-xs-3">
@@ -76,38 +77,40 @@
             <div class="clearfix"></div>
 
 			<div class="order-info col-xs-12">
-				<img src="/img/purce.png" alt="" class="col-md-1 col-xs-2">
+				<img src="/img/purce.png"  class="col-md-1 col-xs-2">
 				<h4>Оплата за товар</h4>
 				<table class="table-order">
 					<tr>
-						<td><p>оплаченно:</p></td>
-						<td><?php if ($is_taken && !$order->is_done): ?>
-								<input type="number" name="paid" id="paid" value="<?= $order->paid; ?>">
-							<?php else: echo $order->paid; endif; ?>
+						<td>
+                            <p style="display: inline-block">оплаченно:</p>
+                            <?php if ($is_taken && !$order->is_done): ?>
+                                <input type="number" name="paid" id="paid" value="<?= $order->paid; ?>">
+                            <?php else: echo $order->paid; endif; ?>
 						</td>
-                        <td style="border-left: 1px solid black"><p>Осталось:</p></td>
-                        <td><p> <?= $order->sum - $order->paid ?></p></td>
+                        <td style="border-left: 1px solid black">
+                            <p style="display: inline-block">Осталось:</p>
+                            <p style="display: inline-block"> <?= $order->sum - $order->paid ?></p>
+                        </td>
 					</tr>
 				</table>
 			</div>
 
-            <div class="order-info col-sm-6 col-xs-12">
-                <img src="/img/delivery.png" class="col-md-2 col-xs-3">
+            <div class="order-info  col-xs-12">
+                <img src="/img/delivery.png" class="col-md-1 col-xs-2">
 
-                <h4>Оплата за доставку</h4>
-                <table class="table-order">
-                    <td><p><?= $order->delivery_cost;?> р</p></td>
-                </table>
-            </div>
-            <div class="order-info  col-sm-6 col-xs-12">
-                <img src="/img/shop.png"  class="col-md-2 col-xs-3">
                 <h4>Оплата за доставку</h4>
                 <table class="table-order">
                     <tr>
                         <td>
-                            <p><?= $order->sum; ?> Р</p>
+                            <p style="display: inline-block">Осталось</p>
+                            <p style="display: inline-block"><?= $order->delivery_cost;?> р</p>
+                        </td>
+                        <td style="border-left: 1px solid black">
+                            <p style="display: inline-block">Оплачено</p>
+                            <p style="display: inline-block"><?= $order->sum; ?> Р</p>
                         </td>
                     </tr>
+
                 </table>
             </div>
 
@@ -163,20 +166,18 @@
             <br>
 			<?php  if($order->payment_type == 'score'): ?>
                 <div class="order-info col-sm-6 col-xs-12">
-					<a class="text-primary" href="/cabinet/blank/<?= $order->id; ?>">
+					<a style="display: inline-block; margin-right: 20px" class="text-primary" href="/cabinet/blank/<?= $order->id; ?>">
 						<h4>
 							<img src="/img/print.png">
 							Посмотреть бланк
 						</h4>
 					</a>
-                </div>
-                <div class="order-info col-sm-6 col-xs-12">
-                <a class="text-primary" href="/cabinet/blank_pallets/<?=$order->id?>">
-                    <h4>
-                        <img src="/img/print.png">
-                        Бланк за поддоны
-                    </h4>
-                </a>
+                    <a style="display: inline-block" class="text-primary" href="/cabinet/blank_pallets/<?=$order->id?>">
+                        <h4>
+                            <img src="/img/print.png">
+                            Бланк за поддоны
+                        </h4>
+                    </a>
                 </div>
 				<?php  elseif($order->payment_type == 'requisites'): ?>
                 <div class="order-info  text-center col-xs-12">
