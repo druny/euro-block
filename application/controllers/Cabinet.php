@@ -196,7 +196,6 @@ class Cabinet extends CI_Controller
             $data['username'] = $this->ion_auth->user()->row()->first_name . ' ' . $this->ion_auth->user()->row()->last_name;
             $data['is_taken'] = ($data['order']->manager_id == $this->user_id) ? 1 : 0;
             $data['is_admin'] = ($this->ion_auth->is_admin()) ? TRUE : FALSE;
-            
 
             $this->load->view('header');
             $this->load->view('cabinet/cabinet', $data);

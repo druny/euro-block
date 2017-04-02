@@ -1,5 +1,5 @@
 <div class="current-order">
-		<div class="container" style=" width: 90%; margin: 0 auto;">
+		<div class="container">
 			<div class="current-order-title current-order-bg col-lg-8 col-md-8 col-sm-12 col-xs-12">
 				<h1>Здесь вы можете:  посмотреть историю заказов, заказать новую партию, посомтреть отгрузки</h1>
 			</div>
@@ -81,13 +81,13 @@
 				<h4>Оплата за товар</h4>
 				<table class="table-order">
 					<tr>
-						<td>
+						<td width="50%">
                             <p style="display: inline-block">оплаченно:</p>
                             <?php if ($is_taken && !$order->is_done): ?>
                                 <input type="number" name="paid" id="paid" value="<?= $order->paid; ?>">
                             <?php else: echo $order->paid; endif; ?>
 						</td>
-                        <td style="border-left: 1px solid black">
+                        <td style="border-left: 1px solid black" width="50%">
                             <p style="display: inline-block">Осталось:</p>
                             <p style="display: inline-block"> <?= $order->sum - $order->paid ?></p>
                         </td>
@@ -97,17 +97,12 @@
 
             <div class="order-info  col-xs-12">
                 <img src="/img/delivery.png" class="col-md-1 col-xs-2">
-
                 <h4>Оплата за доставку</h4>
                 <table class="table-order">
                     <tr>
-                        <td>
-                            <p style="display: inline-block">Осталось</p>
-                            <p style="display: inline-block"><?= $order->delivery_cost;?> р</p>
-                        </td>
-                        <td style="border-left: 1px solid black">
-                            <p style="display: inline-block">Оплачено</p>
-                            <p style="display: inline-block"><?= $order->sum; ?> Р</p>
+                        <td style="border-left: 1px solid black" >
+                            <p style="display: inline-block">Стоимость</p>
+                            <p style="display: inline-block"><?= $order->delivery_cost -=  450 * $order->number_of_pallets ?> Р</p>
                         </td>
                     </tr>
 
@@ -166,7 +161,7 @@
             <br>
 			<?php  if($order->payment_type == 'score'): ?>
                 <div class="order-info col-sm-6 col-xs-12">
-					<a style="display: inline-block; margin-right: 20px" class="text-primary" href="/cabinet/blank/<?= $order->id; ?>">
+					<a style="display: inline-block; margin: 0 20px;" class="text-primary" href="/cabinet/blank/<?= $order->id; ?>">
 						<h4>
 							<img src="/img/print.png">
 							Посмотреть бланк
